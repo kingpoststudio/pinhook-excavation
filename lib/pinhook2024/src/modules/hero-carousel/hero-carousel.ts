@@ -7,7 +7,6 @@ const {
   LitElement,
   html,
   unsafeCSS,
-  state,
   queryAssignedElements,
   createRef,
   ref,
@@ -96,4 +95,4 @@ export class HeroCarousel extends LitElement {
   }
 }
 
-customElements.define("iqvia-hero-carousel", HeroCarousel);
+customElements.define("px-hero-carousel", HeroCarousel);

@@ -47,7 +47,6 @@ declare global {
       ifDefined: typeof ifDefined;
       styleMap: typeof styleMap;
     };
-    hsVideoApi?: any;
   }
 }
 
