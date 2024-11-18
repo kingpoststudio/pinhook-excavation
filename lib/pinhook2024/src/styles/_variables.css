@@ -1,0 +1,98 @@
+:root {
+  --scale: min(16px, 3vw);
+
+  @media (min-width: 768px) {
+    --scale: min(15px, 1.25vw);
+  }
+
+  --space-0: 0;
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space: 1rem;
+  --space-md: 2rem;
+  --space-lg: 3rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+  --space-3xl: 8rem;
+  --space-4xl: 12rem;
+
+  @media (min-width: 768px) {
+    --space-0: 0;
+    --space-2xs: 0.25rem;
+    --space-xs: 0.5rem;
+    --space-sm: 0.75rem;
+    --space: 1rem;
+    --space-md: 2rem;
+    --space-lg: 3rem;
+    --space-xl: 4rem;
+    --space-2xl: 6rem;
+    --space-3xl: 8rem;
+    --space-4xl: 16rem;
+  }
+
+  --page-max-width: 1536px;
+  --page-width-wide: min(95%, calc(var(--page-max-width) * 0.95));
+  --page-width-snug: min(90%, calc(var(--page-max-width) * 0.9));
+  --page-width-narrow: min(85%, calc(var(--page-max-width) * 0.85));
+  --page-width-tight: min(80%, calc(var(--page-max-width) * 0.8));
+
+  @media (min-width: 768px) {
+    --page-width-wide: min(90%, calc(var(--page-max-width) * 0.9));
+    --page-width-snug: min(80%, calc(var(--page-max-width) * 0.8));
+    --page-width-narrow: min(70%, calc(var(--page-max-width) * 0.7));
+    --page-width-tight: min(60%, calc(var(--page-max-width) * 0.6));
+  }
+
+  /* Fonts */
+  --font-size-xs: 0.8rem;
+  --font-size-sm: 0.9rem;
+  --font-size: var(--scale);
+  --font-size-md: 1.25rem;
+  --font-size-lg: 1.75rem;
+  --font-size-xl: 2.25rem;
+  --font-size-2xl: 2.5rem;
+  --font-size-3xl: 3.375rem;
+  --font-size-4xl: 4.5rem;
+
+  /* Colors */
+  --color-black: #1A1A1A;
+  --color-black-opaque: #1A1A1A80;
+  --color-orange: #F77800;
+  --color-orange-opaque: #F7780080;
+  --color-blue: #0887FF;
+  --color-blue-opaque: #0887FF80;
+  --color-white: #FAFAFA;
+  --color-white-opaque: #FAFAFA80;
+
+  --color-error: #F72F00;
+  --color-success: #7DD200;
+
+  --input-border-color: #959ca0;
+  --input-placeholder-color: #959ca0;
+  --input-border-color-focused: var(--color-orange);
+  --input-accent-color: var(--color-blue);
+
+  /* Animations/Easings/Transitions */
+  --ease-time-fast: 150ms;
+  --ease-time: 300ms;
+  --ease-time-slow: 450ms;
+  --ease-type: cubic-bezier(0.5, 0.25, 0.125, 1);
+
+  --animate-ease-time: 500ms;
+
+  --slide-in: var(--ease-time) var(--ease-type);
+
+  /* Shadows */
+  --shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.3);
+  --shadow-light-blue: 0 0 0.5rem 0 rgba(0, 163, 224, 0.5);
+
+  /* Z-index */
+  --z-index-header: 100;
+  --z-index-modal: 200;
+  --z-index-toaster: 300;
+  --z-index-gate: 400;
+
+  /* Header */
+  --iqvia-header-height: 7rem;
+}

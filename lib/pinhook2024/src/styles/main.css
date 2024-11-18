@@ -1,0 +1,308 @@
+@import "_fonts.css";
+@import "_variables.css";
+@import "_buttons.css";
+@import "_text.css";
+@import "_inputs.css";
+@import "_forms.css";
+@import "_dialog.css";
+@import "_themes.css";
+@import "_animations.css";
+@import "_layout.css";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+}
+
+html {
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+
+  &.no-scroll {
+    height: 100vh;
+    overflow-y: hidden;
+  }
+}
+
+hr {
+  width: 80%;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--color-iqvia-charcoal);
+  opacity: 0.25;
+}
+
+ul,
+ol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-left: var(--space-lg);
+  margin-block: var(--space-xs);
+
+  > li {
+    font-size: inherit;
+    line-height: 1.5;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+.aspect-landscape {
+  aspect-ratio: 16 / 9;
+}
+
+.object-cover {
+  object-fit: cover;
+}
+
+.object-contain {
+  object-fit: contain;
+}
+
+.fill-current {
+  fill: currentColor;
+}
+
+.stroke-current {
+  stroke: currentColor;
+}
+
+.shadow {
+  box-shadow: var(--shadow);
+}
+
+.rotate-90 {
+  transform: rotate(90deg);
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+.rotate-270 {
+  transform: rotate(270deg);
+}
+
+tui-tab-group,
+div.tab-group {
+  padding-block: var(--space-sm);
+
+  > div[slot="options"],
+  > div.options {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    tui-tab-group-action {
+      flex: 1;
+    }
+
+    a {
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .tab-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      padding: var(--space);
+      font-size: var(--font-size-sm);
+      text-align: center;
+      color: var(--color-iqvia-indigo);
+      border-bottom: 1px solid var(--color-iqvia-light-gray);
+      cursor: pointer;
+      text-shadow: none;
+      transition:
+        background var(--ease-time) var(--ease-type),
+        text-shadow var(--ease-time) var(--ease-type);
+
+      &[active],
+      &.active {
+        @media (min-width: 768px) {
+          border-bottom: 1px solid var(--color-iqvia-indigo);
+        }
+
+        > .tab-button {
+          text-shadow: 0 0 1px var(--color-iqvia-indigo);
+        }
+      }
+    }
+  }
+
+  > div[slot="tabs"] {
+    position: relative;
+    z-index: 1;
+    top: -1px;
+    margin-top: var(--space-md);
+
+    @media (min-width: 768px) {
+      margin-top: 0;
+    }
+
+    > tui-tab {
+      display: none;
+      width: 100%;
+      background: var(--color-white);
+      border: 1px solid var(--color-light-gray);
+
+      &[active] {
+        display: block;
+      }
+    }
+  }
+}
+
+div.as-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  border-radius: 1rem;
+  overflow: hidden;
+
+  > tui-accordion {
+    > div[slot="header"] {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      width: 100%;
+      padding: var(--space) var(--space-md);
+      background: var(--color-iqvia-dark-blue);
+      color: var(--color-iqvia-white);
+
+      > iqvia-icon[icon="chevron"] {
+        transform: rotate(90deg);
+        transition: transform var(--ease-time) var(--ease-type);
+      }
+    }
+
+    > div[slot="content"] {
+      padding: var(--space);
+      color: var(--color-iqvia-dark-blue);
+      background: var(--color-iqvia-white);
+    }
+
+    &[open] {
+      > div[slot="header"] {
+        > iqvia-icon[icon="chevron"] {
+          transform: rotate(-90deg);
+        }
+      }
+    }
+  }
+}
+
+.line-arrow {
+  position: relative;
+  height: 3rem;
+  width: calc(100% - 2rem);
+  margin: 1.5rem auto 4.5rem;
+
+  .line {
+    position: absolute;
+    top: 50%;
+    left: -0.5rem;
+    width: calc(100% + 1rem);
+    height: 0.5rem;
+    background: var(--color-iqvia-light-blue);
+    transform: translateY(-50%);
+  }
+
+  .line-arrow-tabs {
+    position: relative;
+    z-index: 1;
+    top: -1rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-xs);
+    padding: 0 var(--space-md);
+
+    .line-arrow-tab {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+
+    a,
+    p {
+      text-align: center;
+      font-size: var(--font-size-sm);
+      line-height: 1.5;
+      text-decoration: none;
+    }
+
+    img {
+      padding: var(--space-xs);
+      border-radius: 50%;
+      width: 100%;
+      max-width: 5rem;
+      aspect-ratio: 1 / 1;
+    }
+  }
+
+  iqvia-icon[icon="arrow"] {
+    position: absolute;
+    top: 0.5rem;
+    right: -1.5rem;
+    display: block;
+    width: 1.5rem;
+    color: var(--color-iqvia-light-blue);
+
+    &.rotate-180 {
+      right: auto;
+      left: -1.5rem;
+    }
+  }
+}
+
+/* Create border utilities to increase the border size, etc. */
+.border-md {
+  border-width: 0.125rem;
+}
+
+.border-lg {
+  border-width: 0.25rem;
+}
+
+/* Hover helpers */
+.hover\:float {
+  transition: box-shadow var(--ease-time) var(--ease-type),
+    transform var(--ease-time) var(--ease-type);
+
+  &:hover {
+    box-shadow: 0 0.25rem 0.5rem #00000025;
+    transform: translateY(-0.25rem);
+  }
+}

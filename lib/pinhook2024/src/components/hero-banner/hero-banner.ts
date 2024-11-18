@@ -7,7 +7,7 @@ export class HeroBanner extends LitElement {
 
   @property({ type: Boolean }) condensed = false;
 
-  @property({ type: Boolean }) gradient = false;
+  @property({ type: Boolean }) overlay = false;
 
   render() {
     return html`
@@ -15,7 +15,7 @@ export class HeroBanner extends LitElement {
         <div class="background">
           <slot name="background"></slot>
         </div>
-        ${this.gradient ? html`<div class="gradient"></div>` : undefined}
+        ${this.overlay ? html`<div class="overlay"></div>` : undefined}
         <div class="content">
           <slot name="content"></slot>
           <div class="image">

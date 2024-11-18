@@ -1,0 +1,52 @@
+input,
+select,
+textarea {
+  width: 100%;
+  height: 3rem;
+  padding: 0 var(--space);
+  border: 1px solid var(--input-border-color);
+  border-radius: 2rem;
+  color: var(--color-black);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-sm);
+  transition:
+    background var(--ease-time) var(--ease-type),
+    border-color var(--ease-time) var(--ease-type);
+  outline: none;
+
+  &::placeholder {
+    opacity: 0.75;
+    color: var(--input-placeholder-color);
+  }
+
+  &:focus {
+    border-color: var(--input-border-color-focused);
+  }
+}
+
+input {
+  width: 100%;
+
+  &[type="radio"],
+  &[type="checkbox"] {
+    width: 1rem;
+    height: auto;
+    cursor: pointer;
+    accent-color: var(--input-accent-color);
+    transform: scale(1.25);
+  }
+
+  &.invalid,
+  &.error {
+    border-color: var(--color-error);
+  }
+}
+
+textarea {
+  min-height: 10rem;
+  padding: var(--space);
+}
+
+select {
+  outline: none;
+}

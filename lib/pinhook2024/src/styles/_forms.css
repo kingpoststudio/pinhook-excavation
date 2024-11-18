@@ -1,0 +1,142 @@
+/* Forms
+** Note: All !important are required to override the default styling of the HS form elements.
+*/
+form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: var(--space-sm);
+  width: 100%;
+  max-width: 64rem;
+  margin: 0 auto;
+
+  div#hs-membership-password-requirements {
+    margin-top: var(--space-xs);
+  }
+
+  div.legal-consent-container {
+    margin-block: var(--space-md);
+  }
+
+  input#hs-login-widget-remember {
+    width: fit-content;
+  }
+
+  input#hs-pwd-widget-password {
+    width: 100%;
+    height: 2.75rem !important;
+  }
+
+  fieldset {
+    display: flex;
+    flex-direction: column;
+    max-width: 100% !important;
+    gap: var(--space-md);
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
+
+  div.hs-form-field,
+  div.form-field {
+    position: relative;
+    width: 100% !important;
+    float: none !important;
+
+    &.inline {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    > label {
+      display: inline-flex;
+      padding: 0 var(--space-xs);
+      font-size: var(--font-size-sm);
+      font-weight: 700;
+      color: var(--color-iqvia-indigo);
+      text-transform: uppercase;
+
+      &.error-msg,
+      &.hs-error-msg {
+        margin-top: var(--space-xs);
+        margin-left: var(--space-xs);
+        font-size: var(--font-size-sm);
+        color: var(--color-error);
+        font-style: italic;
+      }
+
+      > span.form-required,
+      > span.hs-form-required {
+        color: var(--color-error);
+      }
+    }
+
+    &.hs-fieldtype-radio,
+    &.hs-fieldtype-checkbox,
+    &.hs-form-booleancheckbox {
+      > label {
+        position: inherit;
+        top: auto;
+        left: auto;
+        padding: 0;
+        background: transparent;
+        font-size: var(--font-size-sm);
+      }
+    }
+
+    legend {
+      display: none !important;
+    }
+
+    div.input {
+      margin-right: 0 !important;
+      margin-top: var(--space-xs);
+
+      /* Textarea competes with inline styles associated w/ form-id. This ensures style priority. */
+      > textarea.hs-input {
+        width: 100%;
+      }
+    }
+
+    ul.inputs-list {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin: 0 0 0 var(--space);
+      padding: 0;
+      list-style: none;
+
+      li.hs-form-radio,
+      li.hs-form-checkbox,
+      li.hs-form-booleancheckbox {
+        display: inline-flex;
+        flex-direction: row;
+        margin-bottom: 0;
+
+        > label {
+          display: flex;
+          align-items: center;
+          gap: var(--space-xs);
+          font-size: var(--font-size-sm);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  div.hs-submit {
+    > .actions {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+/* Spacing for incorrect password notice */
+.hs_cos_wrapper_type_password_prompt {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space);
+}

@@ -1,0 +1,46 @@
+tui-dialog {
+  display: contents;
+
+  .dialog {
+    display: flex;
+    flex-direction: column;
+    min-width: 16rem;
+    width: 48rem;
+    max-width: 90vw;
+    height: calc(100vh - var(--space-md));
+    max-height: 36rem;
+    background: var(--color-white);
+    border-radius: var(--space);
+    box-shadow: var(--shadow);
+
+    &.h-fit {
+      height: fit-content;
+    }
+
+    > .dialog__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-md);
+      border-bottom: 1px solid var(--color-iqvia-light-gray);
+
+      > tui-dialog-action {
+        display: contents;
+        cursor: pointer;
+
+        > iqvia-icon {
+          width: 1rem;
+        }
+      }
+    }
+
+    > .dialog__body {
+      padding: var(--space-md);
+      overflow-y: auto;
+    }
+  }
+}
+
+tui-dialog-action {
+  cursor: pointer;
+}
