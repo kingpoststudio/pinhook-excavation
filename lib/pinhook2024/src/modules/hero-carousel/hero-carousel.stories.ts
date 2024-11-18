@@ -8,6 +8,6 @@ const meta: Meta = {
 
 export default meta;
 
-export const HeroCarousel = () => {
+export const Default = () => {
   return html`<px-hero-carousel></px-hero-carousel>`;
 }
