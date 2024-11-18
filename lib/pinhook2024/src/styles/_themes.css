@@ -308,3 +308,105 @@
 .border-iqvia-gray {
   border: 1px solid var(--color-iqvia-gray);
 }
+
+
+/** Convert the following colors into theme utility classes
+  --color-black: #1A1A1A;
+  --color-black-opaque: #1A1A1A80;
+  --color-orange: #F77800;
+  --color-orange-opaque: #F7780080;
+  --color-blue: #0887FF;
+  --color-blue-opaque: #0887FF80;
+  --color-white: #FAFAFA;
+  --color-white-opaque: #FAFAFA80;
+*/
+
+.bg-black {
+  background-color: var(--color-black);
+}
+
+.bg-black-opaque {
+  background-color: var(--color-black-opaque);
+}
+
+.bg-orange {
+  background-color: var(--color-orange);
+}
+
+.bg-orange-opaque {
+  background-color: var(--color-orange-opaque);
+}
+
+.bg-blue {
+  background-color: var(--color-blue);
+}
+
+.bg-blue-opaque {
+  background-color: var(--color-blue-opaque);
+}
+
+.bg-white {
+  background-color: var(--color-white);
+}
+
+.bg-white-opaque {
+  background-color: var(--color-white-opaque);
+}
+
+.border-black {
+  border: 1px solid var(--color-black);
+}
+
+.border-black-opaque {
+  border: 1px solid var(--color-black-opaque);
+}
+
+.border-orange {
+  border: 1px solid var(--color-orange);
+}
+
+.border-blue {
+  border: 1px solid var(--color-blue);
+}
+
+.border-white {
+  border: 1px solid var(--color-white);
+}
+
+/* Text colors */
+.text-black {
+  color: var(--color-black);
+}
+
+.text-black-opaque {
+  color: var(--color-black-opaque);
+}
+
+.text-orange {
+  color: var(--color-orange);
+}
+
+.text-blue {
+  color: var(--color-blue);
+}
+
+.text-white {
+  color: var(--color-white);
+}
+
+/* Gradients */
+.gradient-black-to-transparent {
+  background-image: linear-gradient(to top, var(--color-black), transparent);
+}
+
+.gradient-orange-to-transparent {
+  background-image: linear-gradient(to top, var(--color-orange), transparent);
+}
+
+.gradient-blue-to-transparent {
+  background-image: linear-gradient(to top, var(--color-blue), transparent);
+}
+
+.gradient-white-to-transparent {
+  background-image: linear-gradient(to top, var(--color-white), transparent);
+}

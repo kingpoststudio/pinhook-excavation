@@ -13,26 +13,23 @@ export default meta;
 
 export const Default = () => {
   return html`
-    <div class="bg-black">
-      <px-hero-banner>
+    <div class="bg-black text-white">
+      <px-hero-banner overlay>
+
         <tui-content slot="content" alignment="start" gap="md">
           <p slot="eyebrow">Central Laboratories</p>
           <h1 slot="title" class="fw-bold">Lorem Ipsum Dolor Sit Amet</h1>
-          <p slot="description" class="as-body">
-            Short introduction text. Lorem ipsum dolor sit amet consectetur
-            adipiscing.
-          </p>
+          <div slot="description" class="as-body">
+          </div>
           <button slot="cta">Contact Us</button>
         </tui-content>
-        <div class="text-iqvia-white" slot="breadcrumbs">
-          <a class="theme-iqvia-white" href="#">Home</a>
+
+        <div class="text-white" slot="breadcrumbs">
+          <a href="/">Home</a>
           <span>/</span>
-          <a class="theme-iqvia-white" href="#">Services</a>
-          <span>/</span>
-          <a class="theme-iqvia-white" href="#">Central Laboratories</a>
-          <span>/</span>
-          <span class="fw-bold" href="#">Clinical Laboratory Services</span>
+          <span class="fw-bold" href="#">Our Services</span>
         </div>
+
       </px-hero-banner>
     </div>
   `;
