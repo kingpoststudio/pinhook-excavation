@@ -18,9 +18,6 @@ export class HeroBanner extends LitElement {
         ${this.overlay ? html`<div class="overlay"></div>` : undefined}
         <div class="content">
           <slot name="content"></slot>
-          <div class="image">
-            <slot name="image"></slot>
-          </div>
         </div>
         <div class="breadcrumbs">
           <slot name="breadcrumbs"></slot>

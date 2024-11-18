@@ -18,7 +18,6 @@ form input[type="submit"] {
   color: var(--color-white);
   background: var(--color-orange);
   border: 0.2rem solid transparent;
-  border-radius: 2.5rem;
   cursor: pointer;
   overflow: hidden;
 

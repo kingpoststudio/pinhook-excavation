@@ -55,20 +55,17 @@
     margin: 0 auto;
     padding: var(--space-lg);
 
+    slot[name="content"]::slotted(tui-content) {
+      width: 100%;
+      border-left: 0.5rem solid var(--color-orange);
+      padding-left: var(--space-md) !important;
+    }
+
     @media (min-width: 768px) {
       flex-direction: row;
 
       slot[name="content"]::slotted(tui-content) {
-        flex: 6;
-      }
-    }
-
-    > .image {
-      flex: 4;
-
-      slot[name="image"]::slotted(img) {
-        aspect-ratio: 3 / 4;
-        object-fit: cover;
+        width: 70%;
       }
     }
   }
