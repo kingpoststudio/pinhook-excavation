@@ -13,7 +13,7 @@ export default meta;
 
 export const Default = () => {
   return html`
-    <div class="bg-iqvia-indigo">
+    <div class="bg-black">
       <px-hero-banner>
         <tui-content slot="content" alignment="start" gap="md">
           <p slot="eyebrow">Central Laboratories</p>
