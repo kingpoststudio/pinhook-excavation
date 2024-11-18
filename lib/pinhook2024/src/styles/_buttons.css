@@ -30,10 +30,10 @@ form input[type="submit"] {
       opacity: 0;
       right: 0;
       top: 50%;
-      width: 0.5rem;
-      height: 0.5rem;
-      border-left: 0.125rem solid;
-      border-bottom: 0.125rem solid;
+      width: 0.4rem;
+      height: 0.4rem;
+      border-left: 0.2rem solid;
+      border-bottom: 0.2rem solid;
       border-color: var(--color-white);
       transform: translate(1rem, -50%) rotate(225deg);
       transition:

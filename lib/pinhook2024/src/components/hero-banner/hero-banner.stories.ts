@@ -20,12 +20,16 @@ export const Default = () => {
           <p slot="eyebrow">Central Laboratories</p>
           <h1 slot="title" class="fw-bold">Lorem Ipsum Dolor Sit Amet</h1>
           <div slot="description" class="as-body">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+              convallis libero in dui mattis, nec ultricies nunc fermentum.
+            </p>
           </div>
-          <button slot="cta">Contact Us</button>
+          <a class="button" slot="cta">Contact Us</a>
         </tui-content>
 
         <div slot="breadcrumbs">
-          <a href="/">Home</a>
+          <a href="/" class="text-inherit">Home</a>
           <span>/</span>
           <span class="fw-bold" href="#">Our Services</span>
         </div>

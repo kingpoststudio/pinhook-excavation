@@ -20,7 +20,7 @@ h6,
 .as-h6,
 .as-heading {
   font-weight: 700;
-  line-height: 1.5;
+  line-height: 1;
 
   > span {
     font-family: inherit;
@@ -73,11 +73,12 @@ a {
   color: var(--color-blue);
 }
 
+.title,
 .eyebrow,
+tui-content *[slot="title"],
 tui-content *[slot="eyebrow"] {
   text-transform: uppercase;
   font-weight: 700;
-  letter-spacing: 0.1rem;
 }
 
 .fw-light {

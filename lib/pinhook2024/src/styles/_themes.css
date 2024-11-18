@@ -136,6 +136,10 @@
   color: var(--color-gray);
 }
 
+.text-inherit {
+  color: inherit;
+}
+
 /* Gradients */
 .gradient-start-black {
   --gradient-color-start: var(--color-black);
