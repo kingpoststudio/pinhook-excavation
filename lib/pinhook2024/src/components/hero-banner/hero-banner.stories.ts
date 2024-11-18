@@ -1,9 +1,6 @@
 import { html } from "lit";
 import type { Meta } from "@storybook/web-components";
 
-import "../../globals.js";
-import "../index.js";
-
 const meta: Meta = {
   title: "Hero Banner",
   component: "px-hero-banner",
@@ -17,7 +14,7 @@ export default meta;
 export const Default = () => {
   return html`
     <div class="bg-iqvia-indigo">
-      <truss-hero-banner>
+      <px-hero-banner>
         <tui-content slot="content" alignment="start" gap="md">
           <p slot="eyebrow">Central Laboratories</p>
           <h1 slot="title" class="fw-bold">Lorem Ipsum Dolor Sit Amet</h1>
@@ -36,7 +33,7 @@ export const Default = () => {
           <span>/</span>
           <span class="fw-bold" href="#">Clinical Laboratory Services</span>
         </div>
-      </truss-hero-banner>
+      </px-hero-banner>
     </div>
   `;
 };
