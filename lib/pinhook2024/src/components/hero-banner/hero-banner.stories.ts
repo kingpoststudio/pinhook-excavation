@@ -24,7 +24,7 @@ export const Default = () => {
           <button slot="cta">Contact Us</button>
         </tui-content>
 
-        <div class="text-white" slot="breadcrumbs">
+        <div slot="breadcrumbs">
           <a href="/">Home</a>
           <span>/</span>
           <span class="fw-bold" href="#">Our Services</span>

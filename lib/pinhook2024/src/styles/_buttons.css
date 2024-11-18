@@ -15,8 +15,8 @@ form input[type="submit"] {
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  color: var(--color-iqvia-white);
-  background: var(--color-iqvia-blue);
+  color: var(--color-white);
+  background: var(--color-orange);
   border: 0.2rem solid transparent;
   border-radius: 2.5rem;
   cursor: pointer;
@@ -34,7 +34,7 @@ form input[type="submit"] {
       height: 0.5rem;
       border-left: 0.125rem solid;
       border-bottom: 0.125rem solid;
-      border-color: var(--color-iqvia-white);
+      border-color: var(--color-white);
       transform: translate(1rem, -50%) rotate(225deg);
       transition:
         opacity var(--ease-time) var(--ease-type),
@@ -49,7 +49,7 @@ form input[type="submit"] {
     }
   }
 
-  &.theme-iqvia-white {
+  &.theme-white {
     background: var(--color-white);
   }
 
@@ -66,7 +66,7 @@ form input[type="submit"] {
     padding-block: var(--space-2xs);
     padding-right: var(--space-md);
     padding-left: 0;
-    color: var(--color-iqvia-dark-blue);
+    color: var(--color-blue);
     text-align: left;
     background: transparent;
     border-color: transparent;
@@ -74,7 +74,7 @@ form input[type="submit"] {
 
     &:before {
       opacity: 1;
-      border-color: var(--color-iqvia-dark-blue);
+      border-color: var(--color-blue);
       transform: translate(-1rem, -50%) rotate(225deg);
     }
 
@@ -88,11 +88,11 @@ form input[type="submit"] {
       }
     }
 
-    &.theme-iqvia-white {
-      color: var(--color-iqvia-white);
+    &.theme-white {
+      color: var(--color-white);
 
       &:before {
-        border-color: var(--color-iqvia-white);
+        border-color: var(--color-white);
       }
     }
   }
@@ -106,9 +106,9 @@ form input[type="submit"] {
     padding: 0;
     aspect-ratio: 1;
     border-radius: 50%;
-    background: var(--color-iqvia-white);
-    color: var(--color-iqvia-dark-blue);
-    border: 1px solid var(--color-iqvia-light-gray);
+    background: var(--color-white);
+    color: var(--color-blue);
+    border: 1px solid var(--color-black-opaque);
     box-shadow: 0 0.24rem 0.5rem rgba(0, 0, 0, 0.15);
     cursor: pointer;
     transition:
@@ -117,31 +117,17 @@ form input[type="submit"] {
       border-color var(--ease-time) var(--ease-type);
 
     &:not(.disabled):hover {
-      border-color: var(--color-iqvia-white);
+      border-color: var(--color-white);
     }
 
     &.disabled {
-      color: var(--color-iqvia-light-gray);
+      color: var(--color-black-opaque);
       box-shadow: none;
       cursor: not-allowed;
     }
 
-    > iqvia-icon {
+    > px-icon {
       width: 50%;
-    }
-  }
-
-  &.outlined {
-    background: transparent;
-    border-color: var(--color-iqvia-white);
-
-    &.theme-light-blue {
-      color: var(--color-iqvia-indigo);
-      border-color: var(--color-iqvia-light-blue);
-
-      &:before {
-        border-color: var(--color-iqvia-indigo);
-      }
     }
   }
 
