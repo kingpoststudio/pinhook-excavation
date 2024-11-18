@@ -11,6 +11,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@kingpoststudio/truss-ui": "^0.1.35",
     "lit": "^3.2.1",
     "swiper": "^11.1.14"
   },
