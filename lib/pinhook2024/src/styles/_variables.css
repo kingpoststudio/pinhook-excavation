@@ -93,7 +93,4 @@
   --z-index-modal: 200;
   --z-index-toaster: 300;
   --z-index-gate: 400;
-
-  /* Header */
-  --iqvia-header-height: 7rem;
 }

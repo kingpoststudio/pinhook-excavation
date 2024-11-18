@@ -534,18 +534,6 @@ div[slot="breadcrumbs"] {
   }
 }
 
-.card-sm {
-  max-width: 16rem;
-}
-
-.card {
-  max-width: 20rem;
-}
-
-.card-md {
-  max-width: 24rem;
-}
-
 .rounded-sm {
   border-radius: var(--space-sm);
   overflow: hidden;
