@@ -64,12 +64,13 @@
   --color-blue-opaque: #0887FF80;
   --color-white: #FAFAFA;
   --color-white-opaque: #FAFAFA80;
+  --color-gray: #959CA0;
 
   --color-error: #F72F00;
   --color-success: #7DD200;
 
-  --input-border-color: #959ca0;
-  --input-placeholder-color: #959ca0;
+  --input-border-color: var(--color-gray);
+  --input-placeholder-color: var(--color-gray);
   --input-border-color-focused: var(--color-orange);
   --input-accent-color: var(--color-blue);
 

@@ -1,56 +1,3 @@
-/* Background */
-.bg-iqvia-light-blue {
-  background-color: var(--color-iqvia-light-blue);
-}
-
-.bg-iqvia-blue {
-  background-color: var(--color-iqvia-blue);
-}
-
-.bg-iqvia-dark-blue {
-  background-color: var(--color-iqvia-dark-blue);
-}
-
-.bg-iqvia-light-teal {
-  background-color: var(--color-iqvia-light-teal);
-}
-
-.bg-iqvia-teal {
-  background-color: var(--color-iqvia-teal);
-}
-
-.bg-iqvia-light-green {
-  background-color: var(--color-iqvia-light-green);
-}
-
-.bg-iqvia-green {
-  background-color: var(--color-iqvia-green);
-}
-
-.bg-iqvia-indigo {
-  background-color: var(--color-iqvia-indigo);
-}
-
-.bg-iqvia-charcoal {
-  background-color: var(--color-iqvia-charcoal);
-}
-
-.bg-iqvia-gray {
-  background-color: var(--color-iqvia-gray);
-}
-
-.bg-iqvia-light-gray {
-  background-color: var(--color-iqvia-light-gray);
-}
-
-.bg-iqvia-white {
-  background-color: var(--color-iqvia-white);
-}
-
-.bg-white {
-  background-color: var(--color-white);
-}
-
 /* Gradients */
 .gradient-to-top {
   background-image: linear-gradient(to top,
@@ -104,223 +51,6 @@
       var(--gradient-color-stop));
 }
 
-/* Start color classes */
-.gradient-start-light-blue {
-  --gradient-color-start: var(--color-iqvia-light-blue);
-}
-
-.gradient-start-blue {
-  --gradient-color-start: var(--color-iqvia-blue);
-}
-
-.gradient-start-dark-blue {
-  --gradient-color-start: var(--color-iqvia-dark-blue);
-}
-
-.gradient-start-light-teal {
-  --gradient-color-start: var(--color-iqvia-light-teal);
-}
-
-.gradient-start-teal {
-  --gradient-color-start: var(--color-iqvia-teal);
-}
-
-.gradient-start-light-green {
-  --gradient-color-start: var(--color-iqvia-light-green);
-}
-
-.gradient-start-green {
-  --gradient-color-start: var(--color-iqvia-green);
-}
-
-.gradient-start-indigo {
-  --gradient-color-start: var(--color-iqvia-indigo);
-}
-
-.gradient-start-charcoal {
-  --gradient-color-start: var(--color-iqvia-charcoal);
-}
-
-.gradient-start-gray {
-  --gradient-color-start: var(--color-iqvia-light-gray);
-}
-
-.gradient-start-white {
-  --gradient-color-start: var(--color-iqvia-white);
-}
-
-.gradient-start-transparent {
-  --gradient-color-start: transparent;
-}
-
-/* Stop color classes */
-.gradient-stop-light-blue {
-  --gradient-color-stop: var(--color-iqvia-light-blue);
-}
-
-.gradient-stop-blue {
-  --gradient-color-stop: var(--color-iqvia-blue);
-}
-
-.gradient-stop-dark-blue {
-  --gradient-color-stop: var(--color-iqvia-dark-blue);
-}
-
-.gradient-stop-light-teal {
-  --gradient-color-stop: var(--color-iqvia-light-teal);
-}
-
-.gradient-stop-teal {
-  --gradient-color-stop: var(--color-iqvia-teal);
-}
-
-.gradient-stop-light-green {
-  --gradient-color-stop: var(--color-iqvia-light-green);
-}
-
-.gradient-stop-green {
-  --gradient-color-stop: var(--color-iqvia-green);
-}
-
-.gradient-stop-indigo {
-  --gradient-color-stop: var(--color-iqvia-indigo);
-}
-
-.gradient-stop-charcoal {
-  --gradient-color-stop: var(--color-iqvia-charcoal);
-}
-
-.gradient-stop-light-gray {
-  --gradient-color-stop: var(--color-iqvia-light-gray);
-}
-
-.gradient-stop-gray {
-  --gradient-color-stop: var(--color-iqvia-gray);
-}
-
-.gradient-stop-white {
-  --gradient-color-stop: var(--color-iqvia-white);
-}
-
-.gradient-stop-transparent {
-  --gradient-color-stop: transparent;
-}
-
-.gradient-blue-to-light-blue {
-  --gradient-color-start: var(--color-iqvia-blue);
-  --gradient-color-stop: var(--color-iqvia-light-blue);
-}
-
-.gradient-indigo-to-dark-blue {
-  --gradient-color-start: var(--color-iqvia-indigo);
-  --gradient-color-stop: var(--color-iqvia-dark-blue);
-}
-
-.gradient-green-to-light-green {
-  --gradient-color-start: var(--color-iqvia-green);
-  --gradient-color-stop: var(--color-iqvia-light-green);
-}
-
-.gradient-teal-to-light-teal {
-  --gradient-color-start: var(--color-iqvia-teal);
-  --gradient-color-stop: var(--color-iqvia-light-teal);
-}
-
-.gradient-charcoal-to-gray {
-  --gradient-color-start: var(--color-iqvia-charcoal);
-  --gradient-color-stop: var(--color-iqvia-gray);
-}
-
-.gradient-indigo-to-transparent {
-  --gradient-color-start: var(--color-iqvia-indigo);
-  --gradient-color-stop: transparent;
-}
-
-.gradient-dark-blue-to-transparent {
-  --gradient-color-start: var(--color-iqvia-dark-blue);
-  --gradient-color-stop: transparent;
-}
-
-.gradient-blue-to-transparent {
-  --gradient-color-start: var(--color-iqvia-blue);
-  --gradient-color-stop: transparent;
-}
-
-.gradient-teal-to-transparent {
-  --gradient-color-start: var(--color-iqvia-teal);
-  --gradient-color-stop: transparent;
-}
-
-.gradient-green-to-transparent {
-  --gradient-color-start: var(--color-iqvia-green);
-  --gradient-color-stop: transparent;
-}
-
-.gradient-charcoal-to-transparent {
-  --gradient-color-start: var(--color-iqvia-charcoal);
-  --gradient-color-stop: transparent;
-}
-
-.border-iqvia-light-blue {
-  border: 1px solid var(--color-iqvia-light-blue);
-}
-
-.border-iqvia-blue {
-  border: 1px solid var(--color-iqvia-blue);
-}
-
-.border-iqvia-dark-blue {
-  border: 1px solid var(--color-iqvia-dark-blue);
-}
-
-.border-iqvia-light-teal {
-  border: 1px solid var(--color-iqvia-light-teal);
-}
-
-.border-iqvia-teal {
-  border: 1px solid var(--color-iqvia-teal);
-}
-
-.border-iqvia-light-green {
-  border: 1px solid var(--color-iqvia-light-green);
-}
-
-.border-iqvia-green {
-  border: 1px solid var(--color-iqvia-green);
-}
-
-.border-iqvia-indigo {
-  border: 1px solid var(--color-iqvia-indigo);
-}
-
-.border-iqvia-red {
-  border: 1px solid var(--color-iqvia-red);
-}
-
-.border-iqvia-charcoal {
-  border: 1px solid var(--color-iqvia-charcoal);
-}
-
-.border-iqvia-light-gray {
-  border: 1px solid var(--color-iqvia-light-gray);
-}
-
-.border-iqvia-gray {
-  border: 1px solid var(--color-iqvia-gray);
-}
-
-
-/** Convert the following colors into theme utility classes
-  --color-black: #1A1A1A;
-  --color-black-opaque: #1A1A1A80;
-  --color-orange: #F77800;
-  --color-orange-opaque: #F7780080;
-  --color-blue: #0887FF;
-  --color-blue-opaque: #0887FF80;
-  --color-white: #FAFAFA;
-  --color-white-opaque: #FAFAFA80;
-*/
-
 .bg-black {
   background-color: var(--color-black);
 }
@@ -353,6 +83,10 @@
   background-color: var(--color-white-opaque);
 }
 
+.bg-gray {
+  background-color: var(--color-gray);
+}
+
 .border-black {
   border: 1px solid var(--color-black);
 }
@@ -371,6 +105,10 @@
 
 .border-white {
   border: 1px solid var(--color-white);
+}
+
+.border-gray {
+  border: 1px solid var(--color-gray);
 }
 
 /* Text colors */
@@ -394,19 +132,83 @@
   color: var(--color-white);
 }
 
+.text-gray {
+  color: var(--color-gray);
+}
+
 /* Gradients */
-.gradient-black-to-transparent {
-  background-image: linear-gradient(to top, var(--color-black), transparent);
+.gradient-start-black {
+  --gradient-color-start: var(--color-black);
 }
 
-.gradient-orange-to-transparent {
-  background-image: linear-gradient(to top, var(--color-orange), transparent);
+.gradient-start-black-opaque {
+  --gradient-color-start: var(--color-black-opaque);
 }
 
-.gradient-blue-to-transparent {
-  background-image: linear-gradient(to top, var(--color-blue), transparent);
+.gradient-start-orange {
+  --gradient-color-start: var(--color-orange);
 }
 
-.gradient-white-to-transparent {
-  background-image: linear-gradient(to top, var(--color-white), transparent);
+.gradient-start-orange-opaque {
+  --gradient-color-start: var(--color-orange-opaque);
+}
+
+.gradient-start-blue {
+  --gradient-color-start: var(--color-blue);
+}
+
+.gradient-start-blue-opaque {
+  --gradient-color-start: var(--color-blue-opaque);
+}
+
+.gradient-start-white {
+  --gradient-color-start: var(--color-white);
+}
+
+.gradient-start-white-opaque {
+  --gradient-color-start: var(--color-white-opaque);
+}
+
+.gradient-start-gray {
+  --gradient-color-start: var(--color-gray);
+}
+
+.gradient-stop-black {
+  --gradient-color-stop: var(--color-black);
+}
+
+.gradient-stop-black-opaque {
+  --gradient-color-stop: var(--color-black-opaque);
+}
+
+.gradient-stop-orange {
+  --gradient-color-stop: var(--color-orange);
+}
+
+.gradient-stop-orange-opaque {
+  --gradient-color-stop: var(--color-orange-opaque);
+}
+
+.gradient-stop-blue {
+  --gradient-color-stop: var(--color-blue);
+}
+
+.gradient-stop-blue-opaque {
+  --gradient-color-stop: var(--color-blue-opaque);
+}
+
+.gradient-stop-white {
+  --gradient-color-stop: var(--color-white);
+}
+
+.gradient-stop-white-opaque {
+  --gradient-color-stop: var(--color-white-opaque);
+}
+
+.gradient-stop-gray {
+  --gradient-color-stop: var(--color-gray);
+}
+
+.gradient-stop-transparent {
+  --gradient-color-stop: transparent;
 }
