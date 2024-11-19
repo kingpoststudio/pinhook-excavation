@@ -16,6 +16,8 @@ export const Default = () => {
     <div class="bg-black text-white">
       <px-hero-banner overlay>
 
+        <img src="https://picsum.photos/id/153/1920/1080" slot="background" />
+
         <tui-content slot="content" alignment="start" gap="md">
           <p slot="eyebrow">Central Laboratories</p>
           <h1 slot="title" class="fw-bold">Lorem Ipsum Dolor Sit Amet</h1>
