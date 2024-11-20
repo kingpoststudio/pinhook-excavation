@@ -26,7 +26,7 @@
 
 header {
   font-size: var(--scale);
-  background: var(--header-bg-color, #f6f6f6);
+  background: var(--color-black);
 
   .wrapper {
     display: flex;
@@ -79,7 +79,7 @@ header {
         position: absolute;
         top: 0;
         left: 0;
-        color: var(--header-mobile-action-color, #333333);
+        color: var(--color-orange);
         cursor: pointer;
         transition:
           opacity var(--ease-time) var(--ease-type),
