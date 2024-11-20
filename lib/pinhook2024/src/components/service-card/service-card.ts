@@ -13,8 +13,8 @@ export class ServiceCard extends LitElement {
         <div class="media">
           <slot name="media"></slot>
         </div>
-        <div class="service">
-          <slot name="service"></slot>
+        <div class="title">
+          <slot name="title"></slot>
         </div>
       </a>
     `;
