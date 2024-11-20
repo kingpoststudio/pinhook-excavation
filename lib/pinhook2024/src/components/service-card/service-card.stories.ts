@@ -13,7 +13,7 @@ export default meta;
 
 export const Default = () => {
   return html`
-    <div class="grid cols-3 mx-auto">
+    <div class="grid cols-3 mx-auto max-w-snug">
       <px-service-card href="#">
         <img slot="media" src="https://picsum.photos/id/154/480/480" alt="Placeholder" />
         <h4 slot="title">Service Title</h4>

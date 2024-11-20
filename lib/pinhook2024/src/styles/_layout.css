@@ -119,8 +119,20 @@
   max-width: var(--page-max-width);
 }
 
-.max-w-page-double {
-  max-width: calc(var(--page-max-width) * 2);
+.max-w-wide {
+  max-width: var(--page-width-wide);
+}
+
+.max-w-snug {
+  max-width: var(--page-width-snug);
+}
+
+.max-w-narrow {
+  max-width: var(--page-width-narrow);
+}
+
+.max-w-tight {
+  max-width: var(--page-width-tight);
 }
 
 .h-auto {
