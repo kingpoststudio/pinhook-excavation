@@ -17,6 +17,13 @@ a.wrapper {
     width: 100;
     transition: filter var(--ease-type) var(--ease-time),
       transform var(--ease-type) var(--ease-time);
+
+    slot[name="media"]::slotted(*) {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
   }
 
   > .title {
@@ -27,7 +34,7 @@ a.wrapper {
     height: 100%;
     padding: var(--space);
     background: var(--color-orange);
-    transform: translateY(calc(100% - 2rem));
+    transform: translateY(calc(100% - 0.5rem));
     transition: transform var(--ease-type) var(--ease-time),
       opacity var(--ease-type) var(--ease-time);
 
