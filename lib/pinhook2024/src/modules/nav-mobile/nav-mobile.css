@@ -1,0 +1,103 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100vw;
+  height: calc(100vh - 100%);
+  background: var(--truss-nav-mobile-bg-color, #f6f6f6);
+  transform: translateX(100%);
+  transition: transform var(--ease-time) var(--ease-type);
+
+  &[visible] {
+    transform: translateX(0);
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+
+  a,
+  span {
+    width: 100%;
+    padding: var(--space);
+    font-size: var(--truss-nav-mobile-font-size, 1.25rem);
+    color: var(--truss-nav-mobile-link-color, #000000);
+  }
+
+  > ul {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: var(--space-md);
+
+    > li.menu-level-1 {
+      > ul {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space);
+        padding: var(--space-md);
+        background: var(--truss-nav-desktop-submenu-bg-color, #f0f0f0);
+        overflow-y: auto;
+        transform: translateX(100%);
+        transition:
+          opacity var(--ease-time) var(--ease-type),
+          transform var(--ease-time) var(--ease-type);
+
+        > .back > span {
+          width: 100%;
+          padding: var(--space);
+          font-size: 1rem;
+          font-weight: 700;
+          text-transform: uppercase;
+        }
+
+        > li.menu-level-2 {
+          ul {
+            display: flex;
+            flex-direction: column;
+
+            > li.menu-level-3 {
+
+              > a,
+              > span {
+                margin-left: var(--space);
+              }
+            }
+
+            > ul {
+              > li.menu-level-4 {
+
+                > a,
+                > span {
+                  margin-left: var(--space-md);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &[visible] {
+        > ul {
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+}

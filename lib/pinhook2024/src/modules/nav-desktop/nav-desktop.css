@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  ul {
+    list-style: none;
+  }
+
+  a,
+  span {
+    text-decoration: none;
+  }
+
+  > ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    > li.menu-level-1 {
+      position: relative;
+      display: inline-flex;
+
+      a,
+      span {
+        display: inline-flex;
+        width: 100%;
+        padding: 0 var(--space-xs) var(--space-sm);
+      }
+
+      > a,
+      span {
+        align-items: center;
+        padding: var(--space);
+        text-align: center;
+        color: var(--truss-nav-desktop-link-color, #000000);
+        transition: color var(--ease-time) var(--ease-type);
+
+        &:hover {
+          color: var(--truss-nav-desktop-link-color-hover, #000000);
+        }
+      }
+
+      &:hover > ul {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translate(-50%, 0);
+      }
+
+      > ul {
+        opacity: 0;
+        position: absolute;
+        z-index: 100;
+        top: 100%;
+        left: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-xs);
+        min-width: 12rem;
+        max-width: 16rem;
+        padding: var(--space);
+        background: var(--truss-nav-desktop-submenu-bg-color, white);
+        border-radius: var(--truss-nav-desktop-submenu-border-radius, 0.5rem);
+        box-shadow: var(--truss-nav-desktop-submenu-box-shadow,
+            0 0 0.5rem rgba(0, 0, 0, 0.2));
+        pointer-events: none;
+        transform: translate(-50%, var(--space));
+        transition:
+          opacity var(--ease-time) var(--ease-type),
+          transform var(--ease-time) var(--ease-type);
+
+        li {
+
+          a,
+          span {
+            color: var(--truss-nav-desktop-submenu-link-color, black);
+            transition: color var(--ease-time) var(--ease-type);
+
+            &:hover {
+              color: var(--truss-nav-desktop-submenu-link-color-hover, #000000);
+            }
+          }
+
+          ul {
+            display: flex;
+            flex-direction: column;
+            margin-left: var(--space-sm);
+          }
+        }
+      }
+    }
+  }
+}

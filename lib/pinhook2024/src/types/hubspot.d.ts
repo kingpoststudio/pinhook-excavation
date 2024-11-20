@@ -1,0 +1,29 @@
+export interface HubSpotMenu {
+  activeBranch: boolean;
+  activeNode: boolean;
+  blogNode: boolean;
+  categoryId: number;
+  children: HubSpotMenu[];
+  contentGroupId: number;
+  contentType: string;
+  errorMessage: string;
+  guid: string;
+  isDeleted: boolean;
+  isNonLinkingNode: boolean;
+  isPublished: boolean;
+  label: string;
+  level: number;
+  linkTarget: string;
+  live: boolean;
+  nodeType: number;
+  pageId: number;
+  pageTitle: string;
+  parentGuid: string;
+  slug: string;
+  state: string;
+  subcategory: string;
+  topLevelAncestorGuid: string;
+  url: string;
+  urlParamStr: string;
+  urlWithoutAnchor: string;
+}

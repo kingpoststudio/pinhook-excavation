@@ -1,0 +1,119 @@
+@import "../../styles/_text.css";
+@import "../../styles/_buttons.css";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+
+  ::selection {
+    color: inherit;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+:host {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: var(--truss-header-z-index, 100);
+}
+
+header {
+  font-size: var(--scale);
+  background: var(--truss-header-bg-color, #f6f6f6);
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+    height: var(--truss-header-height, 5rem);
+    max-width: var(--page-max-width);
+
+    .logo {
+      display: block;
+      height: 100%;
+
+      > a {
+        position: relative;
+        flex: none;
+        display: flex;
+        align-items: center;
+        width: 12rem;
+        height: 100%;
+        padding: var(--space-xs) 0;
+
+        slot[name="logo"]::slotted(img) {
+          width: 100% !important;
+          height: 100% !important;
+          object-fit: contain;
+        }
+      }
+    }
+
+    .cta {
+      margin-left: auto;
+
+      @media (min-width: 768px) {
+        margin-left: 0;
+      }
+    }
+
+    .mobile-actions {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 1.5rem;
+      aspect-ratio: 1;
+      gap: var(--space);
+
+      ::slotted(truss-nav-action) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: var(--truss-header-mobile-action-color, #333333);
+        cursor: pointer;
+        transition:
+          opacity var(--ease-time) var(--ease-type),
+          transform var(--ease-time) var(--ease-type);
+      }
+
+      > slot[name="open-mobile-menu"]::slotted(truss-nav-action) {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      > slot[name="close-mobile-menu"]::slotted(truss-nav-action) {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateX(100%);
+      }
+
+      &[mobileMenuOpen] {
+        > slot[name="open-mobile-menu"]::slotted(truss-nav-action) {
+          opacity: 0;
+          pointer-events: none;
+          transform: translateX(100%);
+        }
+
+        > slot[name="close-mobile-menu"]::slotted(truss-nav-action) {
+          opacity: 1;
+          pointer-events: auto;
+          transform: translateX(0);
+        }
+      }
+
+      @media (min-width: 768px) {
+        display: none;
+      }
+    }
+  }
+}
