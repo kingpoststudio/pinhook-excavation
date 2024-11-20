@@ -43,7 +43,7 @@ export const Default = () => {
       </px-hero-banner>
     </div>
 
-    <div style="margin-top:-6rem;">
+    <div style="margin-top:-6rem;padding-bottom:6rem;">
       ${ServiceCards()}
     </div>
   `;

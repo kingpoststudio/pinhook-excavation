@@ -10,6 +10,7 @@ a.wrapper {
   width: 100%;
   aspect-ratio: 1;
   text-decoration: none;
+  background: var(--color-orange);
   overflow: hidden;
 
   > .media {
