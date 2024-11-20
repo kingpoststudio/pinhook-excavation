@@ -35,11 +35,11 @@ nav {
         align-items: center;
         padding: var(--space);
         text-align: center;
-        color: var(--truss-nav-desktop-link-color, #000000);
+        color: var(--nav-desktop-link-color, #000000);
         transition: color var(--ease-time) var(--ease-type);
 
         &:hover {
-          color: var(--truss-nav-desktop-link-color-hover, #000000);
+          color: var(--nav-desktop-link-color-hover, #000000);
         }
       }
 
@@ -61,9 +61,9 @@ nav {
         min-width: 12rem;
         max-width: 16rem;
         padding: var(--space);
-        background: var(--truss-nav-desktop-submenu-bg-color, white);
-        border-radius: var(--truss-nav-desktop-submenu-border-radius, 0.5rem);
-        box-shadow: var(--truss-nav-desktop-submenu-box-shadow,
+        background: var(--nav-desktop-submenu-bg-color, white);
+        border-radius: var(--nav-desktop-submenu-border-radius, 0.5rem);
+        box-shadow: var(--nav-desktop-submenu-box-shadow,
             0 0 0.5rem rgba(0, 0, 0, 0.2));
         pointer-events: none;
         transform: translate(-50%, var(--space));
@@ -75,11 +75,11 @@ nav {
 
           a,
           span {
-            color: var(--truss-nav-desktop-submenu-link-color, black);
+            color: var(--nav-desktop-submenu-link-color, black);
             transition: color var(--ease-time) var(--ease-type);
 
             &:hover {
-              color: var(--truss-nav-desktop-submenu-link-color-hover, #000000);
+              color: var(--nav-desktop-submenu-link-color-hover, #000000);
             }
           }
 
