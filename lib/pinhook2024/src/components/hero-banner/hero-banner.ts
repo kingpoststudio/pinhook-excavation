@@ -19,9 +19,6 @@ export class HeroBanner extends LitElement {
         <div class="content">
           <slot name="content"></slot>
         </div>
-        <div class="breadcrumbs">
-          <slot name="breadcrumbs"></slot>
-        </div>
       </div>
     `;
   }

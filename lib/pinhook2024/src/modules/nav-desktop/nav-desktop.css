@@ -38,16 +38,20 @@ nav {
         text-align: center;
         color: var(--color-white);
         transition: color var(--ease-time) var(--ease-type);
-
-        &:hover {
-          color: var(--color-orange);
-        }
       }
 
-      &:hover > ul {
-        opacity: 1;
-        pointer-events: auto;
-        transform: translate(-50%, 0);
+      &:hover {
+
+        > a,
+        span {
+          color: var(--color-orange);
+        }
+
+        > ul {
+          opacity: 1;
+          pointer-events: auto;
+          transform: translate(-50%, 0);
+        }
       }
 
       > ul {

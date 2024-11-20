@@ -24,7 +24,12 @@ export const Default = () => {
         <img src="https://picsum.photos/id/153/1920/1080" slot="background" />
 
         <tui-content slot="content" alignment="start" gap="md">
-          <p slot="eyebrow">Central Laboratories</p>
+          <div slot="eyebrow">
+            <a href="/" class="text-inherit">Pinhook Excavation</a>
+            <span>/</span>
+            <span class="fw-bold" href="#">Our Services</span>
+          </div>
+
           <h1 slot="title" class="fw-bold">Lorem Ipsum Dolor Sit Amet</h1>
           <div slot="description" class="as-body">
             <p>
@@ -34,12 +39,6 @@ export const Default = () => {
           </div>
           <a class="button" slot="cta">Contact Us</a>
         </tui-content>
-
-        <div slot="breadcrumbs">
-          <a href="/" class="text-inherit">Home</a>
-          <span>/</span>
-          <span class="fw-bold" href="#">Our Services</span>
-        </div>
 
       </px-hero-banner>
     </div>
