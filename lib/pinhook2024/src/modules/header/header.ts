@@ -102,7 +102,7 @@ export class Header extends LitElement {
         <div class="wrapper">
           <div class="logo">
             <a aria-label="Homepage" href="/">
-              <slot name="logo"></slot>
+              <px-icon icon="logoFull"></px-icon>
             </a>
           </div>
 
