@@ -73,9 +73,9 @@ class NavMobile extends LitElement {
 
     const renderMenuItemLabel = () => {
       if (hasChildren)
-        return html`<span @click=${(e: Event) => toggleSubmenu(e, true)}
-          >${menu.label}</span
-        >`;
+        return html`<span @click=${(e: Event) => toggleSubmenu(e, true)}>
+          ${menu.label}
+        </span>`;
       else if (menu.url) return html`<a href="${menu.url}">${menu.label}</a>`;
       else return html`<span>${menu.label}</span>`;
     };
