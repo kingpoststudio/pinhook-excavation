@@ -10,12 +10,11 @@ form input[type="submit"] {
   min-height: 2.75rem;
   padding: var(--space-sm) var(--space-md);
   font-family: var(--font-family-body);
-  font-size: var(--font-size-xs);
   font-weight: 700;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  color: var(--color-white);
+  color: var(--color-black);
   background: var(--color-orange);
   border: 0.2rem solid transparent;
   cursor: pointer;
@@ -33,7 +32,7 @@ form input[type="submit"] {
       height: 0.4rem;
       border-left: 0.2rem solid;
       border-bottom: 0.2rem solid;
-      border-color: var(--color-white);
+      border-color: var(--color-black);
       transform: translate(1rem, -50%) rotate(225deg);
       transition:
         opacity var(--ease-time) var(--ease-type),
@@ -105,22 +104,17 @@ form input[type="submit"] {
     padding: 0;
     aspect-ratio: 1;
     border-radius: 50%;
-    background: var(--color-white);
-    color: var(--color-blue);
-    border: 1px solid var(--color-black-opaque);
-    box-shadow: 0 0.24rem 0.5rem rgba(0, 0, 0, 0.15);
+    background: transparent;
+    color: var(--color-white);
     cursor: pointer;
-    transition:
-      color var(--ease-time) var(--ease-type),
-      box-shadow var(--ease-time) var(--ease-type),
-      border-color var(--ease-time) var(--ease-type);
+    transition: color var(--ease-time) var(--ease-type);
 
-    &:not(.disabled):hover {
-      border-color: var(--color-white);
+    &:hover {
+      color: var(--color-orange);
     }
 
     &.disabled {
-      color: var(--color-black-opaque);
+      color: var(--color-white-opaque);
       box-shadow: none;
       cursor: not-allowed;
     }

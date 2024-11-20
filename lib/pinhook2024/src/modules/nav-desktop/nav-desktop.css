@@ -60,9 +60,6 @@ nav {
         flex-direction: column;
         min-width: 12rem;
         max-width: 16rem;
-        background: var(--color-orange);
-        box-shadow: var(--nav-desktop-submenu-box-shadow,
-            0 0 0.5rem rgba(0, 0, 0, 0.2));
         pointer-events: none;
         transform: translate(-50%, var(--space));
         transition:
@@ -81,33 +78,11 @@ nav {
             position: relative;
             padding: var(--space) var(--space-md) var(--space) var(--space);
             color: var(--color-black);
-            transition: color var(--ease-time) var(--ease-type);
-
-            &:before {
-              content: "";
-              display: block;
-              position: absolute;
-              opacity: 0;
-              right: 0;
-              top: 50%;
-              width: 0.4rem;
-              height: 0.4rem;
-              border-left: 0.2rem solid;
-              border-bottom: 0.2rem solid;
-              border-color: var(--color-black);
-              transform: translate(0, -50%) rotate(225deg);
-              transition:
-                opacity var(--ease-time) var(--ease-type),
-                transform var(--ease-time) var(--ease-type);
-            }
+            background: var(--color-orange);
 
             &:hover {
-              color: var(--color-black);
-
-              &:before {
-                opacity: 1;
-                transform: translate(-1rem, -50%) rotate(225deg);
-              }
+              color: var(--color-white);
+              background: var(--color-black);
             }
           }
 

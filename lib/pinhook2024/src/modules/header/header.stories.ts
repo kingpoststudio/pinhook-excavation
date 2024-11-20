@@ -24,12 +24,9 @@ export const Default = () => {
 
   return html` <main>
     <px-header>
-      <img
-        slot="logo"
-        src="https://www.amadorbioscience.com/hs-fs/hubfs/Web/logo/amador%20bioscience-png.png?width=166&height=64&name=amador%20bioscience-png.png"
-      />
-
-      <a slot="cta" class="button" href="#">Contact</a>
+      <a slot="cta" class="button icon" href="#">
+        <px-icon icon="facebook"></px-icon>
+      </a>
 
       <px-nav-action slot="open-mobile-menu" action="open">
         <px-icon icon="hamburger"></px-icon>

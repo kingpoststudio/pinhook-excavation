@@ -1,6 +1,7 @@
 import { html } from "lit";
 import type { Meta } from "@storybook/web-components";
 
+import { Default as Header } from "../../modules/header/header.stories";
 import { Default as ServiceCards } from "../service-card/service-card.stories";
 
 const meta: Meta = {
@@ -15,7 +16,9 @@ export default meta;
 
 export const Default = () => {
   return html`
-    <div class="bg-black text-white">
+    ${Header()}
+
+    <div class="bg-black text-white" style="margin-top:5rem;">
       <px-hero-banner overlay>
 
         <img src="https://picsum.photos/id/153/1920/1080" slot="background" />
