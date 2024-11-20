@@ -13,17 +13,17 @@ export default meta;
 
 export const Default = () => {
   return html`
-    <div class="grid cols-1 md:cols-3 mx-auto" style="max-width:80%">
-      <px-service-card href="#">
-        <img slot="media" src="https://picsum.photos/id/156/480/480" alt="Placeholder" />
-        <h4 slot="title">Service Title</h4>
-      </px-service-card>
+    <div class="grid cols-3 mx-auto">
       <px-service-card href="#">
         <img slot="media" src="https://picsum.photos/id/154/480/480" alt="Placeholder" />
         <h4 slot="title">Service Title</h4>
       </px-service-card>
       <px-service-card href="#">
         <img slot="media" src="https://picsum.photos/id/155/480/480" alt="Placeholder" />
+        <h4 slot="title">Service Title</h4>
+      </px-service-card>
+      <px-service-card href="#">
+        <img slot="media" src="https://picsum.photos/id/156/480/480" alt="Placeholder" />
         <h4 slot="title">Service Title</h4>
       </px-service-card>
     </div>

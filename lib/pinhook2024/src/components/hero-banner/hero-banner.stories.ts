@@ -1,6 +1,8 @@
 import { html } from "lit";
 import type { Meta } from "@storybook/web-components";
 
+import { Default as ServiceCards } from "../service-card/service-card.stories";
+
 const meta: Meta = {
   title: "Hero Banner",
   component: "px-hero-banner",
@@ -37,6 +39,10 @@ export const Default = () => {
         </div>
 
       </px-hero-banner>
+    </div>
+
+    <div style="margin-top:-2rem;">
+      ${ServiceCards()}
     </div>
   `;
 };

@@ -8,7 +8,6 @@ a.wrapper {
   position: relative;
   display: block;
   width: 100%;
-  max-width: 36rem;
   aspect-ratio: 1;
   text-decoration: none;
   overflow: hidden;
