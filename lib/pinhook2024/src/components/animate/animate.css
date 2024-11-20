@@ -1,0 +1,75 @@
+@import "../../styles/_animations.css";
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  opacity: 0;
+  animation-fill-mode: both;
+  animation-timing-function: ease;
+  animation-duration: var(--animate-ease-time, 250ms);
+
+  &.fade-in {
+    animation-name: fadeIn;
+    animation-iteration-count: 1;
+    opacity: 0;
+  }
+
+  &.fade-in-left {
+    animation-name: fadeInLeft;
+    animation-iteration-count: 1;
+    opacity: 0;
+  }
+
+  &.fade-in-right {
+    animation-name: fadeInRight;
+    animation-iteration-count: 1;
+    opacity: 0;
+  }
+
+  &.fade-in-top {
+    animation-name: fadeInTop;
+    animation-iteration-count: 1;
+    opacity: 0;
+  }
+
+  &.fade-in-bottom {
+    animation-name: fadeInBottom;
+    animation-iteration-count: 1;
+    opacity: 0;
+  }
+
+  &.float {
+    opacity: 1;
+    animation: float 4s ease-in-out infinite;
+  }
+
+  &.bounce-bottom {
+    animation-name: bounceBottom;
+    animation-iteration-count: 1;
+    opacity: 0;
+  }
+
+  &.flicker {
+    opacity: 1;
+    animation: flicker 100ms steps(1) infinite;
+  }
+
+  &.rock {
+    opacity: 1;
+    animation: rock 1000ms steps(1) infinite;
+  }
+
+  &.spin {
+    opacity: 1;
+    animation: spin 1000ms linear infinite;
+    width: fit-content;
+    will-change: transform;
+  }
+
+  &.walk {
+    opacity: 1;
+    animation: walk 4000ms steps(1) infinite;
+  }
+}
