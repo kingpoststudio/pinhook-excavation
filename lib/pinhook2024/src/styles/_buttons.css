@@ -17,6 +17,7 @@ form input[type="submit"] {
   color: var(--color-black);
   background: var(--color-orange);
   border: 0.2rem solid transparent;
+  opacity: 1;
   cursor: pointer;
   overflow: hidden;
 
