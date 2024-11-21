@@ -1,0 +1,9 @@
+@import "../../styles/_text.css";
+@import "../../styles/_themes.css";
+@import "../../styles/_buttons.css";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
