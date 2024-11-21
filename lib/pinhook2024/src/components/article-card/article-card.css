@@ -1,3 +1,39 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space);
+  width: 100%;
+  text-decoration: none;
+  overflow: hidden;
+
+  > .media {
+    width: 100;
+    transition: filter var(--ease-type) var(--ease-time),
+      transform var(--ease-type) var(--ease-time);
+
+    slot[name="media"]::slotted(*) {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  slot[name="title"]::slotted(*) {
+    color: var(--color-black);
+    text-transform: uppercase;
+    transition: opacity var(--ease-type) var(--ease-time);
+  }
+
+  &:hover {
+    > .media {}
+  }
 }

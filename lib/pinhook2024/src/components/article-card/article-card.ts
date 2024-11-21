@@ -10,12 +10,11 @@ export class ArticleCard extends LitElement {
   render() {
     return html`
       <a class="wrapper" href="${this.href}">
-        <slot name="media"></slot>
-        <div class="content">
-          <slot name="date"></slot>
-          <slot name="title"></slot>
-          <slot name="author"></slot>
+        <div class="media">
+          <slot name="media"></slot>
         </div>
+        <slot name="title"></slot>
+        <slot name="description"></slot>
       </a>
     `;
   }
