@@ -34,14 +34,16 @@ a.wrapper {
     height: 100%;
     padding: var(--space);
     background: var(--color-orange);
+    filter: blur(0.5);
     transform: translateY(calc(100% - 0.5rem));
     transition: transform var(--ease-type) var(--ease-time),
       opacity var(--ease-type) var(--ease-time);
 
     slot[name="title"]::slotted(*) {
       opacity: 0;
-      color: var(--color-white);
+      color: var(--color-black);
       text-transform: uppercase;
+      text-align: center;
       transition: opacity var(--ease-type) var(--ease-time);
     }
   }
@@ -49,12 +51,11 @@ a.wrapper {
   &:hover {
     > .media {
       filter: grayscale(100%);
-      transform: scale(1.05);
     }
 
     > .title {
       opacity: 0.95;
-      transform: translateY(0);
+      transform: translateY(calc(100% - 4rem));
 
       slot[name="title"]::slotted(*) {
         opacity: 1;

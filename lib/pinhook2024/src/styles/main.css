@@ -295,14 +295,3 @@ div.as-accordion {
 .border-lg {
   border-width: 0.25rem;
 }
-
-/* Hover helpers */
-.hover\:float {
-  transition: box-shadow var(--ease-time) var(--ease-type),
-    transform var(--ease-time) var(--ease-type);
-
-  &:hover {
-    box-shadow: 0 0.25rem 0.5rem #00000025;
-    transform: translateY(-0.25rem);
-  }
-}

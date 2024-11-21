@@ -13,21 +13,25 @@ export default meta;
 
 export const Default = () => {
   return html`
-      <px-animate animation="fade-in-bottom" delay="1000">
-        <div class="grid cols-1 md:cols-3 mx-auto max-w-snug">
-          <px-service-card href="#">
-            <img slot="media" src="https://picsum.photos/id/154/480/480" alt="Placeholder" />
-            <h4 slot="title">Service Title</h4>
-          </px-service-card>
-          <px-service-card href="#">
-            <img slot="media" src="https://picsum.photos/id/178/480/480" alt="Placeholder" />
-            <h4 slot="title">Service Title</h4>
-          </px-service-card>
-          <px-service-card href="#">
-            <img slot="media" src="https://picsum.photos/id/192/480/480" alt="Placeholder" />
-            <h4 slot="title">Service Title</h4>
-          </px-service-card>
-        </div>
+    <div class="grid cols-3 mx-auto max-w-snug">
+      <px-animate animation="fade-in-bottom" delay="500">
+        <px-service-card href="#">
+          <img slot="media" src="https://picsum.photos/id/154/480/480" alt="Placeholder" />
+          <h3 class="as-h5" slot="title">Service Title</h3>
+        </px-service-card>
       </px-animate>
+      <px-animate animation="fade-in-bottom" delay="500">
+        <px-service-card href="#">
+          <img slot="media" src="https://picsum.photos/id/178/480/480" alt="Placeholder" />
+          <h3 class="as-h5" slot="title">Service Title</h3>
+        </px-service-card>
+      </px-animate>
+      <px-animate animation="fade-in-bottom" delay="500">
+        <px-service-card href="#">
+          <img slot="media" src="https://picsum.photos/id/192/480/480" alt="Placeholder" />
+          <h3 class="as-h5" slot="title">Service Title</h3>
+        </px-service-card>
+      </px-animate>
+    </div>
   `;
 };
