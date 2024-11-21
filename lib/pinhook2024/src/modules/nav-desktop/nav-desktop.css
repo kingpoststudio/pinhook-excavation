@@ -37,14 +37,31 @@ nav {
         padding: var(--space);
         text-align: center;
         color: var(--color-white);
-        transition: color var(--ease-time) var(--ease-type);
+        transition: color var(--ease-time) var(--ease-type),
+          text-decoration-color var(--ease-time) var(--ease-type);
+      }
+
+      &:not(.menu-has-children) {
+
+        a,
+        span {
+          text-decoration: underline;
+          text-decoration-color: transparent;
+        }
       }
 
       &:hover {
 
         > a,
-        span {
+        > span {
           color: var(--color-orange);
+        }
+
+        &:not(.menu-has-children) {
+
+          > a {
+            text-decoration-color: var(--color-orange);
+          }
         }
 
         > ul {

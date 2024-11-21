@@ -32,8 +32,8 @@ nav {
   span {
     width: 100%;
     padding: var(--space);
-    font-size: var(--nav-mobile-font-size, 1.25rem);
-    color: var(--nav-mobile-link-color, #000000);
+    font-size: var(--font-size-lg);
+    color: var(--color-black);
   }
 
   > ul {
