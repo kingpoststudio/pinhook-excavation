@@ -2,7 +2,7 @@ html {
   font-family: "Atkinson Hyperlegible", sans-serif;
   font-size: var(--scale);
   font-weight: 400;
-  color: var(--color-text);
+  color: inherit;
   text-underline-offset: 2px;
 }
 

@@ -55,6 +55,7 @@
     padding: var(--space-lg);
 
     slot[name="content"]::slotted(tui-content) {
+      color: var(--color-white);
       border-left: 0.5rem solid var(--color-orange);
       padding-left: 1.5rem !important;
     }
