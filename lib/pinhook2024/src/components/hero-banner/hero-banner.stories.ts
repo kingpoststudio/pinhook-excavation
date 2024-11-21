@@ -31,7 +31,7 @@ export const Default = () => {
           </div>
 
           <h1 slot="title" class="fw-bold">Lorem Ipsum Dolor Sit Amet</h1>
-          <div slot="description" class="as-body">
+          <div slot="description" class="text-md">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
               convallis libero in dui mattis, nec ultricies nunc fermentum.

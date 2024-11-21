@@ -10,7 +10,7 @@ nav {
   top: 100%;
   width: 100vw;
   height: calc(100vh - 100%);
-  background: var(--nav-mobile-bg-color, #f6f6f6);
+  background: var(--color-orange);
   transform: translateX(100%);
   transition: transform var(--ease-time) var(--ease-type);
 

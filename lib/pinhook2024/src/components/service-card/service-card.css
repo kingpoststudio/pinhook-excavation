@@ -30,6 +30,9 @@ a.wrapper {
     position: absolute;
     left: 0;
     bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 100%;
     padding: var(--space);
@@ -38,6 +41,10 @@ a.wrapper {
     transform: translateY(calc(100% - 0.5rem));
     transition: transform var(--ease-type) var(--ease-time),
       opacity var(--ease-type) var(--ease-time);
+
+    @media (min-width: 768px) {
+      align-items: flex-start;
+    }
 
     slot[name="title"]::slotted(*) {
       opacity: 0;
@@ -55,7 +62,11 @@ a.wrapper {
 
     > .title {
       opacity: 0.95;
-      transform: translateY(calc(100% - 4rem));
+      transform: translateY(0);
+
+      @media (min-width: 768px) {
+        transform: translateY(calc(100% - 4rem));
+      }
 
       slot[name="title"]::slotted(*) {
         opacity: 1;
