@@ -32,8 +32,4 @@ a.wrapper {
     text-transform: uppercase;
     transition: opacity var(--ease-type) var(--ease-time);
   }
-
-  &:hover {
-    > .media {}
-  }
 }
