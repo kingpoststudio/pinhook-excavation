@@ -52,6 +52,7 @@ export class HeroCarousel extends LitElement {
         }
         .swiper-pagination {
           box-sizing: border-box;
+          bottom: var(--space-md) !important;
           left: 50% !important;
           transform: translateX(-50%);
           width: 100%;
@@ -60,7 +61,10 @@ export class HeroCarousel extends LitElement {
           text-align: left;
         }
         .swiper-pagination-bullet {
-          border: 1px solid var(--color-iqvia-white);
+          border: 0.25rem solid var(--color-white);
+        }
+        .swiper-pagination-bullet.swiper-pagination-bullet-active {
+          background: var(--color-white);
         }
       `,
       ],
