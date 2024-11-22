@@ -40,16 +40,21 @@
       gap: var(--space);
 
       > button {
-        > iqvia-icon {
-          width: 0.75rem;
+        border: 0.5rem solid var(--color-orange);
+        padding: 0.5rem;
+        width: 4rem;
+        transition: opacity var(--ease-time) var(--ease-type);
+
+        > px-icon {
+          width: 0.5rem;
         }
 
         /* Adjustment to help center the icon. */
-        &:last-child > px-icon {
+        &:last-child {
           margin-left: 0.2rem;
         }
 
-        &:first-child > px-icon {
+        &:first-child {
           transform: rotate(180deg);
         }
       }
@@ -58,8 +63,8 @@
 
   swiper-container {
     --swiper-scrollbar-size: 0.5rem;
-    --swiper-scrollbar-bg-color: var(--color-black);
-    --swiper-scrollbar-drag-bg-color: #1a1a1a20;
+    --swiper-scrollbar-bg-color: var(--color-black-opaque);
+    --swiper-scrollbar-drag-bg-color: var(--color-black);
 
     > swiper-slide {
       display: flex;

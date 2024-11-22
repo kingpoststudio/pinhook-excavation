@@ -7,7 +7,7 @@ import "./animate.js";
 
 export default {
   title: "Animate",
-  component: "iqvia-animate",
+  component: "px-animate",
   argTypes: {
     animation: {
       control: { type: "select" },

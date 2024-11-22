@@ -48,16 +48,6 @@ form input[type="submit"] {
     }
   }
 
-  &.theme-white {
-    background: var(--color-white);
-  }
-
-  &.simple {
-    &:before {
-      display: none;
-    }
-  }
-
   &.link {
     justify-content: flex-start;
     width: fit-content;
@@ -106,22 +96,26 @@ form input[type="submit"] {
     aspect-ratio: 1;
     border-radius: 50%;
     background: transparent;
-    color: var(--color-white);
+    color: var(--color-black);
     cursor: pointer;
     transition: color var(--ease-time) var(--ease-type);
 
-    &:hover {
-      color: var(--color-orange);
-    }
-
     &.disabled {
-      color: var(--color-white-opaque);
+      color: var(--color-black-opaque);
       box-shadow: none;
       cursor: not-allowed;
     }
 
     > px-icon {
       width: 50%;
+    }
+
+    &.theme-orange {
+      color: var(--color-orange);
+
+      &.disabled {
+        color: var(--color-orange-opaque);
+      }
     }
   }
 

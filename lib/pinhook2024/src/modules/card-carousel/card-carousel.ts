@@ -83,16 +83,16 @@ export class CardCarousel extends LitElement {
           <slot name="title"></slot>
           <div class="actions">
             <button
-              class="icon theme-white ${this.progress === 0 ? "disabled" : undefined}"
+              class="icon ${this.progress === 0 ? "disabled" : undefined}"
               @click=${() => this.prev()}
             >
-              <iqvia-icon icon="chevron"></iqvia-icon>
+              <px-icon icon="arrow"></px-icon>
             </button>
             <button
-              class="icon theme-white ${this.progress === 1 ? "disabled" : undefined}"
+              class="icon ${this.progress === 1 ? "disabled" : undefined}"
               @click=${() => this.next()}
             >
-              <iqvia-icon icon="chevron"></iqvia-icon>
+              <px-icon icon="arrow"></px-icon>
             </button>
           </div>
         </div>
