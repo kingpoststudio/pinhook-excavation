@@ -1,6 +1,6 @@
 import styles from "./team-card.css?inline";
 
-const { LitElement, html, unsafeCSS, property } = window.Lit;
+const { LitElement, html, unsafeCSS } = window.Lit;
 
 export class TeamCard extends LitElement {
   static styles = unsafeCSS(styles);

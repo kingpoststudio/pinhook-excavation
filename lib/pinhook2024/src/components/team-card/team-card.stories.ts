@@ -13,7 +13,7 @@ export default meta;
 
 export const Default = () => {
   return html`
-    <div class="grid cols-3 mx-auto max-w-snug">
+    <div class="grid cols-2 md:cols-4 mx-auto max-w-snug">
       <div>
         <tui-dialog-action dialog-id="1">
           <px-team-card>

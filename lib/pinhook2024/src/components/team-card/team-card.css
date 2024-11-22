@@ -3,3 +3,26 @@
   margin: 0;
   padding: 0;
 }
+
+.wrapper {
+  > .media {
+    aspect-ratio: 4 / 5;
+
+    slot[name="media"]::slotted(img) {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  > .member {
+    margin-top: var(--space-sm);
+
+    slot[name="position"]::slotted(p) {
+      font-size: var(--font-size-sm);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-style: italic;
+    }
+  }
+}
