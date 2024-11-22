@@ -26,6 +26,7 @@ export const Default = () => {
           <p>Explore our Featured Projects to see Pinhook Excavation in action. From rugged Appalachian terrain to complex site preparations, these highlights showcase our expertise, precision, and commitment to delivering exceptional results. Whether it’s residential, commercial, or specialized excavation, each project reflects our dedication to quality and customer satisfaction.</p>
         </div>
       </tui-content>
+      <a href="#" class="button" slot="cta">View All</a>
       ${Array.from({ length: 4 }).map(() => ArticleCard())}
     </px-card-carousel>
   </tui-container>

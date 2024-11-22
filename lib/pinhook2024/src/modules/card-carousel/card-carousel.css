@@ -16,12 +16,20 @@
   max-width: var(--page-max-width);
   margin: 0 auto;
 
-  slot:not([name="content"]) {
+  slot:not([name]) {
     display: none;
   }
 
   slot[name="content"]::slotted(tui-content) {
-    width: 60%;
+    width: 100%;
+
+    @media (min-width: 768px) {
+      width: 60%;
+    }
+  }
+
+  slot[name="cta"]::slotted(*) {
+    align-self: flex-end;
   }
 
   .header {
@@ -43,7 +51,8 @@
         border: 0.5rem solid var(--color-orange);
         padding: 0.75rem;
         width: 4rem;
-        transition: opacity var(--ease-time) var(--ease-type);
+        transition: color var(--ease-time) var(--ease-type),
+          opacity var(--ease-time) var(--ease-type);
 
         > px-icon {
           width: 0.5rem;

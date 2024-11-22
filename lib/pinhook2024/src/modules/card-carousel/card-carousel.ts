@@ -45,13 +45,25 @@ export class CardCarousel extends LitElement {
       eventsPrefix: `${swiperId}-`,
       slidesPerView: "auto",
       spaceBetween: 32,
+      pagination: true,
       injectStyles: [
         `
+        :host {
+          --swiper-theme-color: var(--color-orange);
+        }
         .swiper {
           overflow: visible;
         }
-        .swiper-wrapper {
-          padding-bottom: var(--space-lg);
+        .swiper-pagination {
+          bottom: auto !important;
+          top: -5.5rem !important;
+          left: auto;
+          text-align: right;
+        }
+        @media (min-width: 768px) {
+          .swiper-pagination {
+            width: calc(100% - 12rem) !important;
+          }
         }
       `,
       ],
@@ -98,6 +110,8 @@ export class CardCarousel extends LitElement {
 
         <swiper-container ${ref(this.swiperRef)} init="false">
         </swiper-container>
+
+        <slot name="cta"></slot>
 
         <slot @slotchange=${this.initSwiper}></slot>
       </div>
