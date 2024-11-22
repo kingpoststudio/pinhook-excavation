@@ -447,7 +447,7 @@ const icons = {
 
 const styles = css`
   :host {
-    display: contents;
+    display: block;
   }
 
   svg.fill-current,

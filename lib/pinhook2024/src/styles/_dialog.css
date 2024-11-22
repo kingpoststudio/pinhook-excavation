@@ -22,13 +22,13 @@ tui-dialog {
       align-items: center;
       justify-content: space-between;
       padding: var(--space-md);
-      border-bottom: 1px solid var(--color-gray);
+      border-bottom: 1px solid var(--color-black-opaque);
 
       > tui-dialog-action {
         display: contents;
         cursor: pointer;
 
-        > iqvia-icon {
+        > px-icon {
           width: 1rem;
         }
       }
