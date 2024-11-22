@@ -7,3 +7,72 @@
   margin: 0;
   padding: 0;
 }
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  width: 100%;
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+
+  slot:not([name="title"]) {
+    display: none;
+  }
+
+  slot[name="title"] {
+    width: 100%;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--space);
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      align-items: flex-end;
+    }
+
+    > .actions {
+      display: flex;
+      gap: var(--space);
+
+      > button {
+        > iqvia-icon {
+          width: 0.75rem;
+        }
+
+        /* Adjustment to help center the icon. */
+        &:last-child > px-icon {
+          margin-left: 0.2rem;
+        }
+
+        &:first-child > px-icon {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  swiper-container {
+    --swiper-scrollbar-size: 0.5rem;
+    --swiper-scrollbar-bg-color: var(--color-black);
+    --swiper-scrollbar-drag-bg-color: #1a1a1a20;
+
+    > swiper-slide {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+
+      @media (min-width: 768px) {
+        width: fit-content;
+      }
+
+      > * {
+        max-width: 24rem;
+      }
+    }
+  }
+}

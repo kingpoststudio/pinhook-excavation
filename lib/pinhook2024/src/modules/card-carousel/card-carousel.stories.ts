@@ -17,7 +17,11 @@ export default meta;
 
 export const Default = () => {
   return html`
-  <px-card-carousel>
-    ${Array.from({ length: 4 }).map(() => ArticleCard())}
-  </px-card-carousel>`;
+  <tui-container>
+    <px-card-carousel>
+      <h4 slot="title" class="fw-bold uppercase">Related Projects</h4>
+      ${Array.from({ length: 4 }).map(() => ArticleCard())}
+    </px-card-carousel>
+  </tui-container>
+  `;
 }

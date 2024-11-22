@@ -7,6 +7,7 @@ const {
   LitElement,
   html,
   unsafeCSS,
+  state,
   queryAssignedElements,
   createRef,
   ref,
@@ -17,6 +18,8 @@ export class CardCarousel extends LitElement {
 
   swiperRef = createRef<SwiperContainer>();
 
+  @state() progress = 0;
+
   @queryAssignedElements() slottedCards!: HTMLElement[];
 
   constructor() {
@@ -24,52 +27,32 @@ export class CardCarousel extends LitElement {
     register();
   }
 
+  private prev() {
+    this.swiperRef.value?.swiper.slidePrev();
+  }
+
+  private next() {
+    this.swiperRef.value?.swiper.slideNext();
+  }
+
   private initSwiper() {
     const { value: swiper } = this.swiperRef;
     if (!swiper) return;
 
-    const swiperId = `article-carousel-${this.id}`;
+    const swiperId = `card-carousel-${this.id}`;
 
     const params: SwiperOptions = {
       eventsPrefix: `${swiperId}-`,
-      autoHeight: true,
-      autoplay: {
-        delay: 7000,
-      },
-      slidesPerView: 1.5,
-      spaceBetween: 24,
-      breakpoints: {
-        768: {
-          slidesPerView: 2.5,
-        },
-        1024: {
-          slidesPerView: 3.5,
-        },
-      },
-      pagination: {
-        enabled: true,
-        clickable: true,
-      },
+      slidesPerView: "auto",
+      spaceBetween: 48,
+      scrollbar: true,
       injectStyles: [
         `
         .swiper {
           overflow: visible;
         }
-        .swiper-pagination {
-          box-sizing: border-box;
-          bottom: var(--space-md) !important;
-          left: 50% !important;
-          transform: translateX(-50%);
-          width: 100%;
-          max-width: var(--page-max-width);
-          padding-inline: var(--space-xl);
-          text-align: left;
-        }
-        .swiper-pagination-bullet {
-          border: 0.25rem solid var(--color-white);
-        }
-        .swiper-pagination-bullet.swiper-pagination-bullet-active {
-          background: var(--color-white);
+        .swiper-wrapper {
+          padding-bottom: var(--space-lg);
         }
       `,
       ],
@@ -83,7 +66,14 @@ export class CardCarousel extends LitElement {
       swiper.appendChild(slide);
     }
 
-    setTimeout(() => swiper.initialize(), 100);
+    setTimeout(() => {
+      swiper.initialize();
+      swiper.addEventListener(`${swiperId}-progress`, (e: Event) => {
+        const { detail } = e as any;
+        const [_, progress] = detail;
+        this.progress = progress;
+      });
+    }, 100);
   }
 
   render() {
@@ -91,17 +81,31 @@ export class CardCarousel extends LitElement {
       <div class="wrapper">
         <div class="header">
           <slot name="title"></slot>
+          <div class="actions">
+            <button
+              class="icon theme-white ${this.progress === 0 ? "disabled" : undefined}"
+              @click=${() => this.prev()}
+            >
+              <iqvia-icon icon="chevron"></iqvia-icon>
+            </button>
+            <button
+              class="icon theme-white ${this.progress === 1 ? "disabled" : undefined}"
+              @click=${() => this.next()}
+            >
+              <iqvia-icon icon="chevron"></iqvia-icon>
+            </button>
+          </div>
         </div>
 
         <swiper-container ${ref(this.swiperRef)} init="false">
         </swiper-container>
 
-        <slot name="action"></slot>
+        <slot @slotchange=${this.initSwiper}></slot>
       </div>
-
-      <slot @slotchange=${this.initSwiper}></slot>
     `;
   }
 }
 
-customElements.define("px-card-carousel", CardCarousel);
+if (!customElements.get("px-card-carousel")) {
+  customElements.define("px-card-carousel", CardCarousel);
+}
