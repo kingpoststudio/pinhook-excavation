@@ -44,8 +44,7 @@ export class CardCarousel extends LitElement {
     const params: SwiperOptions = {
       eventsPrefix: `${swiperId}-`,
       slidesPerView: "auto",
-      spaceBetween: 48,
-      scrollbar: true,
+      spaceBetween: 32,
       injectStyles: [
         `
         .swiper {

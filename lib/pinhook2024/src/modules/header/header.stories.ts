@@ -24,7 +24,7 @@ export const Default = () => {
 
   return html` <main>
     <px-header>
-      <a slot="cta" class="button icon" href="#">
+      <a slot="cta" class="button icon theme-white" href="#">
         <px-icon icon="facebook"></px-icon>
       </a>
 

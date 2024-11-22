@@ -21,7 +21,7 @@ a.wrapper {
     slot[name="media"]::slotted(*) {
       width: 100%;
       height: auto;
-      aspect-ratio: 16 / 9;
+      aspect-ratio: 3 / 2;
       object-fit: cover;
       object-position: center;
     }
@@ -30,6 +30,9 @@ a.wrapper {
   slot[name="title"]::slotted(*) {
     color: var(--color-black);
     text-transform: uppercase;
-    transition: opacity var(--ease-type) var(--ease-time);
+  }
+
+  slot[name="description"]::slotted(*) {
+    color: var(--color-black);
   }
 }
