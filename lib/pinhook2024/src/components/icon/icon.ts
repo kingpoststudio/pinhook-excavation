@@ -1,5 +1,11 @@
 const { LitElement, html, css, property } = window.Lit;
 
+const arrow = html`
+<svg width="100%" height="100%" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <path class="fill-current" d="M0.335938 18.35L22.6594 18.3516L12.7109 28.2984L16.0328 31.625L31.6641 15.9953L16.0453 0.375L12.7203 3.70156L22.6687 13.6484H0.339063L0.335938 18.35Z" />
+</svg>
+`;
+
 const chevron = html`
   <svg
     width="100%"
@@ -397,6 +403,7 @@ const youtube = html`
 `;
 
 const icons = {
+  arrow,
   chevron,
   cross,
   crossCircle,
