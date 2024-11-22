@@ -19,7 +19,12 @@ export const Default = () => {
   return html`
   <tui-container>
     <px-card-carousel>
-      <h4 slot="title" class="fw-bold uppercase">Related Projects</h4>
+      <tui-content slot="content" alignment="start">
+        <h4 slot="title" class="fw-bold uppercase">Featured Projects</h4>
+        <div slot="description" class="as-body">
+          <p>Explore our Featured Projects to see Pinhook Excavation in action. From rugged Appalachian terrain to complex site preparations, these highlights showcase our expertise, precision, and commitment to delivering exceptional results. Whether it’s residential, commercial, or specialized excavation, each project reflects our dedication to quality and customer satisfaction.</p>
+        </div>
+      </tui-content>
       ${Array.from({ length: 4 }).map(() => ArticleCard())}
     </px-card-carousel>
   </tui-container>

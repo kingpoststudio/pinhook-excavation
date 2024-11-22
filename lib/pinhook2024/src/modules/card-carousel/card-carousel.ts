@@ -80,7 +80,7 @@ export class CardCarousel extends LitElement {
     return html`
       <div class="wrapper">
         <div class="header">
-          <slot name="title"></slot>
+          <slot name="content"></slot>
           <div class="actions">
             <button
               class="icon ${this.progress === 0 ? "disabled" : undefined}"

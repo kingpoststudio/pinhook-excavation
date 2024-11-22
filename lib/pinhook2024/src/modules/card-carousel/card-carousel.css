@@ -16,12 +16,12 @@
   max-width: var(--page-max-width);
   margin: 0 auto;
 
-  slot:not([name="title"]) {
+  slot:not([name="content"]) {
     display: none;
   }
 
-  slot[name="title"] {
-    width: 100%;
+  slot[name="content"]::slotted(tui-content) {
+    width: 60%;
   }
 
   .header {
@@ -41,7 +41,7 @@
 
       > button {
         border: 0.5rem solid var(--color-orange);
-        padding: 0.5rem;
+        padding: 0.75rem;
         width: 4rem;
         transition: opacity var(--ease-time) var(--ease-type);
 
