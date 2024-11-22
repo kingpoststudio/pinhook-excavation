@@ -13,31 +13,13 @@ export default meta;
 
 export const Default = () => {
   return html`
-    <div class="grid cols-1 md:cols-3 gap-sm">
-      <px-article-card href="#">
-        <img slot="media" src="https://picsum.photos/id/354/480/480" alt="Placeholder" />
-        <h4 slot="title" class="as-h5">Lorem Ipsum Dolor Sit Amet</h4>
-        <p slot="description" class="text-md">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-          convallis libero in dui mattis, nec ultricies nunc fermentum.
-        </p>
-      </px-article-card>
-      <px-article-card href="#">
-        <img slot="media" src="https://picsum.photos/id/353/480/480" alt="Placeholder" />
-        <h4 slot="title" class="as-h5">Lorem Ipsum Dolor Sit Amet</h4>
-        <p slot="description" class="text-md">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-          convallis libero in dui mattis, nec ultricies nunc fermentum.
-        </p>
-      </px-article-card>
-      <px-article-card href="#">
-        <img slot="media" src="https://picsum.photos/id/352/480/480" alt="Placeholder" />
-        <h4 slot="title" class="as-h5">Lorem Ipsum Dolor Sit Amet</h4>
-        <p slot="description" class="text-md">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-          convallis libero in dui mattis, nec ultricies nunc fermentum.
-        </p>
-      </px-article-card>
-    </div>
+    <px-article-card href="#">
+      <img slot="media" src="https://picsum.photos/id/352/480/480" alt="Placeholder" />
+      <h4 slot="title" class="as-h5">Lorem Ipsum Dolor Sit Amet</h4>
+      <p slot="description" class="text-md">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+        convallis libero in dui mattis, nec ultricies nunc fermentum.
+      </p>
+    </px-article-card>
   `;
 };

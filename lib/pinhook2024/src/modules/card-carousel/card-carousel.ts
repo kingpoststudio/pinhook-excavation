@@ -36,14 +36,19 @@ export class CardCarousel extends LitElement {
       autoplay: {
         delay: 7000,
       },
-      slidesPerView: 1,
+      slidesPerView: 1.5,
+      spaceBetween: 24,
+      breakpoints: {
+        768: {
+          slidesPerView: 2.5,
+        },
+        1024: {
+          slidesPerView: 3.5,
+        },
+      },
       pagination: {
         enabled: true,
         clickable: true,
-      },
-      effect: "fade",
-      fadeEffect: {
-        crossFade: true,
       },
       injectStyles: [
         `
