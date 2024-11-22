@@ -36,6 +36,10 @@ body {
   }
 }
 
+main {
+  margin-top: 5rem;
+}
+
 hr {
   width: 80%;
   margin: 0 auto;
