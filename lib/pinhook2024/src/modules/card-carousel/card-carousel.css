@@ -71,10 +71,6 @@
   }
 
   swiper-container {
-    --swiper-scrollbar-size: 0.5rem;
-    --swiper-scrollbar-bg-color: var(--color-black-opaque);
-    --swiper-scrollbar-drag-bg-color: var(--color-black);
-
     > swiper-slide {
       display: flex;
       justify-content: center;
