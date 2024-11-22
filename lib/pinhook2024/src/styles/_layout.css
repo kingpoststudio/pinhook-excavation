@@ -280,6 +280,10 @@
   display: block;
 }
 
+.contents {
+  display: contents;
+}
+
 .md\:block {
   @media (min-width: 768px) {
     display: block;

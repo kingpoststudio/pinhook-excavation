@@ -55,7 +55,7 @@
           opacity var(--ease-time) var(--ease-type);
 
         > px-icon {
-          width: 0.5rem;
+          display: contents;
         }
 
         /* Adjustment to help center the icon. */

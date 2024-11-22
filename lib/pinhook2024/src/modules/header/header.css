@@ -51,10 +51,8 @@ header {
         height: 100%;
         padding: var(--space-sm) 0;
 
-        slot[name="logo"]::slotted(img) {
-          width: 100% !important;
-          height: 100% !important;
-          object-fit: contain;
+        > px-icon {
+          display: contents;
         }
       }
     }

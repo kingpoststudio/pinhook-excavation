@@ -44,5 +44,5 @@ export const Default = () => {
     <div class="grid cols-2 md:cols-4 mx-auto max-w-snug gap-lg">
       ${Array.from({ length: 4 }).map(() => TeamCard())}
     </div>
-      `;
+  `;
 };

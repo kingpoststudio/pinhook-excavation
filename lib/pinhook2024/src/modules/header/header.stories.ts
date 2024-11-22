@@ -25,7 +25,7 @@ export const Default = () => {
   return html` <main>
     <px-header>
       <a slot="cta" class="button icon theme-white" href="#">
-        <px-icon icon="facebook"></px-icon>
+        <px-icon class="contents" icon="facebook"></px-icon>
       </a>
 
       <px-nav-action slot="open-mobile-menu" action="open">
