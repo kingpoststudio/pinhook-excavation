@@ -1,4 +1,4 @@
-import styles from "./article-card.css?inline";
+import styles from "./quote-card.css?inline";
 
 const { LitElement, html, unsafeCSS, property } = window.Lit;
 
@@ -13,9 +13,10 @@ export class QuoteCard extends LitElement {
         <div class="media">
           <slot name="media"></slot>
         </div>
-        <slot name="quote"></slot>
-        <slot name="author"></slot>
-        <slot name="title"></slot>
+        <div class="content">
+          <slot name="quote"></slot>
+          <slot name="author"></slot>
+        </div>
       </div>
     `;
   }
