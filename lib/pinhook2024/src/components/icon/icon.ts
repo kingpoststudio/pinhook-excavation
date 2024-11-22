@@ -298,6 +298,25 @@ const printCircle = html`
   </svg>
 `;
 
+const quiltOne = html`
+<svg width="100%" height="100%" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#clip0_219_107)">
+    <path d="M80.0439 80.0068V40.0322L0.0948029 40.0322V80.0068H80.0439Z" fill="#0887FF"/>
+    <path d="M80.0439 40.0322V0.0576172L0.0948029 0.0576172V40.0322L80.0439 40.0322Z" fill="#F77800"/>
+    <path d="M60.0058 0.0576172H20.0312V80.1085H60.0058V0.0576172Z" fill="#1A1A1A"/>
+    <path d="M20.006 -0.0191677L0.0185547 19.9683L20.006 39.9557L39.9934 19.9683L20.006 -0.0191677Z" fill="#FAFAFA"/>
+    <path d="M59.9806 -0.0186794L39.9932 19.9688L59.9806 39.9562L79.968 19.9688L59.9806 -0.0186794Z" fill="#FAFAFA"/>
+    <path d="M59.9806 39.9554L39.9932 59.9429L59.9806 79.9303L79.968 59.9429L59.9806 39.9554Z" fill="#FAFAFA"/>
+    <path d="M20.006 39.9559L0.0185547 59.9434L20.006 79.9308L39.9934 59.9434L20.006 39.9559Z" fill="#FAFAFA"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_219_107">
+      <rect width="80" height="80" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>
+`;
+
 const search = html`
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -419,6 +438,7 @@ const icons = {
   play,
   print,
   printCircle,
+  quiltOne,
   search,
   spinner,
   twitter,

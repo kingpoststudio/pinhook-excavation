@@ -10,7 +10,7 @@
   --space-xs: 0.5rem;
   --space-sm: 0.75rem;
   --space: 1rem;
-  --space-md: 2rem;
+  --space-md: 1.5rem;
   --space-lg: 3rem;
   --space-xl: 4rem;
   --space-2xl: 6rem;
@@ -23,7 +23,7 @@
     --space-xs: 0.5rem;
     --space-sm: 0.75rem;
     --space: 1rem;
-    --space-md: 2rem;
+    --space-md: 1.5rem;
     --space-lg: 3rem;
     --space-xl: 4rem;
     --space-2xl: 6rem;
@@ -51,7 +51,7 @@
   --font-size-md: 1.25rem;
   --font-size-lg: 1.75rem;
   --font-size-xl: 2.25rem;
-  --font-size-2xl: 2.5rem;
+  --font-size-2xl: 3rem;
   --font-size-3xl: 3.375rem;
   --font-size-4xl: 4.5rem;
 

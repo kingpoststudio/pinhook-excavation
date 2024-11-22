@@ -81,6 +81,12 @@ tui-content *[slot="eyebrow"] {
   font-weight: 700;
 }
 
+.eyebrow,
+tui-content px-icon[slot="eyebrow"] {
+  display: block;
+  width: 4rem;
+}
+
 .fw-light {
   font-weight: 300;
 }
