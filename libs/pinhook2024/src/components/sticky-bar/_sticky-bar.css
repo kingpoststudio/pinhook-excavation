@@ -1,0 +1,27 @@
+px-sticky-bar {
+  > div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: var(--page-max-width);
+    height: 100%;
+    margin: 0 auto;
+    padding-inline: var(--space-lg);
+
+    > a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      padding: 0 var(--space-md);
+      color: var(--color-iqvia-white);
+      font-size: var(--font-size-sm);
+      text-decoration: none;
+      user-select: none;
+    }
+  }
+
+  > div.social-bar {
+    justify-content: flex-end;
+  }
+}
