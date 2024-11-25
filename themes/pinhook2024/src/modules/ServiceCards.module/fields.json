@@ -1,0 +1,191 @@
+[
+  {
+    "name": "eyebrow",
+    "label": "Eyebrow",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "validation_error_message": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text",
+    "placeholder": "",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": "Services"
+  },
+  {
+    "name": "title",
+    "label": "Title",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "validation_error_message": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text",
+    "placeholder": "",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": "Related Services"
+  },
+  {
+    "name": "cards",
+    "label": "Cards",
+    "required": false,
+    "locked": false,
+    "occurrence": {
+      "min": null,
+      "max": null,
+      "sorting_label_field": "card.title",
+      "default": null
+    },
+    "children": [
+      {
+        "name": "eyebrow",
+        "label": "Eyebrow",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "validation_error_message": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": null
+      },
+      {
+        "id": "card.title",
+        "name": "title",
+        "label": "Title",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "validation_error_message": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": "Lorem ipsum"
+      },
+      {
+        "name": "description",
+        "label": "Description",
+        "required": false,
+        "locked": false,
+        "type": "richtext",
+        "inline_help_text": "",
+        "help_text": "",
+        "enabled_features": [
+          "indents",
+          "charmap",
+          "advanced_emphasis",
+          "standard_emphasis",
+          "anchor",
+          "colors",
+          "block",
+          "link",
+          "image",
+          "lists",
+          "alignment",
+          "lineheight"
+        ],
+        "default": null
+      },
+      {
+        "name": "image",
+        "label": "Image",
+        "required": false,
+        "locked": false,
+        "inline_help_text": "",
+        "help_text": "",
+        "responsive": false,
+        "resizable": false,
+        "show_loading": false,
+        "type": "image",
+        "default": null
+      },
+      {
+        "name": "is_img_condensed",
+        "label": "Condense size of image?",
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "inline_help_text": "If enabled, the image will appear at 50% of the container's width. This is a good option for icon PNGs.",
+        "help_text": "",
+        "default": false
+      },
+      {
+        "name": "link",
+        "label": "Link",
+        "required": false,
+        "locked": false,
+        "supported_types": [
+          "EXTERNAL",
+          "CONTENT",
+          "FILE",
+          "EMAIL_ADDRESS",
+          "BLOG"
+        ],
+        "type": "link",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": null
+      },
+      {
+        "name": "link_label",
+        "label": "Link label",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": "Learn more"
+      }
+    ],
+    "type": "group",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": []
+  },
+  {
+    "name": "settings",
+    "label": "Additional settings",
+    "required": false,
+    "locked": false,
+    "children": [
+      {
+        "name": "is_hidden",
+        "label": "Hide the module?",
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "inline_help_text": "If checked, the module will be hidden from view. This is useful for when you want to apply custom smart rules to show or hide the module on certain views.",
+        "help_text": "",
+        "default": false
+      },
+      {
+        "name": "is_carousel",
+        "label": "Display cards within a carousel?",
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "inline_help_text": "If enabled, the cards will be displayed within a carousel. If disabled, the cards will be displayed within a grid.",
+        "help_text": "",
+        "default": true
+      }
+    ],
+    "type": "group",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": null
+  }
+]

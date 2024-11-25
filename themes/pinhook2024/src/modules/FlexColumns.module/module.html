@@ -1,0 +1,214 @@
+{% if !module.settings.is_hidden %}
+
+{# Render Column #}
+{% macro render_column(column) -%}
+{% set animation = column.settings.animation or "none" %}
+{% set flex_style = 'flex:{{ column.settings.flex_factor || 1 }};' %}
+{% set px_style = column.settings.px ? 'padding-inline:{{ column.settings.px }};' : null %}
+{% set py_style = column.settings.py ? 'padding-block:{{ column.settings.py }};' : null %}
+{% set bg_style = column.settings.bg_color.color ? 'background:{{ column.settings.bg_color.color }};' : null %}
+
+<div style="{{ bg_style }}{{ px_style }}{{ py_style }}{{ flex_style }}">
+  <iqvia-animate animation="{{ animation }}">
+    <div class="as-{{ column.type }} mx-auto">
+
+      {# Content #}
+      {% if column.type == 'content' %}
+      {% set content = column.content %}
+
+      <tui-content alignment="{{ content.alignment }}">
+        {% if content.eyebrow %}
+        <div slot="eyebrow">
+          {{ content.eyebrow }}
+        </div>
+        {% endif %}
+
+        {% if content.title %}
+        <div slot="title">
+          {{ content.title }}
+        </div>
+        {% endif %}
+
+        {% if content.description %}
+        <div slot="description">
+          {{ content.description }}
+        </div>
+        {% endif %}
+
+        {% if !content.is_cta and content.link.url.href and content.link_label %}
+        {% set target = content.link.open_in_new_tab ? '_blank' : '_self' %}
+        <a slot="cta" class="button" href="{{ content.link.url.href }}" target="{{ target }}" role="button">
+          {{ content.link_label }}
+        </a>
+        {% else %}
+        <div slot="cta">
+          {% cta 'content_cta' guid="{{ content.cta_id }}" %}
+        </div>
+        {% endif %}
+      </tui-content>
+
+      {# Richtext #}
+      {% elif column.type == 'rtf' %}
+      {{ column.rtf }}
+
+      {# Links #}
+      {% elif column.type == 'links' %}
+      {% if column.link_group.title %}
+      <h5 class="fw-bold mb-base">{{ column.link_group.title }}</h5>
+      {% endif %}
+
+      <ul class="links">
+        {% for link in column.link_group.links %}
+        {% set href = link.link.url.href %}
+        {% set target = link.open_in_new_tab ? '_blank' : '_self' %}
+        <li>
+          <a href="{{ href }}" target="{{ target }}">{{ link.link_label }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+
+      {# Form #}
+      {% elif column.type == 'form' %}
+      {{ column.form_title }}
+
+      {% if column.is_dialog_form %}
+      {% set form_id = 'gated_form_' ~ loop.index %}
+      <tui-dialog id="{{ form_id }}">
+        <div class="dialog h-fit">
+          <div class="dialog__header">
+            <h3>{{ column.form_dialog_title }}</h3>
+            <tui-dialog-action action="close" dialog-id="{{ form_id }}">
+              <iqvia-icon icon="cross"></iqvia-icon>
+            </tui-dialog-action>
+          </div>
+          <div class="dialog__body">
+            {% form
+            form_to_use="{{ column.form.form_id }}"
+            response_response_type="{{ column.form.response_type }}"
+            response_message="{{ column.form.message }}"
+            response_redirect_id="{{ column.form.redirect_id }}"
+            response_redirect_url="{{column.form.redirect_url}}"
+            gotowebinar_webinar_key="{{ column.form.gotowebinar_webinar_key }}"
+            %}
+          </div>
+        </div>
+      </tui-dialog>
+      <tui-dialog-action class="block mt-base" action="open" dialog-id="{{ form_id }}">
+        <button>
+          {{ column.form_dialog_button_label }}
+        </button>
+      </tui-dialog-action>
+
+      {% else %}
+      {% form
+      form_to_use="{{ column.form.form_id }}"
+      response_response_type="{{ column.form.response_type }}"
+      response_message="{{ column.form.message }}"
+      response_redirect_id="{{ column.form.redirect_id }}"
+      response_redirect_url="{{column.form.redirect_url}}"
+      gotowebinar_webinar_key="{{ column.form.gotowebinar_webinar_key }}"
+      %}
+      {% endif %}
+
+      {# Image Pill #}
+      {% elif column.type == 'pill' %}
+
+      {% if column.img_accent.img_accent_enabled %}
+      <iqvia-img-accent tr-type="{{ column.img_accent.tr_type }}" bl-type="{{ column.img_accent.bl_type }}"
+        tr-color="{{ column.img_accent.tr_color }}" bl-color="{{ column.img_accent.bl_color }}">
+        <iqvia-img-pill variant="{{ column.pill_variant }}" direction="{{ column.pill_direction }}">
+          <img src="{{ column.image.src }}" alt="{{ column.image.alt }}" width="560" />
+        </iqvia-img-pill>
+      </iqvia-img-accent>
+      {% else %}
+      <iqvia-img-pill variant="{{ column.pill_variant }}" direction="{{ column.pill_direction }}">
+        <img src="{{ column.image.src }}" alt="{{ column.image.alt }}" width="560" />
+      </iqvia-img-pill>
+      {% endif %}
+
+      {# Image #}
+      {% elif column.type == 'image' %}
+      {% set image_styles = column.img_radius_disabled ? "border-radius:0;" : "border-radius:1rem;" %}
+
+      <div class="flex flex-col gap-sm">
+        <div>{{ column.media_title }}</div>
+        {% if column.img_accent.img_accent_enabled %}
+        <iqvia-img-accent tr-type="{{ column.img_accent.tr_type }}" bl-type="{{ column.img_accent.bl_type }}"
+          tr-color="{{ column.img_accent.tr_color }}" bl-color="{{ column.img_accent.bl_color }}">
+          <img src="{{ column.image.src }}" alt="{{ column.image.alt }}" style="{{ image_styles }}" />
+        </iqvia-img-accent>
+        {% else %}
+        <img src="{{ column.image.src }}" alt="{{ column.image.alt }}" style="{{ image_styles }}" />
+        {% endif %}
+        <div>{{ column.media_description }}</div>
+      </div>
+
+      {# Video #}
+      {% elif column.type == 'video' %}
+      <div class="flex flex-col gap-sm">
+        <div>{{ column.media_title }}</div>
+        {% video_player 'content_video' player_id="{{ column.video.player_id }}" %}
+        <div>{{ column.media_description }}</div>
+      </div>
+
+      {# Accordion #}
+      {% elif column.type == 'accordion' %}
+      {% for accordion in column.accordions %}
+      <tui-accordion>
+        <div slot="header">
+          <iqvia-icon icon="chevron" style="width:1rem;"></iqvia-icon>
+          <h5>{{ accordion.title }}</h5>
+        </div>
+        <div slot="content">{{ accordion.content }}</div>
+      </tui-accordion>
+      {% endfor %}
+
+      {% endif %}
+    </div>
+  </iqvia-animate>
+</div>
+{% endmacro -%}
+
+
+{# Container #}
+<tui-container py="none" width="{{ module.settings.width }}" gap="{{ module.settings.gap }}"
+  align-items="{{ module.settings.col_alignment }}">
+
+  {% if module.tabs.is_enabled %}
+
+  <tui-tab-group active-tab-index="0">
+    <div slot="options">
+      {% for tab_group in module.tabs.tab_groups %}
+      <tui-tab-group-action tab-id="{{ tab_group.group_id }}">
+        <div class="tab-button" role="button">
+          {{ tab_group.group_label }}
+        </div>
+      </tui-tab-group-action>
+      {% endfor %}
+    </div>
+    <div slot="tabs">
+      {% for column_group in module.columns|groupby('tab_group_id') %}
+      <tui-tab tab-id="{{ column_group.grouperObject }}">
+        <tui-container py="md" px="none" gap="lg" width="no-max">
+          {% for columns in column_group.list %}
+          <div>
+            {{ render_column(columns) }}
+          </div>
+          {% endfor %}
+        </tui-container>
+      </tui-tab>
+      {% endfor %}
+    </div>
+  </tui-tab-group>
+
+  {% else %}
+
+  {% for column in module.columns %}
+  {{ render_column(column) }}
+  {% endfor %}
+
+  {% endif %}
+
+</tui-container>
+
+{% endif %}

@@ -1,0 +1,649 @@
+[
+  {
+    "name": "condensed",
+    "label": "Condense the banner?",
+    "required": false,
+    "locked": false,
+    "type": "boolean",
+    "inline_help_text": "If checked, the header's height will be set to 50% of the default height at <i>minimum</i>. Please note, the banner will still stretch to the height of its internal content.",
+    "help_text": "",
+    "default": false
+  },
+  {
+    "name": "eyebrow",
+    "label": "Eyebrow",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "validation_error_message": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text",
+    "placeholder": "",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": null
+  },
+  {
+    "name": "title",
+    "label": "Title",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "validation_error_message": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text",
+    "placeholder": "",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": null
+  },
+  {
+    "name": "as_h2",
+    "label": "Display title text as H2?",
+    "required": false,
+    "locked": false,
+    "type": "boolean",
+    "inline_help_text": "If enabled, the size of the title text will be decreased to match the H2 style.",
+    "help_text": "",
+    "default": false
+  },
+  {
+    "name": "description",
+    "label": "Description",
+    "required": false,
+    "locked": false,
+    "type": "richtext",
+    "inline_help_text": "",
+    "help_text": "",
+    "enabled_features": [
+      "indents",
+      "charmap",
+      "advanced_emphasis",
+      "standard_emphasis",
+      "anchor",
+      "colors",
+      "block",
+      "link",
+      "image",
+      "lists",
+      "alignment",
+      "lineheight"
+    ],
+    "default": null
+  },
+  {
+    "name": "links",
+    "label": "Links",
+    "required": false,
+    "locked": false,
+    "occurrence": {
+      "min": null,
+      "max": 2,
+      "sorting_label_field": null,
+      "default": null
+    },
+    "children": [
+      {
+        "id": "is_cta",
+        "name": "is_cta",
+        "label": "Use a CTA?",
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "inline_help_text": "If checked, you will be able to select a CTA instead of generating a button link.",
+        "help_text": "",
+        "default": true
+      },
+      {
+        "name": "link",
+        "label": "Link",
+        "required": false,
+        "locked": false,
+        "supported_types": [
+          "EXTERNAL",
+          "CONTENT",
+          "FILE",
+          "EMAIL_ADDRESS",
+          "BLOG"
+        ],
+        "type": "link",
+        "inline_help_text": "",
+        "help_text": "",
+        "visibility": {
+          "controlling_field": "is_cta",
+          "controlling_value_regex": false
+        },
+        "default": null
+      },
+      {
+        "name": "link_label",
+        "label": "Link label",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "validation_error_message": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
+        "inline_help_text": "",
+        "help_text": "",
+        "visibility": {
+          "controlling_field": "is_cta",
+          "controlling_value_regex": false
+        },
+        "default": "Learn more"
+      },
+      {
+        "name": "cta_id",
+        "label": "CTA",
+        "required": false,
+        "locked": false,
+        "inline_help_text": "",
+        "help_text": "",
+        "type": "cta",
+        "visibility": {
+          "controlling_field": "is_cta",
+          "controlling_value_regex": true
+        },
+        "default": null
+      }
+    ],
+    "type": "group",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": []
+  },
+  {
+    "name": "featured_image",
+    "label": "Featured image",
+    "required": false,
+    "locked": false,
+    "inline_help_text": "",
+    "help_text": "",
+    "responsive": false,
+    "resizable": false,
+    "show_loading": false,
+    "type": "image",
+    "default": null
+  },
+  {
+    "id": "is_featured_img_pill",
+    "name": "is_featured_img_pill",
+    "label": "Is the featured image a pill?",
+    "required": false,
+    "locked": false,
+    "type": "boolean",
+    "inline_help_text": "If enabled, the featured image will be displayed as a pill shape.",
+    "help_text": "",
+    "default": false
+  },
+  {
+    "name": "img_accent",
+    "label": "Image Accents",
+    "required": false,
+    "locked": false,
+    "children": [
+      {
+        "name": "img_accent_enabled",
+        "label": "Enable image accent?",
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "inline_help_text": "If enabled, shapes will surround the image and shift into position when the image comes into view.",
+        "help_text": "",
+        "default": false
+      },
+      {
+        "name": "tr_type",
+        "label": "Top-right: Shape",
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "inline_help_text": "",
+        "help_text": "",
+        "choices": [
+          [
+            "pill",
+            "Pill"
+          ],
+          [
+            "circle",
+            "Circle"
+          ]
+        ],
+        "type": "choice",
+        "placeholder": "",
+        "default": "pill"
+      },
+      {
+        "name": "tr_color",
+        "label": "Top-right: Color",
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "inline_help_text": "",
+        "help_text": "",
+        "choices": [
+          [
+            "var(--color-iqvia-light-blue)",
+            "Light blue"
+          ],
+          [
+            "var(--color-iqvia-blue)",
+            "Blue"
+          ],
+          [
+            "var(--color-iqvia-dark-blue)",
+            "Dark blue"
+          ],
+          [
+            "var(--color-iqvia-light-teal)",
+            "Light teal"
+          ],
+          [
+            "var(--color-iqvia-teal)",
+            "Teal"
+          ],
+          [
+            "var(--color-iqvia-light-green)",
+            "Light green"
+          ],
+          [
+            "var(--color-iqvia-green)",
+            "Green"
+          ],
+          [
+            "var(--color-iqvia-indigo)",
+            "Indigo"
+          ],
+          [
+            "var(--color-iqvia-red)",
+            "Red"
+          ],
+          [
+            "var(--color-iqvia-charcoal)",
+            "Charcoal"
+          ],
+          [
+            "var(--color-iqvia-gray)",
+            "Gray"
+          ],
+          [
+            "var(--color-iqvia-light-gray)",
+            "Light gray"
+          ],
+          [
+            "var(--color-white)",
+            "White"
+          ]
+        ],
+        "type": "choice",
+        "placeholder": "",
+        "default": "var(--color-iqvia-light-blue)"
+      },
+      {
+        "name": "bl_type",
+        "label": "Bottom-left: Shape",
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "inline_help_text": "",
+        "help_text": "",
+        "choices": [
+          [
+            "pill",
+            "Pill"
+          ],
+          [
+            "circle",
+            "Circle"
+          ]
+        ],
+        "type": "choice",
+        "placeholder": "",
+        "default": "circle"
+      },
+      {
+        "name": "bl_color",
+        "label": "Bottom-left: Color",
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "inline_help_text": "",
+        "help_text": "",
+        "choices": [
+          [
+            "var(--color-iqvia-light-blue)",
+            "Light blue"
+          ],
+          [
+            "var(--color-iqvia-blue)",
+            "Blue"
+          ],
+          [
+            "var(--color-iqvia-dark-blue)",
+            "Dark blue"
+          ],
+          [
+            "var(--color-iqvia-light-teal)",
+            "Light teal"
+          ],
+          [
+            "var(--color-iqvia-teal)",
+            "Teal"
+          ],
+          [
+            "var(--color-iqvia-light-green)",
+            "Light green"
+          ],
+          [
+            "var(--color-iqvia-green)",
+            "Green"
+          ],
+          [
+            "var(--color-iqvia-indigo)",
+            "Indigo"
+          ],
+          [
+            "var(--color-iqvia-red)",
+            "Red"
+          ],
+          [
+            "var(--color-iqvia-charcoal)",
+            "Charcoal"
+          ],
+          [
+            "var(--color-iqvia-gray)",
+            "Gray"
+          ],
+          [
+            "var(--color-iqvia-light-gray)",
+            "Light gray"
+          ],
+          [
+            "var(--color-white)",
+            "White"
+          ]
+        ],
+        "type": "choice",
+        "placeholder": "",
+        "default": "var(--color-iqvia-light-teal)"
+      }
+    ],
+    "type": "group",
+    "inline_help_text": "",
+    "help_text": "",
+    "visibility": {
+      "controlling_field": "is_featured_img_pill",
+      "controlling_value_regex": true
+    },
+    "default": {}
+  },
+  {
+    "id": "bg_type",
+    "name": "bg_type",
+    "label": "Background type",
+    "required": false,
+    "locked": false,
+    "display": "select",
+    "inline_help_text": "",
+    "help_text": "",
+    "choices": [
+      [
+        "color",
+        "Color"
+      ],
+      [
+        "image",
+        "Image"
+      ],
+      [
+        "video",
+        "Video"
+      ]
+    ],
+    "type": "choice",
+    "placeholder": "",
+    "default": "image"
+  },
+  {
+    "name": "bg_color",
+    "label": "Background color",
+    "required": false,
+    "locked": false,
+    "display": "select",
+    "inline_help_text": "",
+    "help_text": "",
+    "choices": [
+      [
+        "iqvia-blue",
+        "Blue"
+      ],
+      [
+        "iqvia-light-blue",
+        "Light blue"
+      ],
+      [
+        "iqvia-dark-blue",
+        "Dark blue"
+      ],
+      [
+        "iqvia-light-teal",
+        "Light teal"
+      ],
+      [
+        "iqvia-teal",
+        "Teal"
+      ],
+      [
+        "iqvia-light-green",
+        "Light green"
+      ],
+      [
+        "iqvia-green",
+        "Green"
+      ],
+      [
+        "iqvia-indigo",
+        "Indigo"
+      ],
+      [
+        "iqvia-charcoal",
+        "Charcoal"
+      ],
+      [
+        "iqvia-gray",
+        "Gray"
+      ],
+      [
+        "iqvia-light-gray",
+        "Light gray"
+      ],
+      [
+        "iqvia-white",
+        "White"
+      ]
+    ],
+    "type": "choice",
+    "placeholder": "",
+    "visibility": {
+      "controlling_field": "bg_type",
+      "controlling_value_regex": "color",
+      "operator": "EQUAL"
+    },
+    "default": null
+  },
+  {
+    "name": "bg_image",
+    "label": "Background image",
+    "required": false,
+    "locked": false,
+    "inline_help_text": "",
+    "help_text": "",
+    "responsive": false,
+    "resizable": false,
+    "show_loading": false,
+    "type": "image",
+    "visibility": {
+      "controlling_field": "bg_type",
+      "controlling_value_regex": "image",
+      "operator": "EQUAL"
+    },
+    "default": null
+  },
+  {
+    "name": "bg_video",
+    "label": "Background video (URL)",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "validation_error_message": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text",
+    "placeholder": "",
+    "inline_help_text": "Provide a URL to a video - you can host the video in the HubSpot file system.",
+    "help_text": "",
+    "visibility": {
+      "controlling_field": "bg_type",
+      "controlling_value_regex": "video",
+      "operator": "EQUAL"
+    },
+    "default": null
+  },
+  {
+    "name": "breadcrumbs",
+    "label": "Breadcrumbs",
+    "required": false,
+    "locked": false,
+    "occurrence": {
+      "min": null,
+      "max": null,
+      "sorting_label_field": null,
+      "default": null
+    },
+    "children": [
+      {
+        "name": "link",
+        "label": "Link",
+        "required": false,
+        "locked": false,
+        "supported_types": [
+          "EXTERNAL",
+          "CONTENT",
+          "FILE",
+          "EMAIL_ADDRESS",
+          "BLOG"
+        ],
+        "type": "link",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": null
+      },
+      {
+        "name": "link_label",
+        "label": "Link label",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "validation_error_message": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": "Learn more"
+      }
+    ],
+    "type": "group",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": []
+  },
+  {
+    "name": "gradient",
+    "label": "Gradient (overlay)",
+    "required": false,
+    "locked": false,
+    "children": [
+      {
+        "name": "is_enabled",
+        "label": "Enable gradient overlay?",
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": true
+      },
+      {
+        "name": "gradient",
+        "label": "Gradient (color)",
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "inline_help_text": "",
+        "help_text": "",
+        "choices": [
+          [
+            "gradient-indigo-to-transparent",
+            "Indigo"
+          ],
+          [
+            "gradient-dark-blue-to-transparent",
+            "Dark Blue"
+          ],
+          [
+            "gradient-blue-to-transparent",
+            "Blue"
+          ],
+          [
+            "gradient-teal-to-transparent",
+            "Teal"
+          ],
+          [
+            "gradient-green-to-transparent",
+            "Green"
+          ],
+          [
+            "gradient-charcoal-to-transparent",
+            "Charcoal"
+          ]
+        ],
+        "type": "choice",
+        "placeholder": "",
+        "default": "gradient-indigo-to-transparent"
+      }
+    ],
+    "type": "group",
+    "inline_help_text": "Settings for the Hero Banner's gradient. This does not act as the background of the banner - it is an overlay on top of the image.",
+    "help_text": "",
+    "default": null
+  },
+  {
+    "name": "settings",
+    "label": "Additional settings",
+    "required": false,
+    "locked": false,
+    "children": [
+      {
+        "name": "is_hidden",
+        "label": "Hide the module?",
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "inline_help_text": "If checked, the module will be hidden from view. This is useful for when you want to apply custom smart rules to show or hide the module on certain views.",
+        "help_text": "",
+        "default": false
+      }
+    ],
+    "type": "group",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": null
+  }
+]

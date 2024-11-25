@@ -1,0 +1,99 @@
+{% if !module.settings.is_hidden %}
+
+{% set bg_color = module.bg_type == 'color' ? 'bg-' ~ module.bg_color : null %}
+
+{% set condensed = module.condensed ? 'condensed' : null %}
+{% set gradient = module.gradient.is_enabled ? 'gradient="' ~ module.gradient.gradient ~ '"' : "" %}
+
+<div class="{{ bg_color }}">
+  <iqvia-hero-banner {{ condensed }} {{ gradient }}>
+
+    {# Background Image #}
+    {% if module.bg_type == 'image' and module.bg_image.src %}
+    <img slot="background" src="{{ module.bg_image.src }}" alt="{{ module.bg_image.alt || module.title }}" width="1280"
+      loading="eager" />
+    {% elif module.bg_type == 'video' and module.bg_video %}
+    <video slot="background" src="{{ module.bg_video }}" autoplay loop muted playsinline></video>
+    {% endif %}
+
+    {# Content Block #}
+    <tui-content class="text-iqvia-white" slot="content" alignment="start" gap="md">
+      {% if module.eyebrow %}
+      <p class="eyebrow" slot="eyebrow">{{ module.eyebrow }}</p>
+      {% endif %}
+
+      {% if module.title %}
+      {% set title_class = module.as_h2 ? "as-h2" : "as-h1" %}
+      <h1 slot="title" class="{{ title_class }}">{{ module.title }}</h1>
+      {% endif %}
+
+      {% if module.description %}
+      <div slot="description" class="as-body">{{ module.description }}</div>
+      {% endif %}
+
+      {% if module.links|length > 0 %}
+      <div class="flex flex-col md:flex-row gap-base mt-sm" slot="cta">
+        {% for link in module.links %}
+        {% if link.is_cta %}
+        {% cta 'hero_banner_cta' guid="{{ link.cta_id }}" %}
+        {% else %}
+        {% set target = link.open_in_new_tab ? '_blank' : '_self' %}
+
+        <a class="button" href="{{ link.link.url.href }}" target="{{ target }}">
+          {{ link.link_label }}
+        </a>
+        {% endif %}
+        {% endfor %}
+      </div>
+      {% endif %}
+    </tui-content>
+
+    {# Featured Image #}
+    {% if module.featured_image.src %}
+
+    {% if module.is_featured_img_pill %}
+    {% if module.img_accent.img_accent_enabled %}
+    <iqvia-img-accent slot="image" tr-type="{{ module.img_accent.tr_type }}" bl-type="{{ module.img_accent.bl_type }}"
+      tr-color="{{ module.img_accent.tr_color }}" bl-color="{{ module.img_accent.bl_color }}">
+      <iqvia-img-pill variant="arch" direction="right-to-left">
+        <img src="{{ module.featured_image.src }}" alt="{{ module.featured_image.alt || module.title }}" width="640"
+          loading="eager" width="640" />
+      </iqvia-img-pill>
+    </iqvia-img-accent>
+    {% else %}
+    <iqvia-img-pill slot="image" variant="arch" direction="right-to-left">
+      <img src="{{ module.featured_image.src }}" alt="{{ module.featured_image.alt || module.title }}" width="640"
+        loading="eager" width="640" />
+    </iqvia-img-pill>
+    {% endif %}
+    {% else %}
+    <img slot="image" src="{{ module.featured_image.src }}" alt="{{ module.featured_image.alt || module.title }}"
+      width="640" loading="eager" />
+    {% endif %}
+
+    {% endif %}
+
+    {# Breadcrumbs #}
+    {% if module.breadcrumbs|length %}
+    <div class="text-iqvia-white md:w-half" slot="breadcrumbs">
+      {% for crumb in module.breadcrumbs %}
+
+      {% if !crumb.link.url.href %}
+      <span class="fw-bold">{{ crumb.link_label }}</span>
+      {% else %}
+      {% set target = crumb.link.open_in_new_tab ? '_blank' : '_self' %}
+      <a class="theme-iqvia-white" href="{{ crumb.link.url.href }}" target="{{ target }}">{{ crumb.link_label }}</a>
+      {% endif %}
+
+      {% if not loop.last %}
+      <span>/</span>
+      {% endif %}
+
+      {% endfor %}
+    </div>
+    {% endif %}
+
+  </iqvia-hero-banner>
+</div>
+
+{% endif %}

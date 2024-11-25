@@ -1,0 +1,127 @@
+{# Set the language-specific text (dialog and trigger label) based on the page's active language. #}
+{% set lang_labels = {
+trigger_label: "",
+title: "",
+description: "",
+confirm_label: "",
+new_tab_label: ""
+} %}
+
+{% for lang in module.languages %}
+{% if lang.language == html_lang %}
+{% do lang_labels.update({
+trigger_label: lang.trigger_label,
+title: lang.dialog_title,
+description: lang.dialog_description,
+confirm_label: lang.dialog_confirm_label,
+new_tab_label: lang.dialog_new_tab_label
+}) %}
+{% endif %}
+{% endfor %}
+
+
+<iqvia-header>
+  <img slot="logo" src="https://www.q2labsolutions.com/hubfs/IQVIA/Branding/iqvia-logo-white.png" />
+
+  <nav slot="menu">
+    {% menu "navigation" id="{{ module.main_menu }}" %}
+  </nav>
+
+  {% if module.nav_ctas|length %}
+  <div slot="nav-ctas">
+    {% for nav_cta in module.nav_ctas %}
+
+    {% set indices = nav_cta.indices|map('index')|join(',') %}
+    {% set target = nav_cta.link.open_in_new_tab ? '_blank' : '_self' %}
+
+    {% if nav_cta.horizontal_orientation_enabled %}
+    <div class="nav-cta" data-menu-indices="{{ indices }}">
+      <tui-content alignment="start">
+        {% if nav_cta.title %}
+        <h6 slot="title" class="text-base fw-bold uppercase">{{ nav_cta.title }}</h6>
+        {% endif %}
+        {% if nav_cta.description %}
+        <p slot="description" class="text-sm">{{ nav_cta.description }}</p>
+        {% endif %}
+        {% if nav_cta.link.url.href and nav_cta.link_label %}
+        <a slot="cta" class="button link theme-iqvia-white" href="{{ nav_cta.link.url.href }}" target="{{ target }}">
+          {{ nav_cta.link_label }}
+        </a>
+        {% endif %}
+      </tui-content>
+      {% if nav_cta.image.src %}
+      <img src="{{ nav_cta.image.src }}" alt="{{ nav_cta.image.alt }}" width="360" />
+      {% endif %}
+    </div>
+    {% else %}
+
+    <tui-content alignment="start" data-menu-indices="{{ indices }}">
+      {% if nav_cta.image.src %}
+      <img slot="eyebrow" src="{{ nav_cta.image.src }}" alt="{{ nav_cta.image.alt }}" width="360" />
+      {% endif %}
+      {% if nav_cta.title %}
+      <h6 slot="title" class="text-base fw-bold uppercase">{{ nav_cta.title }}</h6>
+      {% endif %}
+      {% if nav_cta.description %}
+      <p slot="description" class="text-sm">{{ nav_cta.description }}</p>
+      {% endif %}
+      {% if nav_cta.link.url.href and nav_cta.link_label %}
+      <a slot="cta" class="button link theme-iqvia-white" href="{{ nav_cta.link.url.href }}" target="{{ target }}">
+        {{ nav_cta.link_label }}
+      </a>
+      {% endif %}
+    </tui-content>
+    {% endif %}
+
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if module.nav_sliders|length %}
+  <div slot="nav-sliders">
+    {% for nav_slider in module.nav_sliders %}
+    <div class="nav-slider" data-menu-index="{{ nav_slider.indices.menu_index }}"
+      data-menu-item-index="{{ nav_slider.indices.menu_item_index }}">
+      {% if nav_slider.image.src %}
+      <img src="{{ nav_slider.image.src }}" alt="{{ nav_slider.image.alt }}" width="320" />
+      {% endif %}
+      <tui-content alignment="start">
+        <h4 slot="title" class="fw-bold">{{ nav_slider.title }}</h4>
+        <p slot="description">{{ nav_slider.description }}</p>
+        {% if nav_slider.cta_id %}
+        <div slot="cta">
+          {% cta "nav_slider_cta" guid="{{ nav_slider.cta_id }}" %}
+        </div>
+        {% endif %}
+      </tui-content>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if module.main_cta_id %}
+  <div slot="cta">
+    {% cta "main_cta" guid="{{ module.main_cta_id }}" %}
+  </div>
+  {% endif %}
+
+  <iqvia-lang-selector slot="region" languages="{{ module.languages|map('language')|join(',') }}">
+    <a slot="action" href="javascript:;" class="flex gap-sm items-center uppercase theme-iqvia-white text-xs fw-bold">
+      <span>{{ lang_labels.trigger_label }}</span>
+      <iqvia-icon style="width:1rem;" icon="globe"></iqvia-icon>
+    </a>
+    <span slot="dialog-title">{{ lang_labels.title }}</span>
+    <span slot="dialog-description">{{ lang_labels.description }}</span>
+    <span slot="dialog-confirm-label">{{ lang_labels.confirm_label }}</span>
+    <span slot="dialog-new-tab-label">{{ lang_labels.new_tab_label }}</span>
+  </iqvia-lang-selector>
+
+  <iqvia-search-action slot="search">
+    <a href="javascript:;" class="flex gap-sm items-center uppercase theme-iqvia-white text-xs fw-bold">
+      <span>Search</span>
+      <iqvia-icon style="width:0.825rem;" icon="search"></iqvia-icon>
+    </a>
+  </iqvia-search-action>
+</iqvia-header>
+
+<iqvia-search></iqvia-search>

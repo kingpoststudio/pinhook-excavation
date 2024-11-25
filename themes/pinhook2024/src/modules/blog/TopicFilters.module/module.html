@@ -1,0 +1,39 @@
+{% set blog_href = blog_by_id(module.blog).absolute_url %}
+
+<tui-container py="md">
+  {% if module.topics|length > 0 %}
+  <div class="flex flex-col gap-xs md:hidden">
+    <h6 class="uppercase">Filter by Topic</h6>
+    <select onchange="window.location.href = this.value">
+      <option value="{{ blog_href }}">{{ module.all_posts_label|upper }}</option>
+
+      {% for topic in module.topics %}
+      {% set topic_href = blog_tag_url(module.blog, topic.tag) %}
+      {% set topic_selected = topic.tag in request.path ? 'selected' : null %}
+
+      <option value="{{ topic_href }}" {{ topic_selected }}>
+        {{ topic.tag|upper }}
+      </option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div class="hidden md:flex gap-base justify-center" style="border-bottom: 2px solid var(--color-platinum);">
+    <div class="tab-group w-full">
+      <div class="options">
+        <a class="flex-1 tab-button {{ 'tag' not in request.path ? 'active' : null }}" href="{{ blog_href }}">
+          {{ module.all_posts_label }}
+        </a>
+        {% for topic in module.topics %}
+        {% set topic_href = blog_tag_url(module.blog, topic.tag) %}
+        {% set topic_active = topic.tag in request.path ? 'active' : null %}
+
+        <a class="flex-1 tab-button {{ topic_active }}" href="{{ topic_href }}">
+          {{ topic.tag }}
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% endif %}
+</tui-container>

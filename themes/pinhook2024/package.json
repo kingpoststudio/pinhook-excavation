@@ -1,0 +1,32 @@
+{
+  "name": "pinhook-theme-2024",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "rm -rf dist && webpack --watch --env portal=develop --env autoupload --env hsDest=Pinhook2024",
+    "dev:staging": "rm -rf dist && webpack --watch --env portal=staging --env autoupload --env hsDest=Pinhook2024",
+    "dev:production": "rm -rf dist && webpack --watch --env portal=production --env autoupload --env hsDest=Pinhook2024",
+    "build": "rm -rf dist && webpack",
+    "upload": "hs upload --account=production dist Pinhook2024",
+    "upload:develop": "hs upload --account=develop dist Pinhook2024",
+    "upload:staging": "hs upload --account=staging dist Pinhook2024",
+    "deploy": "bun run build && bun run upload",
+    "deploy:develop": "bun run build && bun run upload:develop",
+    "deploy:staging": "bun run build && bun run upload:staging",
+    "hs:init": "hs init",
+    "hs:auth": "hs auth"
+  },
+  "devDependencies": {
+    "@hubspot/cli": "^6.3.0",
+    "@hubspot/webpack-cms-plugins": "^6.2.1",
+    "copy-webpack-plugin": "^12.0.2",
+    "css-loader": "^7.1.2",
+    "css-minimizer-webpack-plugin": "^5.0.1",
+    "esbuild-loader": "^4.2.2",
+    "ignore-loader": "^0.1.2",
+    "mini-css-extract-plugin": "^2.9.2",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.7.2",
+    "webpack": "^5.96.1",
+    "webpack-cli": "^5.1.4"
+  }
+}

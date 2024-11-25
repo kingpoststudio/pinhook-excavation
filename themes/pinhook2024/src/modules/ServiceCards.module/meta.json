@@ -1,0 +1,23 @@
+{
+  "label": "Service Cards",
+  "external_js": [],
+  "global": false,
+  "help_text": "",
+  "host_template_types": [
+    "PAGE",
+    "BLOG_POST",
+    "BLOG_LISTING"
+  ],
+  "icon": "/IQVIA2024/images/icons/services.svg",
+  "css_assets": [],
+  "js_assets": [],
+  "other_assets": [],
+  "js_render_options": {
+    "position": "head",
+    "async": false
+  },
+  "data_query_path": "../../../queries/RelatedServices",
+  "smart_type": "NOT_SMART",
+  "tags": [],
+  "is_available_for_new_content": true
+}

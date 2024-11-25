@@ -1,0 +1,115 @@
+<!--
+    templateType: blog_listing
+    isAvailableForNewContent: true
+    label: Blog Listing
+-->
+
+{% boolean 'tags_enabled' label='Display post tags?', value=false, export_to_template_context=true, no_wrapper=true %}
+{% set tags_enabled = widget_data.tags_enabled.value %}
+
+{% extends "../layouts/base.html" %}
+{% block body %}
+
+{% set blog = contents[0].parent_blog %}
+{% set posts = { standard: [], featured: [] } %}
+
+{% for post in blog_recent_tag_posts(blog.id, 'featured') %}
+{% if tag and tag in post.tag_list|map('slug')|join(' ') %}
+{% do posts.featured.append(post) %}
+{% elif !tag %}
+{% do posts.featured.append(post) %}
+{% endif %}
+{% endfor %}
+
+{% for post in contents %}
+{% set tag_str = post.tag_list|map('slug')|join(' ') %}
+
+{% if 'featured' in tag_str == false %}
+{% do posts.standard.append(post) %}
+{% endif %}
+
+{% endfor %}
+
+{% macro format_publish_date(date) %}
+{{ date|datetimeformat('%-m/%e/%Y') }}
+{% endmacro %}
+
+{# Render Article Card #}
+{% macro render_article_card(post) %}
+{% set tag = post.tag_list|first %}
+
+<iqvia-article-card href="{{ post.absolute_url }}">
+  {% if post.featured_image %}
+  <img src="{{ post.featured_image }}" slot="media" alt="{{ post.name }}" width="360" />
+  {% endif %}
+
+  <p slot="date">{{ post.publish_date|datetimeformat("%B %e, %Y") }}</p>
+
+  {% if tags_enabled and post.tag_list|first %}
+  <div slot="tags">
+    <a class="tag" href="{{ blog.absolute_url }}/tag/{{ tag.slug }}">{{ tag.name }}</a>
+  </div>
+  {% endif %}
+
+  <h5 slot="title" class="fw-bold">{{ post.name }}</h5>
+  <span slot="description">{{ post.meta_description|truncate(80) }}</span>
+</iqvia-article-card>
+{% endmacro %}
+
+
+{# Blog Listing #}
+<main style="padding-bottom:6rem;">
+  {%
+  module 'hero_banner'
+  path='../../modules/HeroBanner'
+  eyebrow="",
+  title="Blog",
+  description="",
+  condensed=true,
+  gradient={ is_enabled: true, gradient: "gradient-indigo-to-transparent" },
+  breadcrumbs=[{ link: { url: { href: "/" } }, link_label: "Home" }, { link_label: "Blog" }],
+  extra_classes="bg-iqvia-dark-blue"
+  %}
+
+  {# Featured Posts #}
+  {% set featured_post = posts.featured[0] %}
+  {% if featured_post is truthy %}
+  <div class="gradient-to-left gradient-start-light-blue gradient-stop-blue">
+    <tui-container py="xl" width="wide">
+      <div class="grid cols-1 md:cols-2 gap-lg items-center">
+        <tui-content class="text-iqvia-white" alignment="start">
+          <p slot="eyebrow">Featured</p>
+          <h3 slot="title">{{ featured_post.name }}</h3>
+          <p slot="description" class="text-md">{{ featured_post.meta_description }}</p>
+          <a slot="cta" class="button outlined mt-sm" href="{{ featured_post.absolute_url }}">Read More</a>
+        </tui-content>
+        <img class="flex-1 rounded object-cover" style="aspect-ratio: 3 / 2;" width="640"
+          src="{{ featured_post.featured_image }}" alt="{{ featured_post.name }}" />
+      </div>
+    </tui-container>
+  </div>
+  {% endif %}
+
+  {# Filters #}
+  {%
+  module 'blog_topic_filters'
+  path='../../modules/blog/TopicFilters'
+  %}
+
+  {# Standard Posts #}
+  <tui-container py="md">
+    {% if posts.standard|length > 0 or posts.featured|length > 0 %}
+    <div class="basis-full grid cols-1 md:cols-3 gap-xl">
+      {% for post in posts.standard %}
+      {{ render_article_card(post) }}
+      {% endfor %}
+    </div>
+    {% else %}
+    <h2 class="text-center">No results found.</h2>
+    {% endif %}
+  </tui-container>
+  <br />
+
+</main>
+
+{% endblock body %}

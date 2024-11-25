@@ -1,0 +1,1272 @@
+[
+  {
+    "name": "columns",
+    "label": "Columns",
+    "required": false,
+    "locked": false,
+    "occurrence": {
+      "min": null,
+      "max": null,
+      "sorting_label_field": "type",
+      "default": 2
+    },
+    "children": [
+      {
+        "id": "type",
+        "name": "type",
+        "label": "Content type",
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "inline_help_text": "",
+        "help_text": "",
+        "choices": [
+          [
+            "content",
+            "Content block"
+          ],
+          [
+            "rtf",
+            "Richtext"
+          ],
+          [
+            "links",
+            "Links"
+          ],
+          [
+            "pill",
+            "Image pill"
+          ],
+          [
+            "image",
+            "Image"
+          ],
+          [
+            "video",
+            "Video"
+          ],
+          [
+            "form",
+            "Form"
+          ],
+          [
+            "accordion",
+            "Accordion"
+          ],
+          [
+            "spacer",
+            "Spacer"
+          ]
+        ],
+        "type": "choice",
+        "placeholder": "",
+        "default": "content"
+      },
+      {
+        "name": "tab_group_id",
+        "label": "Tab group ID",
+        "required": true,
+        "locked": false,
+        "validation_regex": "",
+        "validation_error_message": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
+        "inline_help_text": "This field value must match the \"Group ID\" value in the \"Tabs\" section. This will determine where the column will be placed within the tab groups; if the value doesn't match any group ID, the column content will not appear.",
+        "help_text": "",
+        "visibility": {
+          "controlling_field": "tabs.is_enabled",
+          "controlling_value_regex": true
+        },
+        "default": null
+      },
+      {
+        "name": "content",
+        "label": "Content block",
+        "required": false,
+        "locked": false,
+        "children": [
+          {
+            "name": "alignment",
+            "label": "Alignment",
+            "required": false,
+            "locked": false,
+            "display": "select",
+            "inline_help_text": "",
+            "help_text": "",
+            "choices": [
+              [
+                "start",
+                "Left"
+              ],
+              [
+                "center",
+                "Center"
+              ],
+              [
+                "end",
+                "Right"
+              ]
+            ],
+            "type": "choice",
+            "placeholder": "",
+            "default": "start"
+          },
+          {
+            "name": "eyebrow",
+            "label": "Eyebrow",
+            "required": false,
+            "locked": false,
+            "type": "richtext",
+            "inline_help_text": "",
+            "help_text": "",
+            "enabled_features": [
+              "indents",
+              "charmap",
+              "advanced_emphasis",
+              "standard_emphasis",
+              "anchor",
+              "colors",
+              "block",
+              "link",
+              "cta",
+              "embed",
+              "video",
+              "hr",
+              "table",
+              "personalize",
+              "emoji",
+              "image",
+              "lists",
+              "alignment",
+              "lineheight"
+            ],
+            "default": "<p>Lorem ipsum</p>"
+          },
+          {
+            "name": "title",
+            "label": "Title",
+            "required": false,
+            "locked": false,
+            "type": "richtext",
+            "inline_help_text": "",
+            "help_text": "",
+            "enabled_features": [
+              "indents",
+              "charmap",
+              "advanced_emphasis",
+              "standard_emphasis",
+              "anchor",
+              "colors",
+              "block",
+              "link",
+              "cta",
+              "embed",
+              "video",
+              "hr",
+              "table",
+              "personalize",
+              "emoji",
+              "image",
+              "lists",
+              "alignment",
+              "lineheight"
+            ],
+            "default": "<h2>Lorem Ipsum</h2><h2 style=\"color:var(--color-theme);\">Dolor Sit Amet</h2>"
+          },
+          {
+            "name": "description",
+            "label": "Description",
+            "required": false,
+            "locked": false,
+            "type": "richtext",
+            "inline_help_text": "",
+            "help_text": "",
+            "enabled_features": [
+              "indents",
+              "charmap",
+              "advanced_emphasis",
+              "standard_emphasis",
+              "anchor",
+              "colors",
+              "block",
+              "link",
+              "cta",
+              "embed",
+              "video",
+              "hr",
+              "table",
+              "personalize",
+              "emoji",
+              "image",
+              "lists",
+              "alignment",
+              "lineheight"
+            ],
+            "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>"
+          },
+          {
+            "id": "is_cta",
+            "name": "is_cta",
+            "label": "Is button a CTA?",
+            "required": false,
+            "locked": false,
+            "type": "boolean",
+            "inline_help_text": "",
+            "help_text": "",
+            "default": false
+          },
+          {
+            "name": "cta_id",
+            "label": "CTA",
+            "required": false,
+            "locked": false,
+            "inline_help_text": "",
+            "help_text": "",
+            "type": "cta",
+            "visibility": {
+              "controlling_field": "is_cta",
+              "controlling_value_regex": true
+            },
+            "default": null
+          },
+          {
+            "name": "link",
+            "label": "Link",
+            "required": false,
+            "locked": false,
+            "supported_types": [
+              "EXTERNAL",
+              "CONTENT",
+              "FILE",
+              "EMAIL_ADDRESS",
+              "BLOG"
+            ],
+            "type": "link",
+            "inline_help_text": "",
+            "help_text": "",
+            "visibility": {
+              "controlling_field": "is_cta",
+              "controlling_value_regex": false
+            },
+            "default": null
+          },
+          {
+            "name": "link_label",
+            "label": "Link label",
+            "required": false,
+            "locked": false,
+            "validation_regex": "",
+            "allow_new_line": false,
+            "show_emoji_picker": false,
+            "type": "text",
+            "placeholder": "",
+            "inline_help_text": "",
+            "help_text": "",
+            "visibility": {
+              "controlling_field": "is_cta",
+              "controlling_value_regex": false
+            },
+            "default": null
+          }
+        ],
+        "type": "group",
+        "inline_help_text": "",
+        "help_text": "",
+        "visibility": {
+          "controlling_field": "type",
+          "controlling_value_regex": "content",
+          "operator": "EQUAL"
+        },
+        "default": null
+      },
+      {
+        "name": "rtf",
+        "label": "Richtext",
+        "required": false,
+        "locked": false,
+        "type": "richtext",
+        "inline_help_text": "",
+        "help_text": "",
+        "visibility": {
+          "controlling_field": "type",
+          "controlling_value_regex": "rtf",
+          "operator": "EQUAL"
+        },
+        "default": null
+      },
+      {
+        "name": "link_group",
+        "label": "Link group",
+        "required": false,
+        "locked": false,
+        "children": [
+          {
+            "name": "title",
+            "label": "Title",
+            "required": false,
+            "locked": false,
+            "validation_regex": "",
+            "validation_error_message": "",
+            "allow_new_line": false,
+            "show_emoji_picker": false,
+            "type": "text",
+            "placeholder": "",
+            "inline_help_text": "",
+            "help_text": "",
+            "default": "Related Links"
+          },
+          {
+            "name": "links",
+            "label": "Links",
+            "required": false,
+            "locked": false,
+            "occurrence": {
+              "min": null,
+              "max": null,
+              "sorting_label_field": null,
+              "default": null
+            },
+            "children": [
+              {
+                "name": "link",
+                "label": "Link",
+                "required": false,
+                "locked": false,
+                "supported_types": [
+                  "EXTERNAL",
+                  "CONTENT",
+                  "FILE",
+                  "EMAIL_ADDRESS",
+                  "BLOG"
+                ],
+                "type": "link",
+                "inline_help_text": "",
+                "help_text": "",
+                "default": null
+              },
+              {
+                "name": "link_label",
+                "label": "Link label",
+                "required": false,
+                "locked": false,
+                "validation_regex": "",
+                "validation_error_message": "",
+                "allow_new_line": false,
+                "show_emoji_picker": false,
+                "type": "text",
+                "placeholder": "",
+                "inline_help_text": "",
+                "help_text": "",
+                "default": "Learn more"
+              }
+            ],
+            "type": "group",
+            "inline_help_text": "",
+            "help_text": "",
+            "default": []
+          }
+        ],
+        "type": "group",
+        "inline_help_text": "",
+        "help_text": "",
+        "visibility": {
+          "controlling_field": "type",
+          "controlling_value_regex": "links",
+          "operator": "EQUAL"
+        },
+        "default": {}
+      },
+      {
+        "name": "form_title",
+        "label": "Form title",
+        "required": false,
+        "locked": false,
+        "type": "richtext",
+        "inline_help_text": "Note: you can place images in this field.",
+        "help_text": "",
+        "enabled_features": [
+          "indents",
+          "charmap",
+          "advanced_emphasis",
+          "standard_emphasis",
+          "anchor",
+          "colors",
+          "block",
+          "link",
+          "image",
+          "lists",
+          "alignment",
+          "lineheight"
+        ],
+        "visibility": {
+          "controlling_field": "type",
+          "controlling_value_regex": "form",
+          "operator": "EQUAL"
+        },
+        "default": "<h3>Lorem Ipsum</h3>"
+      },
+      {
+        "name": "is_dialog_form",
+        "label": "Contain form within a dialog?",
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "inline_help_text": "If checked, the form will be contained within a dialog. The dialog can be opened with a button that appears just below the form's title.",
+        "help_text": "",
+        "visibility": {
+          "controlling_field": "type",
+          "controlling_value_regex": "form",
+          "operator": "EQUAL"
+        },
+        "default": false
+      },
+      {
+        "name": "form_dialog_title",
+        "label": "Form dialog title",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "validation_error_message": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
+        "inline_help_text": "",
+        "help_text": "",
+        "visibility": {
+          "controlling_field": "type",
+          "controlling_value_regex": "form",
+          "operator": "EQUAL"
+        },
+        "default": "Form Dialog"
+      },
+      {
+        "name": "form_dialog_button_label",
+        "label": "Form dialog button label",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "validation_error_message": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
+        "inline_help_text": "",
+        "help_text": "",
+        "visibility": {
+          "controlling_field": "type",
+          "controlling_value_regex": "form",
+          "operator": "EQUAL"
+        },
+        "default": "Click to Open Dialog"
+      },
+      {
+        "name": "form",
+        "label": "Form",
+        "required": false,
+        "locked": false,
+        "inline_help_text": "",
+        "help_text": "",
+        "type": "form",
+        "visibility": {
+          "controlling_field": "type",
+          "controlling_value_regex": "form",
+          "operator": "EQUAL"
+        },
+        "default": null
+      },
+      {
+        "name": "pill_variant",
+        "label": "Image pill variant",
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "inline_help_text": "",
+        "help_text": "",
+        "choices": [
+          [
+            "arch",
+            "Arch"
+          ],
+          [
+            "tilt",
+            "Tilted"
+          ]
+        ],
+        "type": "choice",
+        "placeholder": "",
+        "visibility": {
+          "controlling_field": "type",
+          "controlling_value_regex": "pill",
+          "operator": "EQUAL"
+        },
+        "default": "arch"
+      },
+      {
+        "name": "pill_direction",
+        "label": "Pill direction",
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "inline_help_text": "",
+        "help_text": "",
+        "choices": [
+          [
+            "top-to-bottom",
+            "Top to bottom"
+          ],
+          [
+            "bottom-to-top",
+            "Bottom to top"
+          ],
+          [
+            "left-to-right",
+            "Left to right"
+          ],
+          [
+            "right-to-left",
+            "Right to left"
+          ]
+        ],
+        "type": "choice",
+        "placeholder": "",
+        "visibility": {
+          "controlling_field": "type",
+          "controlling_value_regex": "pill",
+          "operator": "EQUAL"
+        },
+        "default": "top-to-bottom"
+      },
+      {
+        "name": "image",
+        "label": "Image",
+        "required": false,
+        "locked": false,
+        "inline_help_text": "",
+        "help_text": "",
+        "responsive": false,
+        "resizable": false,
+        "show_loading": false,
+        "type": "image",
+        "visibility": {
+          "controlling_field": "type",
+          "controlling_value_regex": "^(image|pill)$"
+        },
+        "default": null
+      },
+      {
+        "name": "img_radius_disabled",
+        "label": "Disable the image's border radius?",
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "inline_help_text": "If checked, the image will have square corners instead of the thematic rounded border.",
+        "help_text": "",
+        "visibility": {
+          "controlling_field": "type",
+          "controlling_value_regex": "image"
+        },
+        "default": false
+      },
+      {
+        "name": "video",
+        "label": "Video",
+        "required": false,
+        "locked": false,
+        "type": "videoplayer",
+        "show_advanced_options": false,
+        "visibility": {
+          "controlling_field": "type",
+          "controlling_value_regex": "video",
+          "operator": "EQUAL"
+        },
+        "default": null
+      },
+      {
+        "name": "img_accent",
+        "label": "Image Accents",
+        "required": false,
+        "locked": false,
+        "children": [
+          {
+            "name": "img_accent_enabled",
+            "label": "Enable image accent?",
+            "required": false,
+            "locked": false,
+            "type": "boolean",
+            "inline_help_text": "If enabled, shapes will surround the image and shift into position when the image comes into view.",
+            "help_text": "",
+            "default": false
+          },
+          {
+            "name": "tr_type",
+            "label": "Top-right: Shape",
+            "required": false,
+            "locked": false,
+            "display": "select",
+            "inline_help_text": "",
+            "help_text": "",
+            "choices": [
+              [
+                "pill",
+                "Pill"
+              ],
+              [
+                "circle",
+                "Circle"
+              ]
+            ],
+            "type": "choice",
+            "placeholder": "",
+            "default": "pill"
+          },
+          {
+            "name": "tr_color",
+            "label": "Top-right: Color",
+            "required": false,
+            "locked": false,
+            "display": "select",
+            "inline_help_text": "",
+            "help_text": "",
+            "choices": [
+              [
+                "var(--color-iqvia-light-blue)",
+                "Light blue"
+              ],
+              [
+                "var(--color-iqvia-blue)",
+                "Blue"
+              ],
+              [
+                "var(--color-iqvia-dark-blue)",
+                "Dark blue"
+              ],
+              [
+                "var(--color-iqvia-light-teal)",
+                "Light teal"
+              ],
+              [
+                "var(--color-iqvia-teal)",
+                "Teal"
+              ],
+              [
+                "var(--color-iqvia-light-green)",
+                "Light green"
+              ],
+              [
+                "var(--color-iqvia-green)",
+                "Green"
+              ],
+              [
+                "var(--color-iqvia-indigo)",
+                "Indigo"
+              ],
+              [
+                "var(--color-iqvia-red)",
+                "Red"
+              ],
+              [
+                "var(--color-iqvia-charcoal)",
+                "Charcoal"
+              ],
+              [
+                "var(--color-iqvia-gray)",
+                "Gray"
+              ],
+              [
+                "var(--color-iqvia-light-gray)",
+                "Light gray"
+              ],
+              [
+                "var(--color-white)",
+                "White"
+              ]
+            ],
+            "type": "choice",
+            "placeholder": "",
+            "default": null
+          },
+          {
+            "name": "bl_type",
+            "label": "Bottom-left: Shape",
+            "required": false,
+            "locked": false,
+            "display": "select",
+            "inline_help_text": "",
+            "help_text": "",
+            "choices": [
+              [
+                "pill",
+                "Pill"
+              ],
+              [
+                "circle",
+                "Circle"
+              ]
+            ],
+            "type": "choice",
+            "placeholder": "",
+            "default": "circle"
+          },
+          {
+            "name": "bl_color",
+            "label": "Bottom-left: Color",
+            "required": false,
+            "locked": false,
+            "display": "select",
+            "inline_help_text": "",
+            "help_text": "",
+            "choices": [
+              [
+                "var(--color-iqvia-light-blue)",
+                "Light blue"
+              ],
+              [
+                "var(--color-iqvia-blue)",
+                "Blue"
+              ],
+              [
+                "var(--color-iqvia-dark-blue)",
+                "Dark blue"
+              ],
+              [
+                "var(--color-iqvia-light-teal)",
+                "Light teal"
+              ],
+              [
+                "var(--color-iqvia-teal)",
+                "Teal"
+              ],
+              [
+                "var(--color-iqvia-light-green)",
+                "Light green"
+              ],
+              [
+                "var(--color-iqvia-green)",
+                "Green"
+              ],
+              [
+                "var(--color-iqvia-indigo)",
+                "Indigo"
+              ],
+              [
+                "var(--color-iqvia-red)",
+                "Red"
+              ],
+              [
+                "var(--color-iqvia-charcoal)",
+                "Charcoal"
+              ],
+              [
+                "var(--color-iqvia-gray)",
+                "Gray"
+              ],
+              [
+                "var(--color-iqvia-light-gray)",
+                "Light gray"
+              ],
+              [
+                "var(--color-white)",
+                "White"
+              ]
+            ],
+            "type": "choice",
+            "placeholder": "",
+            "default": null
+          }
+        ],
+        "type": "group",
+        "inline_help_text": "",
+        "help_text": "",
+        "visibility": {
+          "controlling_field": "type",
+          "controlling_value_regex": "^(image|pill)$"
+        },
+        "default": {}
+      },
+      {
+        "name": "media_title",
+        "label": "Media title",
+        "required": false,
+        "locked": false,
+        "type": "richtext",
+        "inline_help_text": "",
+        "help_text": "",
+        "enabled_features": [
+          "indents",
+          "charmap",
+          "advanced_emphasis",
+          "standard_emphasis",
+          "anchor",
+          "colors",
+          "block",
+          "link",
+          "image",
+          "lists",
+          "alignment",
+          "lineheight"
+        ],
+        "visibility": {
+          "controlling_field": "type",
+          "controlling_value_regex": "^(image|video)$"
+        },
+        "default": null
+      },
+      {
+        "name": "media_description",
+        "label": "Media description",
+        "required": false,
+        "locked": false,
+        "type": "richtext",
+        "inline_help_text": "",
+        "help_text": "",
+        "enabled_features": [
+          "indents",
+          "charmap",
+          "advanced_emphasis",
+          "standard_emphasis",
+          "anchor",
+          "colors",
+          "block",
+          "link",
+          "image",
+          "lists",
+          "alignment",
+          "lineheight"
+        ],
+        "visibility": {
+          "controlling_field": "type",
+          "controlling_value_regex": "^(image|video)$"
+        },
+        "default": null
+      },
+      {
+        "name": "accordions",
+        "label": "Accordions",
+        "required": false,
+        "locked": false,
+        "occurrence": {
+          "min": null,
+          "max": null,
+          "sorting_label_field": null,
+          "default": null
+        },
+        "children": [
+          {
+            "name": "title",
+            "label": "Title",
+            "required": false,
+            "locked": false,
+            "validation_regex": "",
+            "validation_error_message": "",
+            "allow_new_line": false,
+            "show_emoji_picker": false,
+            "type": "text",
+            "placeholder": "",
+            "inline_help_text": "",
+            "help_text": "",
+            "default": "Lorem Ipsum"
+          },
+          {
+            "name": "content",
+            "label": "Content",
+            "required": false,
+            "locked": false,
+            "type": "richtext",
+            "inline_help_text": "",
+            "help_text": "",
+            "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>"
+          }
+        ],
+        "type": "group",
+        "inline_help_text": "",
+        "help_text": "",
+        "visibility": {
+          "controlling_field": "type",
+          "controlling_value_regex": "accordion",
+          "operator": "EQUAL"
+        },
+        "default": []
+      },
+      {
+        "name": "settings",
+        "label": "Settings",
+        "required": false,
+        "locked": false,
+        "children": [
+          {
+            "name": "flex_factor",
+            "label": "Flex factor",
+            "required": false,
+            "locked": false,
+            "display": "text",
+            "step": 1,
+            "type": "number",
+            "min": 1,
+            "max": null,
+            "inline_help_text": "Determines the amount of space that the column will take up relative to the other columns in the row.",
+            "help_text": "",
+            "default": 1
+          },
+          {
+            "name": "bg_color",
+            "label": "Background color",
+            "required": false,
+            "locked": false,
+            "inline_help_text": "Determines the background color of the column.",
+            "help_text": "",
+            "type": "color",
+            "default": null
+          },
+          {
+            "name": "px",
+            "label": "Padding (x-axis)",
+            "required": false,
+            "locked": false,
+            "display": "select",
+            "inline_help_text": "Determines the x-axis padding of the column's container.",
+            "help_text": "",
+            "choices": [
+              [
+                "var(--space-xs)",
+                "Extra-small"
+              ],
+              [
+                "var(--space-sm)",
+                "Small"
+              ],
+              [
+                "var(--space)",
+                "Normal"
+              ],
+              [
+                "var(--space-md)",
+                "Medium"
+              ],
+              [
+                "var(--space-lg)",
+                "Large"
+              ],
+              [
+                "var(--space-xl)",
+                "XL"
+              ],
+              [
+                "var(--space-2xl)",
+                "2XL"
+              ]
+            ],
+            "type": "choice",
+            "placeholder": "",
+            "default": null
+          },
+          {
+            "name": "py",
+            "label": "Padding (y-axis)",
+            "required": false,
+            "locked": false,
+            "display": "select",
+            "inline_help_text": "Determines the y-axis padding of the column's container.",
+            "help_text": "",
+            "choices": [
+              [
+                "var(--space-xs)",
+                "Extra-small"
+              ],
+              [
+                "var(--space-sm)",
+                "Small"
+              ],
+              [
+                "var(--space)",
+                "Normal"
+              ],
+              [
+                "var(--space-md)",
+                "Medium"
+              ],
+              [
+                "var(--space-lg)",
+                "Large"
+              ],
+              [
+                "var(--space-xl)",
+                "XL"
+              ],
+              [
+                "var(--space-2xl)",
+                "2XL"
+              ]
+            ],
+            "type": "choice",
+            "placeholder": "",
+            "default": null
+          },
+          {
+            "name": "animation",
+            "label": "Animation",
+            "required": false,
+            "locked": false,
+            "display": "select",
+            "inline_help_text": "",
+            "help_text": "",
+            "choices": [
+              [
+                "none",
+                "None"
+              ],
+              [
+                "fade-in",
+                "Fade in"
+              ],
+              [
+                "fade-in-bottom",
+                "Fade in bottom"
+              ],
+              [
+                "fade-in-left",
+                "Fade in left"
+              ],
+              [
+                "fade-in-right",
+                "Fade in right"
+              ],
+              [
+                "fade-in-top",
+                "Fade in top"
+              ],
+              [
+                "bounce-bottom",
+                "Bounce bottom"
+              ]
+            ],
+            "type": "choice",
+            "placeholder": "",
+            "default": "none"
+          }
+        ],
+        "type": "group",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": {}
+      }
+    ],
+    "type": "group",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": []
+  },
+  {
+    "name": "tabs",
+    "label": "Tabs",
+    "required": false,
+    "locked": false,
+    "children": [
+      {
+        "id": "tabs.is_enabled",
+        "name": "is_enabled",
+        "label": "Enable tab groups?",
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "inline_help_text": "If enabled, the columns will be grouped into tabs. This is useful for when you want to organize content into different sections.",
+        "help_text": "",
+        "default": false
+      },
+      {
+        "name": "tab_groups",
+        "label": "Tab groups",
+        "required": false,
+        "locked": false,
+        "occurrence": {
+          "min": null,
+          "max": null,
+          "sorting_label_field": null,
+          "default": null
+        },
+        "children": [
+          {
+            "name": "group_id",
+            "label": "Group ID",
+            "required": false,
+            "locked": false,
+            "validation_regex": "",
+            "validation_error_message": "",
+            "allow_new_line": false,
+            "show_emoji_picker": false,
+            "type": "text",
+            "placeholder": "",
+            "inline_help_text": "Provide a unique ID for the tab group. This will be used to determine which columns will be placed within the tab groups.",
+            "help_text": "",
+            "default": null
+          },
+          {
+            "name": "group_label",
+            "label": "Group label",
+            "required": false,
+            "locked": false,
+            "validation_regex": "",
+            "validation_error_message": "",
+            "allow_new_line": false,
+            "show_emoji_picker": false,
+            "type": "text",
+            "placeholder": "",
+            "inline_help_text": "",
+            "help_text": "",
+            "default": null
+          }
+        ],
+        "type": "group",
+        "inline_help_text": "",
+        "help_text": "",
+        "visibility": {
+          "controlling_field": "tabs.is_enabled",
+          "controlling_value_regex": true
+        },
+        "default": []
+      }
+    ],
+    "type": "group",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": {}
+  },
+  {
+    "name": "settings",
+    "label": "Additional settings",
+    "required": false,
+    "locked": false,
+    "children": [
+      {
+        "name": "is_hidden",
+        "label": "Hide the module?",
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "inline_help_text": "If checked, the module will be hidden from view. This is useful for when you want to apply custom smart rules to show or hide the module on certain views.",
+        "help_text": "",
+        "default": false
+      },
+      {
+        "name": "width",
+        "label": "Width",
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "inline_help_text": "Determines the allowable width of the container.",
+        "help_text": "",
+        "choices": [
+          [
+            "no-max",
+            "No maximum"
+          ],
+          [
+            "full",
+            "Full"
+          ],
+          [
+            "wide",
+            "Wide"
+          ],
+          [
+            "snug",
+            "Snug"
+          ],
+          [
+            "narrow",
+            "Narrow"
+          ],
+          [
+            "tight",
+            "Tight"
+          ]
+        ],
+        "type": "choice",
+        "placeholder": "",
+        "default": "full"
+      },
+      {
+        "name": "gap",
+        "label": "Gap",
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "inline_help_text": "Determines the space provided between columns.",
+        "help_text": "",
+        "choices": [
+          [
+            "",
+            "No gap"
+          ],
+          [
+            "sm",
+            "Small"
+          ],
+          [
+            "base",
+            "Normal"
+          ],
+          [
+            "md",
+            "Medium"
+          ],
+          [
+            "lg",
+            "Large"
+          ],
+          [
+            "xl",
+            "XL"
+          ],
+          [
+            "2xl",
+            "2XL"
+          ],
+          [
+            "3xl",
+            "3XL"
+          ],
+          [
+            "4xl",
+            "4XL"
+          ]
+        ],
+        "type": "choice",
+        "placeholder": "",
+        "default": "lg"
+      },
+      {
+        "name": "col_alignment",
+        "label": "Column vertical alignment",
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "inline_help_text": "Determines the vertical alignment of the content within the columns.",
+        "help_text": "",
+        "choices": [
+          [
+            "start",
+            "Top"
+          ],
+          [
+            "center",
+            "Center"
+          ],
+          [
+            "end",
+            "Bottom"
+          ]
+        ],
+        "type": "choice",
+        "placeholder": "",
+        "default": "start"
+      }
+    ],
+    "type": "group",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": {}
+  }
+]

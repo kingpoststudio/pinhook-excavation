@@ -1,0 +1,58 @@
+[
+  {
+    "name": "blog",
+    "label": "Blog",
+    "required": false,
+    "locked": false,
+    "type": "blog",
+    "placeholder": "",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": "default"
+  },
+  {
+    "name": "all_posts_label",
+    "label": "\"All posts\" label",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "validation_error_message": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text",
+    "placeholder": "",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": "All posts"
+  },
+  {
+    "name": "topics",
+    "label": "Topics",
+    "required": false,
+    "locked": false,
+    "occurrence": {
+      "min": null,
+      "max": null,
+      "sorting_label_field": null,
+      "default": null
+    },
+    "children": [
+      {
+        "name": "tag",
+        "label": "Tag",
+        "required": false,
+        "locked": false,
+        "inline_help_text": "",
+        "help_text": "",
+        "tag_value": "SLUG",
+        "type": "tag",
+        "placeholder": "",
+        "default": null
+      }
+    ],
+    "type": "group",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": []
+  }
+]

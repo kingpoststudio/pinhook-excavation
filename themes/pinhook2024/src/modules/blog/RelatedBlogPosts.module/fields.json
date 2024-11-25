@@ -1,0 +1,157 @@
+[
+  {
+    "name": "title",
+    "label": "Title",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "validation_error_message": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text",
+    "placeholder": "",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": "Related blog articles"
+  },
+  {
+    "name": "blog",
+    "label": "Blog",
+    "required": false,
+    "locked": false,
+    "type": "blog",
+    "placeholder": "",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": null
+  },
+  {
+    "name": "filter_by_tags",
+    "label": "Filter by tags",
+    "required": false,
+    "locked": false,
+    "occurrence": {
+      "min": null,
+      "max": null,
+      "sorting_label_field": null,
+      "default": null
+    },
+    "children": [
+      {
+        "name": "tag",
+        "label": "Tag",
+        "required": false,
+        "locked": false,
+        "inline_help_text": "",
+        "help_text": "",
+        "tag_value": "SLUG",
+        "type": "tag",
+        "placeholder": "",
+        "default": null
+      }
+    ],
+    "type": "group",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": []
+  },
+  {
+    "name": "display_image",
+    "label": "Display image?",
+    "required": false,
+    "locked": false,
+    "type": "boolean",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": true
+  },
+  {
+    "name": "posts_to_display",
+    "label": "# of posts to display",
+    "required": false,
+    "locked": false,
+    "display": "text",
+    "step": 1,
+    "type": "number",
+    "min": 0,
+    "max": 10,
+    "inline_help_text": "",
+    "help_text": "",
+    "default": 6
+  },
+  {
+    "name": "blog_link_label",
+    "label": "Blog link label",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "validation_error_message": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text",
+    "placeholder": "",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": "See All"
+  },
+  {
+    "name": "settings",
+    "label": "Additional settings",
+    "required": false,
+    "locked": false,
+    "children": [
+      {
+        "name": "is_hidden",
+        "label": "Hide the module?",
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "inline_help_text": "If checked, the module will be hidden from view. This is useful for when you want to apply custom smart rules to show or hide the module on certain views.",
+        "help_text": "",
+        "default": false
+      },
+      {
+        "name": "width",
+        "label": "Width",
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "inline_help_text": "Determines the allowable width of the container.",
+        "help_text": "",
+        "choices": [
+          [
+            "no-max",
+            "No maximum"
+          ],
+          [
+            "full",
+            "Full"
+          ],
+          [
+            "wide",
+            "Wide"
+          ],
+          [
+            "snug",
+            "Snug"
+          ],
+          [
+            "narrow",
+            "Narrow"
+          ],
+          [
+            "tight",
+            "Tight"
+          ]
+        ],
+        "type": "choice",
+        "placeholder": "",
+        "default": "full"
+      }
+    ],
+    "type": "group",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": null
+  }
+]

@@ -1,0 +1,202 @@
+[
+  {
+    "name": "logo",
+    "label": "Logo",
+    "required": false,
+    "locked": false,
+    "inline_help_text": "",
+    "help_text": "",
+    "responsive": false,
+    "resizable": false,
+    "show_loading": false,
+    "type": "image",
+    "default": null
+  },
+  {
+    "name": "bg_image",
+    "label": "Background image",
+    "required": false,
+    "locked": false,
+    "inline_help_text": "",
+    "help_text": "",
+    "responsive": false,
+    "resizable": false,
+    "show_loading": false,
+    "type": "image",
+    "default": null
+  },
+  {
+    "name": "menus",
+    "label": "Menus",
+    "required": false,
+    "locked": false,
+    "occurrence": {
+      "min": null,
+      "max": 3,
+      "sorting_label_field": null,
+      "default": null
+    },
+    "children": [
+      {
+        "name": "menu_id",
+        "label": "Menu",
+        "required": false,
+        "locked": false,
+        "inline_help_text": "",
+        "help_text": "",
+        "type": "menu",
+        "placeholder": "",
+        "default": null
+      }
+    ],
+    "type": "group",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": []
+  },
+  {
+    "name": "social_links",
+    "label": "Social links",
+    "required": false,
+    "locked": false,
+    "children": [
+      {
+        "name": "linkedin",
+        "label": "Linkedin",
+        "required": false,
+        "locked": false,
+        "supported_types": [
+          "EXTERNAL",
+          "CONTENT",
+          "FILE",
+          "EMAIL_ADDRESS",
+          "BLOG"
+        ],
+        "type": "link",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": null
+      },
+      {
+        "name": "facebook",
+        "label": "Facebook",
+        "required": false,
+        "locked": false,
+        "supported_types": [
+          "EXTERNAL",
+          "CONTENT",
+          "FILE",
+          "EMAIL_ADDRESS",
+          "BLOG"
+        ],
+        "type": "link",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": null
+      },
+      {
+        "name": "twitter",
+        "label": "Twitter",
+        "required": false,
+        "locked": false,
+        "supported_types": [
+          "EXTERNAL",
+          "CONTENT",
+          "FILE",
+          "EMAIL_ADDRESS",
+          "BLOG"
+        ],
+        "type": "link",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": null
+      },
+      {
+        "name": "instagram",
+        "label": "Instagram",
+        "required": false,
+        "locked": false,
+        "supported_types": [
+          "EXTERNAL",
+          "CONTENT",
+          "FILE",
+          "EMAIL_ADDRESS",
+          "BLOG"
+        ],
+        "type": "link",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": null
+      }
+    ],
+    "type": "group",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": {}
+  },
+  {
+    "name": "legal",
+    "label": "Legal",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "validation_error_message": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text",
+    "placeholder": "",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": "© {{ year }} IQVIA. All rights reserved."
+  },
+  {
+    "name": "legal_links",
+    "label": "Legal links",
+    "required": false,
+    "locked": false,
+    "occurrence": {
+      "min": null,
+      "max": 3,
+      "sorting_label_field": null,
+      "default": null
+    },
+    "children": [
+      {
+        "name": "link",
+        "label": "Link",
+        "required": false,
+        "locked": false,
+        "supported_types": [
+          "EXTERNAL",
+          "CONTENT",
+          "FILE",
+          "EMAIL_ADDRESS",
+          "BLOG"
+        ],
+        "type": "link",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": null
+      },
+      {
+        "name": "link_label",
+        "label": "Link label",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "validation_error_message": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": null
+      }
+    ],
+    "type": "group",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": []
+  }
+]

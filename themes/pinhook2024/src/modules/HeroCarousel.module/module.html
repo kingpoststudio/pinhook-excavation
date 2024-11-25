@@ -1,0 +1,68 @@
+{% if !module.settings.is_hidden %}
+
+<iqvia-hero-carousel>
+
+  {% for slide in module.slides %}
+  {% set gradient = slide.gradient.is_enabled ? 'gradient="' ~ slide.gradient.gradient ~ '"' : null %}
+  <iqvia-hero-banner {{ condensed }} {{ gradient }}>
+
+    {# Background Image #}
+    {% if slide.bg_type == 'image' and slide.bg_image.src %}
+    <img slot="background" src="{{ slide.bg_image.src }}" alt="{{ slide.bg_image.alt || slide.title }}" width="1440"
+      loading="eager" />
+    {% elif slide.bg_type == 'video' and slide.bg_video %}
+    <video slot="background" src="{{ slide.bg_video }}" autoplay loop muted playsinline></video>
+    {% endif %}
+
+    {# Content Block #}
+    <tui-content class="text-iqvia-white" slot="content" alignment="start" gap="md">
+      {% if slide.eyebrow %}
+      <p class="eyebrow" slot="eyebrow">{{ slide.eyebrow }}</p>
+      {% endif %}
+
+      {% if slide.title %}
+      <h1 slot="title">{{ slide.title }}</h1>
+      {% endif %}
+
+      {% if slide.description %}
+      <div slot="description" class="as-body">{{ slide.description }}</div>
+      {% endif %}
+
+      {% if slide.links|length > 0 %}
+      <div class="flex flex-col md:flex-row gap-base mt-sm" slot="cta">
+        {% for link in slide.links %}
+        {% if link.is_cta %}
+        {% cta 'hero_banner_cta' guid="{{ link.cta_id }}" %}
+        {% else %}
+        {% set target = link.open_in_new_tab ? '_blank' : '_self' %}
+
+        <a class="button" href="{{ link.link.url.href }}" target="{{ target }}">
+          {{ link.link_label }}
+        </a>
+        {% endif %}
+        {% endfor %}
+      </div>
+      {% endif %}
+    </tui-content>
+
+    {# Featured Image #}
+    {% if slide.featured_image.src %}
+
+    {% if slide.is_featured_img_pill %}
+    <iqvia-img-pill slot="image" variant="arch" direction="right-to-left">
+      <img src="{{ slide.featured_image.src }}" alt="{{ slide.featured_image.alt || slide.title }}" width="640"
+        loading="eager" />
+    </iqvia-img-pill>
+    {% else %}
+    <img slot="image" src="{{ slide.featured_image.src }}" alt="{{ slide.featured_image.alt || slide.title }}"
+      width="640" loading="eager" />
+    {% endif %}
+
+    {% endif %}
+
+  </iqvia-hero-banner>
+  {% endfor %}
+
+</iqvia-hero-carousel>
+
+{% endif %}

@@ -1,0 +1,45 @@
+<!--
+  templateType: none
+-->
+
+<!doctype html>
+<html lang="{{ html_lang }}" {{ html_lang_dir }}>
+
+<head>
+  <meta charset="utf-8">
+  {% if dynamic_page_hubdb_row.hs_name or page_meta.html_title %}
+  <title>{{ dynamic_page_hubdb_row.hs_name or page_meta.html_title }}</title>
+  {% endif %}
+
+  {% if site_settings.favicon_src %}
+  <link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />
+  {% endif %}
+
+  <meta name="description" content="{{ page_meta.meta_description }}">
+
+  {{ require_js(get_asset_url('../../build/main.js'), { async: false, position: 'head' }) }}
+  {{ require_css(get_asset_url("../../build/main.css")) }}
+
+  {% if template_css %}
+  {{ require_css(get_asset_url(template_css)) }}
+  {% endif %}
+
+  {{ standard_header_includes }}
+</head>
+
+<body class="{{ builtin_body_classes }}">
+  {% block header %}
+  {% module "global_header" path="../../modules/globals/Header.module", label="Header" %}
+  {% endblock header %}
+
+  {% block body %}
+  {% endblock body %}
+
+  {% block footer %}
+  {% module "global_footer" path="../../modules/globals/Footer.module", label="Footer" %}
+  {% endblock footer %}
+</body>
+
+{{ standard_footer_includes }}
+
+</html>

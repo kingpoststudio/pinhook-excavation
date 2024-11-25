@@ -1,0 +1,5 @@
+<iqvia-anchor-bar>
+  {% for anchor in module.anchor_links %}
+  <a href="#{{ anchor.anchor_id }}">{{ anchor.anchor_label }}</a>
+  {% endfor %}
+</iqvia-anchor-bar>

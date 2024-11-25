@@ -1,0 +1,324 @@
+[
+  {
+    "name": "slides",
+    "label": "Slides",
+    "required": false,
+    "locked": false,
+    "occurrence": {
+      "min": null,
+      "max": null,
+      "sorting_label_field": "slide.title",
+      "default": null
+    },
+    "children": [
+      {
+        "name": "eyebrow",
+        "label": "Eyebrow",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "validation_error_message": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": null
+      },
+      {
+        "id": "slide.title",
+        "name": "title",
+        "label": "Title",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "validation_error_message": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": null
+      },
+      {
+        "name": "description",
+        "label": "Description",
+        "required": false,
+        "locked": false,
+        "type": "richtext",
+        "inline_help_text": "",
+        "help_text": "",
+        "enabled_features": [
+          "indents",
+          "charmap",
+          "advanced_emphasis",
+          "standard_emphasis",
+          "anchor",
+          "colors",
+          "block",
+          "link",
+          "image",
+          "lists",
+          "alignment",
+          "lineheight"
+        ],
+        "default": null
+      },
+      {
+        "name": "links",
+        "label": "Links",
+        "required": false,
+        "locked": false,
+        "occurrence": {
+          "min": null,
+          "max": 2,
+          "sorting_label_field": null,
+          "default": null
+        },
+        "children": [
+          {
+            "id": "is_cta",
+            "name": "is_cta",
+            "label": "Use a CTA?",
+            "required": false,
+            "locked": false,
+            "type": "boolean",
+            "inline_help_text": "If checked, you will be able to select a CTA instead of generating a button link.",
+            "help_text": "",
+            "default": true
+          },
+          {
+            "name": "link",
+            "label": "Link",
+            "required": false,
+            "locked": false,
+            "supported_types": [
+              "EXTERNAL",
+              "CONTENT",
+              "FILE",
+              "EMAIL_ADDRESS",
+              "BLOG"
+            ],
+            "type": "link",
+            "inline_help_text": "",
+            "help_text": "",
+            "visibility": {
+              "controlling_field": "is_cta",
+              "controlling_value_regex": false
+            },
+            "default": null
+          },
+          {
+            "name": "link_label",
+            "label": "Link label",
+            "required": false,
+            "locked": false,
+            "validation_regex": "",
+            "validation_error_message": "",
+            "allow_new_line": false,
+            "show_emoji_picker": false,
+            "type": "text",
+            "placeholder": "",
+            "inline_help_text": "",
+            "help_text": "",
+            "visibility": {
+              "controlling_field": "is_cta",
+              "controlling_value_regex": false
+            },
+            "default": "Learn more"
+          },
+          {
+            "name": "cta_id",
+            "label": "CTA",
+            "required": false,
+            "locked": false,
+            "inline_help_text": "",
+            "help_text": "",
+            "type": "cta",
+            "visibility": {
+              "controlling_field": "is_cta",
+              "controlling_value_regex": true
+            },
+            "default": null
+          }
+        ],
+        "type": "group",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": []
+      },
+      {
+        "name": "featured_image",
+        "label": "Featured image",
+        "required": false,
+        "locked": false,
+        "inline_help_text": "",
+        "help_text": "",
+        "responsive": false,
+        "resizable": false,
+        "show_loading": false,
+        "type": "image",
+        "default": null
+      },
+      {
+        "name": "is_featured_img_pill",
+        "label": "Is the featured image a pill?",
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "inline_help_text": "If enabled, the featured image will be displayed as a pill shape.",
+        "help_text": "",
+        "default": false
+      },
+      {
+        "id": "bg_type",
+        "name": "bg_type",
+        "label": "Background type",
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "inline_help_text": "",
+        "help_text": "",
+        "choices": [
+          [
+            "image",
+            "Image"
+          ],
+          [
+            "video",
+            "Video"
+          ]
+        ],
+        "type": "choice",
+        "placeholder": "",
+        "default": "image"
+      },
+      {
+        "name": "bg_image",
+        "label": "Background image",
+        "required": false,
+        "locked": false,
+        "inline_help_text": "",
+        "help_text": "",
+        "responsive": false,
+        "resizable": false,
+        "show_loading": false,
+        "type": "image",
+        "visibility": {
+          "controlling_field": "bg_type",
+          "controlling_value_regex": "image",
+          "operator": "EQUAL"
+        },
+        "default": null
+      },
+      {
+        "name": "bg_video",
+        "label": "Background video (URL)",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "validation_error_message": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
+        "inline_help_text": "Provide a URL to a video - you can host the video in the HubSpot file system.",
+        "help_text": "",
+        "visibility": {
+          "controlling_field": "bg_type",
+          "controlling_value_regex": "video",
+          "operator": "EQUAL"
+        },
+        "default": null
+      },
+      {
+        "name": "gradient",
+        "label": "Gradient (overlay)",
+        "required": false,
+        "locked": false,
+        "children": [
+          {
+            "name": "is_enabled",
+            "label": "Enable gradient overlay?",
+            "required": false,
+            "locked": false,
+            "type": "boolean",
+            "inline_help_text": "",
+            "help_text": "",
+            "default": false
+          },
+          {
+            "name": "gradient",
+            "label": "Gradient (color)",
+            "required": false,
+            "locked": false,
+            "display": "select",
+            "inline_help_text": "",
+            "help_text": "",
+            "choices": [
+              [
+                "gradient-indigo-to-transparent",
+                "Indigo"
+              ],
+              [
+                "gradient-dark-blue-to-transparent",
+                "Dark Blue"
+              ],
+              [
+                "gradient-blue-to-transparent",
+                "Blue"
+              ],
+              [
+                "gradient-teal-to-transparent",
+                "Teal"
+              ],
+              [
+                "gradient-green-to-transparent",
+                "Green"
+              ],
+              [
+                "gradient-charcoal-to-transparent",
+                "Charcoal"
+              ]
+            ],
+            "type": "choice",
+            "placeholder": "",
+            "default": "gradient-indigo-to-transparent"
+          }
+        ],
+        "type": "group",
+        "inline_help_text": "Settings for the Hero Banner's gradient. This is not act as the background of the banner - it is an overlay on top of the image.",
+        "help_text": "",
+        "default": null
+      }
+    ],
+    "type": "group",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": []
+  },
+  {
+    "name": "settings",
+    "label": "Additional settings",
+    "required": false,
+    "locked": false,
+    "children": [
+      {
+        "name": "is_hidden",
+        "label": "Hide the module?",
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "inline_help_text": "If checked, the module will be hidden from view. This is useful for when you want to apply custom smart rules to show or hide the module on certain views.",
+        "help_text": "",
+        "default": false
+      }
+    ],
+    "type": "group",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": null
+  }
+]

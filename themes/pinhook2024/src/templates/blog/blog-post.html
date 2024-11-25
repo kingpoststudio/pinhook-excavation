@@ -1,0 +1,87 @@
+<!--
+    templateType: blog_post
+    isAvailableForNewContent: true
+    label: Blog Post
+-->
+
+{% boolean 'tags_enabled' label='Display post tags?', value=false, export_to_template_context=true, no_wrapper=true %}
+{% set tags_enabled = widget_data.tags_enabled.value %}
+
+{% boolean 'date_enabled' label='Display post date?', value=true, export_to_template_context=true, no_wrapper=true %}
+{% set date_enabled = widget_data.date_enabled.value %}
+
+{% boolean 'author_enabled' label='Display post author?', value=true, export_to_template_context=true, no_wrapper=true
+%}
+{% set author_enabled = widget_data.author_enabled.value %}
+
+{% set parent_blog_url = content.parent_blog.absolute_url %}
+
+
+{% extends "../layouts/base.html" %}
+{% block body %}
+
+<main>
+  {%
+  module "blog_post_hero_banner"
+  path="../../modules/HeroBanner"
+  eyebrow="Blog",
+  title="{{ content.title }}",
+  as_h2={{ content.title|length > 60 }},
+  description="{{ content.meta_description }}",
+  gradient={
+  is_enabled: true,
+  gradient: "gradient-charcoal-to-transparent"
+  },
+  breadcrumbs=[
+  { link: { url: { href: "/" } }, link_label: "Home" },
+  { link: { url: { href: "/blog" } }, link_label: "Blog" },
+  { link_label: content.title }
+  ],
+  featured_image={
+  src: content.featured_image,
+  alt: content.title
+  }
+  is_featured_img_pill=false,
+  extra_classes="bg-iqvia-gray"
+  %}
+
+  {%
+  module 'share_bar'
+  path='../../modules/ShareBar'
+  %}
+
+  <tui-container width="snug" py="xl">
+    <div class="basis-full flex flex-col gap-sm">
+      {% if tags_enabled %}
+      <div class="flex flex-col md:flex-row gap-base">
+        {% for tag in content.tag_list %}
+        <a class="tag" href="{{ parent_blog_url }}/tag/{{ tag.slug }}">{{ tag.name }}</a>
+        {% endfor %}
+      </div>
+      {% endif %}
+      <div class="flex flex-row gap-2xs">
+        {% if date_enabled %}
+        <p>{{ content.publish_date|datetimeformat('%B %e, %Y') }}</p>
+        {% endif %}
+        {% if author_enabled and content.author %}
+        <p>{{ "| " ~ content.author }}</p>
+        {% endif %}
+      </div>
+    </div>
+    <div class="basis-full">
+      {{ content.post_body }}
+    </div>
+  </tui-container>
+
+  <div class="mb-lg">
+    {%
+    module 'related_blog_posts'
+    path='../../modules/blog/RelatedBlogPosts',
+    title='<span class="text-md uppercase">You may also be interested in</span>',
+    blog="{{ content.parent_blog.id }}",
+    filter_by_tags="{{ content.tag_list[0].slug }}",
+    %}
+  </div>
+</main>
+
+{% endblock body %}
