@@ -1,72 +1,53 @@
 {% if !module.settings.is_hidden %}
 
-{% set bg_color = module.bg_type == 'color' ? 'bg-' ~ module.bg_color : null %}
+{% set condensed = module.condensed ? 'condensed' : null %}
+{% set overlay = module.overlay_enabled ? "overlay" : null %}
 
-{% set condensed = module.condensed ? 'condensed' : undefine %}
-{% set overlay = module.overlay_enabled ? "overlay" : undefined %}
+<px-hero-banner {{ condensed }} {{ overlay }}>
+  {% if module.img.src %}
+  <img slot="background" src="{{ module.img.src }}" alt="{{ module.img.alt }}" />
+  {% endif %}
 
-<div class="{{ bg_color }}">
+  <tui-content class="text-white" slot="content" alignment="start" gap="md">
 
-  <px-hero-banner overlay>
-    <img src="https://picsum.photos/id/153/1920/1080" slot="background" />
-    <tui-content slot="content" alignment="start" gap="md">
-      <div slot="eyebrow">
-        <span class="fw-bold" href="#">Pinhook Excavation</span>
-      </div>
-      <h1 slot="title" class="fw-bold">Groundwork for a Rock-Solid Future.</h1>
-      <div slot="description" class="text-md">
-        <p>Pinhook Excavation specializes in professional site preparation, land clearing, grading, and foundation
-          excavation tailored to the unique demands of the Appalachian region. With a focus on precision, safety, and
-          efficiency, we deliver dependable solutions for residential, commercial, and industrial projects. Our
-          expertise ensures every project starts on solid ground.</p>
-      </div>
-      <a class="button" slot="cta">Our Services</a>
-    </tui-content>
-  </px-hero-banner>
+    {# Breadcrumbs #}
+    {% if module.breadcrumbs|length %}
+    <div slot="eyebrow" class="breadcrumbs">
+      {% for crumb in module.breadcrumbs %}
 
-  <px-hero-banner {{ condensed }} {{ gradient }}>
+      {% if !crumb.link.url.href %}
+      <span class="fw-bold">{{ crumb.link_label }}</span>
+      {% else %}
+      {% set target = crumb.link.open_in_new_tab ? '_blank' : '_self' %}
+      <a class="theme-white" href="{{ crumb.link.url.href }}" target="{{ target }}">
+        {{ crumb.link_label }}
+      </a>
+      {% endif %}
 
-    {# Background Image #}
-    {% if module.bg_type == 'image' and module.bg_image.src %}
-    <img slot="background" src="{{ module.bg_image.src }}" alt="{{ module.bg_image.alt || module.title }}" width="1280"
-      loading="eager" />
-    {% elif module.bg_type == 'video' and module.bg_video %}
-    <video slot="background" src="{{ module.bg_video }}" autoplay loop muted playsinline></video>
+      {% if not loop.last %}
+      <span>/</span>
+      {% endif %}
+
+      {% endfor %}
+    </div>
     {% endif %}
 
-    {# Content Block #}
-    <tui-content class="text-iqvia-white" slot="content" alignment="start" gap="md">
-      {% if module.eyebrow %}
-      <p class="eyebrow" slot="eyebrow">{{ module.eyebrow }}</p>
-      {% endif %}
+    {% if module.title %}
+    {% set is_h2 = module.as_h2 ? "as-h2" : undefined %}
+    <h1 slot="title" class="fw-bold {{ is_h2 }}">{{ module.title }}</h1>
+    {% endif %}
 
-      {% if module.title %}
-      {% set title_class = module.as_h2 ? "as-h2" : "as-h1" %}
-      <h1 slot="title" class="{{ title_class }}">{{ module.title }}</h1>
-      {% endif %}
+    {% if module.description %}
+    <div slot="description" class="text-md">
+      {{ module.description }}
+    </div>
+    {% endif %}
 
-      {% if module.description %}
-      <div slot="description" class="as-body">{{ module.description }}</div>
-      {% endif %}
+    {% if module.link.url.href %}
+    <a class="button" slot="cta">{{ module.link_label }}</a>
+    {% endif %}
 
-      {% if module.links|length > 0 %}
-      <div class="flex flex-col md:flex-row gap-base mt-sm" slot="cta">
-        {% for link in module.links %}
-        {% if link.is_cta %}
-        {% cta 'hero_banner_cta' guid="{{ link.cta_id }}" %}
-        {% else %}
-        {% set target = link.open_in_new_tab ? '_blank' : '_self' %}
-
-        <a class="button" href="{{ link.link.url.href }}" target="{{ target }}">
-          {{ link.link_label }}
-        </a>
-        {% endif %}
-        {% endfor %}
-      </div>
-      {% endif %}
-    </tui-content>
-
-  </px-hero-banner>
-</div>
+  </tui-content>
+</px-hero-banner>
 
 {% endif %}

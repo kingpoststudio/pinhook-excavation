@@ -10,6 +10,16 @@
     "default": false
   },
   {
+    "name": "overlay",
+    "label": "Overlay visible?",
+    "required": false,
+    "locked": false,
+    "type": "boolean",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": false
+  },
+  {
     "name": "title",
     "label": "Title",
     "required": false,
