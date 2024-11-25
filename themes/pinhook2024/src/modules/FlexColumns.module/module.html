@@ -9,7 +9,7 @@
 {% set bg_style = column.settings.bg_color.color ? 'background:{{ column.settings.bg_color.color }};' : null %}
 
 <div style="{{ bg_style }}{{ px_style }}{{ py_style }}{{ flex_style }}">
-  <iqvia-animate animation="{{ animation }}">
+  <px-animate animation="{{ animation }}">
     <div class="as-{{ column.type }} mx-auto">
 
       {# Content #}
@@ -78,7 +78,7 @@
           <div class="dialog__header">
             <h3>{{ column.form_dialog_title }}</h3>
             <tui-dialog-action action="close" dialog-id="{{ form_id }}">
-              <iqvia-icon icon="cross"></iqvia-icon>
+              <px-icon icon="cross"></px-icon>
             </tui-dialog-action>
           </div>
           <div class="dialog__body">
@@ -110,34 +110,13 @@
       %}
       {% endif %}
 
-      {# Image Pill #}
-      {% elif column.type == 'pill' %}
-
-      {% if column.img_accent.img_accent_enabled %}
-      <iqvia-img-accent tr-type="{{ column.img_accent.tr_type }}" bl-type="{{ column.img_accent.bl_type }}"
-        tr-color="{{ column.img_accent.tr_color }}" bl-color="{{ column.img_accent.bl_color }}">
-        <iqvia-img-pill variant="{{ column.pill_variant }}" direction="{{ column.pill_direction }}">
-          <img src="{{ column.image.src }}" alt="{{ column.image.alt }}" width="560" />
-        </iqvia-img-pill>
-      </iqvia-img-accent>
-      {% else %}
-      <iqvia-img-pill variant="{{ column.pill_variant }}" direction="{{ column.pill_direction }}">
-        <img src="{{ column.image.src }}" alt="{{ column.image.alt }}" width="560" />
-      </iqvia-img-pill>
-      {% endif %}
-
       {# Image #}
       {% elif column.type == 'image' %}
       {% set image_styles = column.img_radius_disabled ? "border-radius:0;" : "border-radius:1rem;" %}
 
       <div class="flex flex-col gap-sm">
         <div>{{ column.media_title }}</div>
-        {% if column.img_accent.img_accent_enabled %}
-        <iqvia-img-accent tr-type="{{ column.img_accent.tr_type }}" bl-type="{{ column.img_accent.bl_type }}"
-          tr-color="{{ column.img_accent.tr_color }}" bl-color="{{ column.img_accent.bl_color }}">
-          <img src="{{ column.image.src }}" alt="{{ column.image.alt }}" style="{{ image_styles }}" />
-        </iqvia-img-accent>
-        {% else %}
+        {% if column.image.src %}
         <img src="{{ column.image.src }}" alt="{{ column.image.alt }}" style="{{ image_styles }}" />
         {% endif %}
         <div>{{ column.media_description }}</div>
@@ -156,7 +135,7 @@
       {% for accordion in column.accordions %}
       <tui-accordion>
         <div slot="header">
-          <iqvia-icon icon="chevron" style="width:1rem;"></iqvia-icon>
+          <px-icon icon="chevron" style="width:1rem;"></px-icon>
           <h5>{{ accordion.title }}</h5>
         </div>
         <div slot="content">{{ accordion.content }}</div>
@@ -165,7 +144,7 @@
 
       {% endif %}
     </div>
-  </iqvia-animate>
+  </px-animate>
 </div>
 {% endmacro -%}
 
