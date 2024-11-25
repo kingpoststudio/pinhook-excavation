@@ -1,68 +1,58 @@
 {% if !module.settings.is_hidden %}
 
-<iqvia-hero-carousel>
+<px-hero-carousel>
 
   {% for slide in module.slides %}
-  {% set gradient = slide.gradient.is_enabled ? 'gradient="' ~ slide.gradient.gradient ~ '"' : null %}
-  <iqvia-hero-banner {{ condensed }} {{ gradient }}>
+  {% set overlay = module.overlay_enabled ? "overlay" : null %}
 
-    {# Background Image #}
-    {% if slide.bg_type == 'image' and slide.bg_image.src %}
-    <img slot="background" src="{{ slide.bg_image.src }}" alt="{{ slide.bg_image.alt || slide.title }}" width="1440"
-      loading="eager" />
-    {% elif slide.bg_type == 'video' and slide.bg_video %}
-    <video slot="background" src="{{ slide.bg_video }}" autoplay loop muted playsinline></video>
+  <px-hero-banner {{ overlay }}>
+    {% if slide.img.src %}
+    <img slot="background" src="{{ slide.img.src }}" alt="{{ slide.img.alt }}" />
     {% endif %}
 
-    {# Content Block #}
-    <tui-content class="text-iqvia-white" slot="content" alignment="start" gap="md">
-      {% if slide.eyebrow %}
-      <p class="eyebrow" slot="eyebrow">{{ slide.eyebrow }}</p>
-      {% endif %}
+    <tui-content class="text-white" slot="content" alignment="start" gap="md">
 
-      {% if slide.title %}
-      <h1 slot="title">{{ slide.title }}</h1>
-      {% endif %}
+      {# Breadcrumbs #}
+      {% if slide.breadcrumbs|length %}
+      <div slot="eyebrow" class="breadcrumbs">
+        {% for crumb in slide.breadcrumbs %}
 
-      {% if slide.description %}
-      <div slot="description" class="as-body">{{ slide.description }}</div>
-      {% endif %}
-
-      {% if slide.links|length > 0 %}
-      <div class="flex flex-col md:flex-row gap-base mt-sm" slot="cta">
-        {% for link in slide.links %}
-        {% if link.is_cta %}
-        {% cta 'hero_banner_cta' guid="{{ link.cta_id }}" %}
+        {% if !crumb.link.url.href %}
+        <span class="fw-bold">{{ crumb.link_label }}</span>
         {% else %}
-        {% set target = link.open_in_new_tab ? '_blank' : '_self' %}
-
-        <a class="button" href="{{ link.link.url.href }}" target="{{ target }}">
-          {{ link.link_label }}
+        {% set target = crumb.link.open_in_new_tab ? '_blank' : '_self' %}
+        <a class="theme-white" href="{{ crumb.link.url.href }}" target="{{ target }}">
+          {{ crumb.link_label }}
         </a>
         {% endif %}
+
+        {% if not loop.last %}
+        <span>/</span>
+        {% endif %}
+
         {% endfor %}
       </div>
       {% endif %}
+
+      {% if slide.title %}
+      {% set is_h2 = slide.as_h2 ? "as-h2" : undefined %}
+      <h1 slot="title" class="fw-bold {{ is_h2 }}">{{ slide.title }}</h1>
+      {% endif %}
+
+      {% if slide.description %}
+      <div slot="description" class="text-md">
+        {{ slide.description }}
+      </div>
+      {% endif %}
+
+      {% if slide.link.url.href %}
+      <a class="button" slot="cta">{{ slide.link_label }}</a>
+      {% endif %}
+
     </tui-content>
-
-    {# Featured Image #}
-    {% if slide.featured_image.src %}
-
-    {% if slide.is_featured_img_pill %}
-    <iqvia-img-pill slot="image" variant="arch" direction="right-to-left">
-      <img src="{{ slide.featured_image.src }}" alt="{{ slide.featured_image.alt || slide.title }}" width="640"
-        loading="eager" />
-    </iqvia-img-pill>
-    {% else %}
-    <img slot="image" src="{{ slide.featured_image.src }}" alt="{{ slide.featured_image.alt || slide.title }}"
-      width="640" loading="eager" />
-    {% endif %}
-
-    {% endif %}
-
-  </iqvia-hero-banner>
+  </px-hero-banner>
   {% endfor %}
 
-</iqvia-hero-carousel>
+</px-hero-carousel>
 
 {% endif %}
