@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+  width: 100%;
+  min-height: 32rem;
+  background: var(--color-black);
+
+  > .top,
+  > .bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--space-xl);
+    width: 100%;
+    max-width: var(--page-max-width);
+    padding: var(--space-xl);
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
+}
