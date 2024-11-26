@@ -1,7 +1,7 @@
 {% if !module.settings.is_hidden %}
 
 {% set condensed = module.condensed ? 'condensed' : null %}
-{% set overlay = module.overlay_enabled ? "overlay" : null %}
+{% set overlay = module.overlay ? "overlay" : null %}
 
 <px-hero-banner {{ condensed }} {{ overlay }}>
   {% if module.img.src %}
@@ -43,8 +43,14 @@
     </div>
     {% endif %}
 
-    {% if module.link.url.href %}
-    <a class="button" slot="cta">{{ module.link_label }}</a>
+    {% if module.links|length > 0 %}
+    <div slot="cta" class="flex flex-col md:flex-row gap-sm">
+      {% for link in module.links %}
+      {% if link.url.href and link.link_label %}
+      <a class="button" href="{{ link.url.href }}">{{ link.link_label }}</a>
+      {% endif %}
+      {% endfor %}
+    </div>
     {% endif %}
 
   </tui-content>
