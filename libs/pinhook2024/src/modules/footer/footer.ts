@@ -3,6 +3,8 @@ import styles from "./footer.css?inline";
 const { LitElement, html, unsafeCSS } = window.Lit;
 
 export class Footer extends LitElement {
+  static styles = unsafeCSS(styles);
+
   render() {
     return html`
     <footer>

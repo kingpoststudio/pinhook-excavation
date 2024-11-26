@@ -18,6 +18,7 @@ footer {
     width: 100%;
     max-width: var(--page-max-width);
     padding: var(--space-xl);
+    margin: 0 auto;
 
     @media (min-width: 768px) {
       flex-direction: row;
