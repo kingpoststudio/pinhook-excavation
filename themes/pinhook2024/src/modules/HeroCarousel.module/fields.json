@@ -7,27 +7,21 @@
     "occurrence": {
       "min": null,
       "max": null,
-      "sorting_label_field": "slide.title",
+      "sorting_label_field": null,
       "default": null
     },
     "children": [
       {
-        "name": "eyebrow",
-        "label": "Eyebrow",
+        "name": "overlay",
+        "label": "Overlay visible?",
         "required": false,
         "locked": false,
-        "validation_regex": "",
-        "validation_error_message": "",
-        "allow_new_line": false,
-        "show_emoji_picker": false,
-        "type": "text",
-        "placeholder": "",
-        "inline_help_text": "",
+        "type": "boolean",
+        "inline_help_text": "If checked, a semi-transparent overlay will be applied to the background image.",
         "help_text": "",
-        "default": null
+        "default": false
       },
       {
-        "id": "slide.title",
         "name": "title",
         "label": "Title",
         "required": false,
@@ -41,6 +35,16 @@
         "inline_help_text": "",
         "help_text": "",
         "default": null
+      },
+      {
+        "name": "as_h2",
+        "label": "Display title text as H2?",
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "inline_help_text": "If enabled, the size of the title text will be decreased to match the H2 style.",
+        "help_text": "",
+        "default": false
       },
       {
         "name": "description",
@@ -79,17 +83,6 @@
         },
         "children": [
           {
-            "id": "is_cta",
-            "name": "is_cta",
-            "label": "Use a CTA?",
-            "required": false,
-            "locked": false,
-            "type": "boolean",
-            "inline_help_text": "If checked, you will be able to select a CTA instead of generating a button link.",
-            "help_text": "",
-            "default": true
-          },
-          {
             "name": "link",
             "label": "Link",
             "required": false,
@@ -104,10 +97,6 @@
             "type": "link",
             "inline_help_text": "",
             "help_text": "",
-            "visibility": {
-              "controlling_field": "is_cta",
-              "controlling_value_regex": false
-            },
             "default": null
           },
           {
@@ -123,25 +112,7 @@
             "placeholder": "",
             "inline_help_text": "",
             "help_text": "",
-            "visibility": {
-              "controlling_field": "is_cta",
-              "controlling_value_regex": false
-            },
             "default": "Learn more"
-          },
-          {
-            "name": "cta_id",
-            "label": "CTA",
-            "required": false,
-            "locked": false,
-            "inline_help_text": "",
-            "help_text": "",
-            "type": "cta",
-            "visibility": {
-              "controlling_field": "is_cta",
-              "controlling_value_regex": true
-            },
-            "default": null
           }
         ],
         "type": "group",
@@ -150,148 +121,54 @@
         "default": []
       },
       {
-        "name": "featured_image",
-        "label": "Featured image",
+        "name": "breadcrumbs",
+        "label": "Breadcrumbs",
         "required": false,
         "locked": false,
-        "inline_help_text": "",
-        "help_text": "",
-        "responsive": false,
-        "resizable": false,
-        "show_loading": false,
-        "type": "image",
-        "default": null
-      },
-      {
-        "name": "is_featured_img_pill",
-        "label": "Is the featured image a pill?",
-        "required": false,
-        "locked": false,
-        "type": "boolean",
-        "inline_help_text": "If enabled, the featured image will be displayed as a pill shape.",
-        "help_text": "",
-        "default": false
-      },
-      {
-        "id": "bg_type",
-        "name": "bg_type",
-        "label": "Background type",
-        "required": false,
-        "locked": false,
-        "display": "select",
-        "inline_help_text": "",
-        "help_text": "",
-        "choices": [
-          [
-            "image",
-            "Image"
-          ],
-          [
-            "video",
-            "Video"
-          ]
-        ],
-        "type": "choice",
-        "placeholder": "",
-        "default": "image"
-      },
-      {
-        "name": "bg_image",
-        "label": "Background image",
-        "required": false,
-        "locked": false,
-        "inline_help_text": "",
-        "help_text": "",
-        "responsive": false,
-        "resizable": false,
-        "show_loading": false,
-        "type": "image",
-        "visibility": {
-          "controlling_field": "bg_type",
-          "controlling_value_regex": "image",
-          "operator": "EQUAL"
+        "occurrence": {
+          "min": null,
+          "max": null,
+          "sorting_label_field": null,
+          "default": null
         },
-        "default": null
-      },
-      {
-        "name": "bg_video",
-        "label": "Background video (URL)",
-        "required": false,
-        "locked": false,
-        "validation_regex": "",
-        "validation_error_message": "",
-        "allow_new_line": false,
-        "show_emoji_picker": false,
-        "type": "text",
-        "placeholder": "",
-        "inline_help_text": "Provide a URL to a video - you can host the video in the HubSpot file system.",
-        "help_text": "",
-        "visibility": {
-          "controlling_field": "bg_type",
-          "controlling_value_regex": "video",
-          "operator": "EQUAL"
-        },
-        "default": null
-      },
-      {
-        "name": "gradient",
-        "label": "Gradient (overlay)",
-        "required": false,
-        "locked": false,
         "children": [
           {
-            "name": "is_enabled",
-            "label": "Enable gradient overlay?",
+            "name": "link",
+            "label": "Link",
             "required": false,
             "locked": false,
-            "type": "boolean",
+            "supported_types": [
+              "EXTERNAL",
+              "CONTENT",
+              "FILE",
+              "EMAIL_ADDRESS",
+              "BLOG"
+            ],
+            "type": "link",
             "inline_help_text": "",
             "help_text": "",
-            "default": false
+            "default": null
           },
           {
-            "name": "gradient",
-            "label": "Gradient (color)",
+            "name": "link_label",
+            "label": "Link label",
             "required": false,
             "locked": false,
-            "display": "select",
+            "validation_regex": "",
+            "validation_error_message": "",
+            "allow_new_line": false,
+            "show_emoji_picker": false,
+            "type": "text",
+            "placeholder": "",
             "inline_help_text": "",
             "help_text": "",
-            "choices": [
-              [
-                "gradient-indigo-to-transparent",
-                "Indigo"
-              ],
-              [
-                "gradient-dark-blue-to-transparent",
-                "Dark Blue"
-              ],
-              [
-                "gradient-blue-to-transparent",
-                "Blue"
-              ],
-              [
-                "gradient-teal-to-transparent",
-                "Teal"
-              ],
-              [
-                "gradient-green-to-transparent",
-                "Green"
-              ],
-              [
-                "gradient-charcoal-to-transparent",
-                "Charcoal"
-              ]
-            ],
-            "type": "choice",
-            "placeholder": "",
-            "default": "gradient-indigo-to-transparent"
+            "default": "Learn more"
           }
         ],
         "type": "group",
-        "inline_help_text": "Settings for the Hero Banner's gradient. This is not act as the background of the banner - it is an overlay on top of the image.",
+        "inline_help_text": "",
         "help_text": "",
-        "default": null
+        "default": []
       }
     ],
     "type": "group",

@@ -38,7 +38,7 @@
 {% macro render_article_card(post) %}
 {% set tag = post.tag_list|first %}
 
-<iqvia-article-card href="{{ post.absolute_url }}">
+<px-article-card href="{{ post.absolute_url }}">
   {% if post.featured_image %}
   <img src="{{ post.featured_image }}" slot="media" alt="{{ post.name }}" width="360" />
   {% endif %}
@@ -53,7 +53,7 @@
 
   <h5 slot="title" class="fw-bold">{{ post.name }}</h5>
   <span slot="description">{{ post.meta_description|truncate(80) }}</span>
-</iqvia-article-card>
+</px-article-card>
 {% endmacro %}
 
 
