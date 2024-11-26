@@ -300,3 +300,9 @@ div.as-accordion {
 .border-lg {
   border-width: 0.25rem;
 }
+
+/* Image slant class, clip-path to a tall rhombus */
+.slant {
+  aspect-ratio: 4 / 5;
+  clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+}

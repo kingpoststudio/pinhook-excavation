@@ -1,8 +1,8 @@
 :root {
-  --scale: min(15px, 3vw);
+  --scale: min(16px, 3vw);
 
   @media (min-width: 768px) {
-    --scale: min(15px, 1.25vw);
+    --scale: min(18px, 1.25vw);
   }
 
   --space-0: 0;

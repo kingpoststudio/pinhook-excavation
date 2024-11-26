@@ -108,22 +108,30 @@
 
       {# Image #}
       {% elif column.type == 'image' %}
-      {% set image_styles = column.img_radius_disabled ? "border-radius:0;" : "border-radius:1rem;" %}
+      {% set slant_class = column.img_slant ? "slant" : undefined %}
 
       <div class="flex flex-col gap-sm">
+        {% if column.media_title %}
         <div>{{ column.media_title }}</div>
-        {% if column.image.src %}
-        <img src="{{ column.image.src }}" alt="{{ column.image.alt }}" style="{{ image_styles }}" />
         {% endif %}
+        {% if column.image.src %}
+        <img src="{{ column.image.src }}" alt="{{ column.image.alt }}" class="{{ slant_class }}" />
+        {% endif %}
+        {% if column.media_description %}
         <div>{{ column.media_description }}</div>
+        {% endif %}
       </div>
 
       {# Video #}
       {% elif column.type == 'video' %}
       <div class="flex flex-col gap-sm">
+        {% if column.media_title %}
         <div>{{ column.media_title }}</div>
+        {% endif %}
         {% video_player 'content_video' player_id="{{ column.video.player_id }}" %}
+        {% if column.media_description %}
         <div>{{ column.media_description }}</div>
+        {% endif %}
       </div>
 
       {# Accordion #}

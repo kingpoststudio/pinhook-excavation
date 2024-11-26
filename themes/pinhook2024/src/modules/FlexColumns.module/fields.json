@@ -455,12 +455,12 @@
         "default": null
       },
       {
-        "name": "img_radius_disabled",
-        "label": "Disable the image's border radius?",
+        "name": "img_slant",
+        "label": "Slant the image?",
         "required": false,
         "locked": false,
         "type": "boolean",
-        "inline_help_text": "If checked, the image will have square corners instead of the thematic rounded border.",
+        "inline_help_text": "If checked, the image will have a slant effect applied to it.",
         "help_text": "",
         "visibility": {
           "controlling_field": "type",
