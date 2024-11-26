@@ -1,0 +1,73 @@
+[
+  {
+    "name": "quote",
+    "label": "Quote",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "validation_error_message": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text",
+    "placeholder": "",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": null
+  },
+  {
+    "name": "author",
+    "label": "Author",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "validation_error_message": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text",
+    "placeholder": "",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": null
+  },
+  {
+    "name": "position",
+    "label": "Position",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "validation_error_message": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text",
+    "placeholder": "",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": null
+  },
+  {
+    "name": "bg_color",
+    "label": "Background color",
+    "required": false,
+    "locked": false,
+    "display": "select",
+    "inline_help_text": "",
+    "help_text": "",
+    "choices": [
+      [
+        "bg-orange",
+        "Orange"
+      ],
+      [
+        "bg-blue",
+        "Blue"
+      ],
+      [
+        "bg-black",
+        "Black"
+      ]
+    ],
+    "type": "choice",
+    "placeholder": "",
+    "default": "bg-orange"
+  }
+]

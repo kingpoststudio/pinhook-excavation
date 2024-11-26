@@ -1,0 +1,14 @@
+{% set bg_color = module.bg_color or "bg-orange" %}
+
+<div class="bg-orange">
+  <px-quote-card>
+    <px-icon icon="quiltOne" slot="media"></px-icon>
+    <p class="text-lg" slot="quote">{{ module.quote }}</p>
+    <p slot="author" class="text-lg">
+      <span>{{ module.author }}</span>
+      {% if module.position %}
+      <span>, <br /><strong>{{ module.position }}</strong></span>
+      {% endif %}
+    </p>
+  </px-quote-card>
+</div>
