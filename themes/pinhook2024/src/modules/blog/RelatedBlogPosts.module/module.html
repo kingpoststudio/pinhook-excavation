@@ -23,10 +23,10 @@
   <h3 class="basis-full fw-bold text-center">{{ module.title }}</h3>
   {% endif %}
 
-  <iqvia-article-carousel>
+  <px-card-carousel>
     {% for post in related_posts %}
 
-    <iqvia-article-card href="{{ post.absolute_url }}">
+    <px-article-card href="{{ post.absolute_url }}">
       {% if module.display_image %}
       <img src="{{ post.featured_image }}" alt="{{ post.title }}" slot="media" width="360" />
       {% endif %}
@@ -38,7 +38,7 @@
       </div>
       <h5 slot="title" class="fw-bold">{{ post.name }}</h5>
       <span slot="description">{{ post.meta_description|truncate(80) }}</span>
-    </iqvia-article-card>
+    </px-article-card>
 
     {% endfor %}
 
@@ -48,7 +48,7 @@
     </a>
     {% endif %}
 
-  </iqvia-article-carousel>
+  </px-card-carousel>
 
   {% endif %}
 </tui-container>

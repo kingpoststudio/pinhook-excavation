@@ -60,8 +60,6 @@ const clientConfig = ({ portal, autoupload, hsDest }) => ({
     new CopyWebpackPlugin({
       patterns: [
         { from: 'src/modules', to: 'modules', globOptions: { ignore: ['**/*.ts'] } },
-        { from: 'src/images', to: 'images' },
-        { from: 'src/queries', to: 'queries' },
         { from: 'src/templates', to: 'templates' },
         { from: 'src/theme.json', to: 'theme.json' },
       ],
