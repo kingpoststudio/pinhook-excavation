@@ -1,9 +1,8 @@
 {% if !module.settings.is_hidden %}
 
-{% set condensed = module.condensed ? 'condensed' : null %}
 {% set overlay = module.overlay ? "overlay" : null %}
 
-<px-hero-banner {{ condensed }} {{ overlay }}>
+<px-hero-banner {{ overlay }}>
   {% if module.img.src %}
   <img slot="background" src="{{ module.img.src }}" alt="{{ module.img.alt }}" />
   {% endif %}

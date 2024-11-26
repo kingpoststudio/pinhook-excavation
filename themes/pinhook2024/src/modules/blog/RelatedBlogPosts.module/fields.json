@@ -1,18 +1,40 @@
 [
   {
-    "name": "title",
-    "label": "Title",
+    "name": "content",
+    "label": "Content",
     "required": false,
     "locked": false,
-    "validation_regex": "",
-    "validation_error_message": "",
-    "allow_new_line": false,
-    "show_emoji_picker": false,
-    "type": "text",
-    "placeholder": "",
+    "children": [
+      {
+        "name": "title",
+        "label": "Title",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "validation_error_message": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": null
+      },
+      {
+        "name": "description",
+        "label": "Description",
+        "required": false,
+        "locked": false,
+        "type": "richtext",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": null
+      }
+    ],
+    "type": "group",
     "inline_help_text": "",
     "help_text": "",
-    "default": "Related blog articles"
+    "default": {}
   },
   {
     "name": "blog",

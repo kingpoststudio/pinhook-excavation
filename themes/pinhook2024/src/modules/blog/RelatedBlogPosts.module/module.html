@@ -24,6 +24,18 @@
   {% endif %}
 
   <px-card-carousel>
+    <tui-content slot="content" alignment="start" gap="md">
+      <px-icon icon="quiltOne" slot="eyebrow"></px-icon>
+      {% if module.content.title %}
+      <h3 slot="title" class="fw-bold uppercase">{{ module.content.title }}</h3>
+      {% endif %}
+      {% if module.content.description %}
+      <div slot="description" class="as-body">
+        {{ module.content.description }}
+      </div>
+      {% endif %}
+    </tui-content>
+
     {% for post in related_posts %}
 
     <px-article-card href="{{ post.absolute_url }}">
@@ -43,7 +55,7 @@
     {% endfor %}
 
     {% if blog %}
-    <a slot="action" class="button outlined theme-light-blue" href="{{ blog.absolute_url }}">
+    <a slot="cta" class="button" href="{{ blog.absolute_url }}">
       {{ module.blog_link_label }}
     </a>
     {% endif %}

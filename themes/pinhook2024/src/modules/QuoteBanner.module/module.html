@@ -1,6 +1,6 @@
 {% set bg_color = module.bg_color or "bg-orange" %}
 
-<div class="bg-orange">
+<div class="{{ bg_color }}">
   <px-quote-card>
     <px-icon icon="quiltOne" slot="media"></px-icon>
     <p class="text-lg" slot="quote">{{ module.quote }}</p>
