@@ -1,86 +1,25 @@
+{% require_js %}
+{% set menu = menu(module.main_menu) %}
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const menu = {{ menu|tojson }};
+    const customEvent = new CustomEvent("NavigationMenuLoaded", { detail: { menu } });
+      window.dispatchEvent(customEvent);
+    });
+</script>
+{% end_require_js %}
+
 <px-header>
-  <img slot="logo" src="https://www.q2labsolutions.com/hubfs/IQVIA/Branding/iqvia-logo-white.png" />
+  <a slot="cta" class="button icon theme-white" href="https://facebook.com/">
+    <px-icon class="contents" icon="facebook"></px-icon>
+  </a>
 
-  <nav slot="menu">
-    {% menu "navigation" id="{{ module.main_menu }}" %}
-  </nav>
+  <px-nav-action slot="open-mobile-menu" action="open">
+    <px-icon icon="hamburger"></px-icon>
+  </px-nav-action>
 
-  {% if module.nav_ctas|length %}
-  <div slot="nav-ctas">
-    {% for nav_cta in module.nav_ctas %}
-
-    {% set indices = nav_cta.indices|map('index')|join(',') %}
-    {% set target = nav_cta.link.open_in_new_tab ? '_blank' : '_self' %}
-
-    {% if nav_cta.horizontal_orientation_enabled %}
-    <div class="nav-cta" data-menu-indices="{{ indices }}">
-      <tui-content alignment="start">
-        {% if nav_cta.title %}
-        <h6 slot="title" class="text-base fw-bold uppercase">{{ nav_cta.title }}</h6>
-        {% endif %}
-        {% if nav_cta.description %}
-        <p slot="description" class="text-sm">{{ nav_cta.description }}</p>
-        {% endif %}
-        {% if nav_cta.link.url.href and nav_cta.link_label %}
-        <a slot="cta" class="button link theme-iqvia-white" href="{{ nav_cta.link.url.href }}" target="{{ target }}">
-          {{ nav_cta.link_label }}
-        </a>
-        {% endif %}
-      </tui-content>
-      {% if nav_cta.image.src %}
-      <img src="{{ nav_cta.image.src }}" alt="{{ nav_cta.image.alt }}" width="360" />
-      {% endif %}
-    </div>
-    {% else %}
-
-    <tui-content alignment="start" data-menu-indices="{{ indices }}">
-      {% if nav_cta.image.src %}
-      <img slot="eyebrow" src="{{ nav_cta.image.src }}" alt="{{ nav_cta.image.alt }}" width="360" />
-      {% endif %}
-      {% if nav_cta.title %}
-      <h6 slot="title" class="text-base fw-bold uppercase">{{ nav_cta.title }}</h6>
-      {% endif %}
-      {% if nav_cta.description %}
-      <p slot="description" class="text-sm">{{ nav_cta.description }}</p>
-      {% endif %}
-      {% if nav_cta.link.url.href and nav_cta.link_label %}
-      <a slot="cta" class="button link theme-iqvia-white" href="{{ nav_cta.link.url.href }}" target="{{ target }}">
-        {{ nav_cta.link_label }}
-      </a>
-      {% endif %}
-    </tui-content>
-    {% endif %}
-
-    {% endfor %}
-  </div>
-  {% endif %}
-
-  {% if module.nav_sliders|length %}
-  <div slot="nav-sliders">
-    {% for nav_slider in module.nav_sliders %}
-    <div class="nav-slider" data-menu-index="{{ nav_slider.indices.menu_index }}"
-      data-menu-item-index="{{ nav_slider.indices.menu_item_index }}">
-      {% if nav_slider.image.src %}
-      <img src="{{ nav_slider.image.src }}" alt="{{ nav_slider.image.alt }}" width="320" />
-      {% endif %}
-      <tui-content alignment="start">
-        <h4 slot="title" class="fw-bold">{{ nav_slider.title }}</h4>
-        <p slot="description">{{ nav_slider.description }}</p>
-        {% if nav_slider.cta_id %}
-        <div slot="cta">
-          {% cta "nav_slider_cta" guid="{{ nav_slider.cta_id }}" %}
-        </div>
-        {% endif %}
-      </tui-content>
-    </div>
-    {% endfor %}
-  </div>
-  {% endif %}
-
-  {% if module.main_cta_id %}
-  <div slot="cta">
-    {% cta "main_cta" guid="{{ module.main_cta_id }}" %}
-  </div>
-  {% endif %}
-
+  <px-nav-action slot="close-mobile-menu" action="close">
+    <px-icon icon="cross"></px-icon>
+  </px-nav-action>
 </px-header>
