@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 
 bunfig.toml
+
+# HubSpot config file
+hubspot.config.yml

@@ -1,1 +1,1 @@
-import "../../../../../../libs/iqvia2024/dist/article-carousel.js";
+import "../../../../../../libs/pinhook2024/dist/card-carousel.js";

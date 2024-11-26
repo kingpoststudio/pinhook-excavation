@@ -1,1 +1,1 @@
-import '../../../../../../libs/iqvia2024/dist/footer.js';
+import '../../../../../../libs/pinhook2024/dist/footer.js';

@@ -10,22 +10,8 @@ const clientConfig = ({ portal, autoupload, hsDest }) => ({
 
   entry: {
     'build/main': './src/main.ts',
-
     'modules/globals/Header.module/module': './src/modules/globals/Header.module/module.ts',
-    'modules/globals/Footer.module/module': './src/modules/globals/Footer.module/module.ts',
-
     'modules/HeroCarousel.module/module': './src/modules/HeroCarousel.module/module.ts',
-    'modules/NavGrid.module/module': './src/modules/NavGrid.module/module.ts',
-    'modules/ResourceCards.module/module': './src/modules/ResourceCards.module/module.ts',
-    'modules/ServiceCards.module/module': './src/modules/ServiceCards.module/module.ts',
-    'modules/TabArch.module/module': './src/modules/TabArch.module/module.ts',
-
-    'modules/blog/RelatedBlogPosts.module/module': './src/modules/blog/RelatedBlogPosts.module/module.ts',
-
-    'modules/hubdb/InsightsListing.module/module': './src/modules/hubdb/InsightsListing.module/module.ts',
-    'modules/hubdb/RelatedEvents.module/module': './src/modules/hubdb/RelatedEvents.module/module.ts',
-    'modules/hubdb/RelatedInsights.module/module': './src/modules/hubdb/RelatedInsights.module/module.ts',
-    'modules/hubdb/RelatedServices.module/module': './src/modules/hubdb/RelatedServices.module/module.ts',
   },
 
   output: {

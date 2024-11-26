@@ -1,26 +1,4 @@
-{# Set the language-specific text (dialog and trigger label) based on the page's active language. #}
-{% set lang_labels = {
-trigger_label: "",
-title: "",
-description: "",
-confirm_label: "",
-new_tab_label: ""
-} %}
-
-{% for lang in module.languages %}
-{% if lang.language == html_lang %}
-{% do lang_labels.update({
-trigger_label: lang.trigger_label,
-title: lang.dialog_title,
-description: lang.dialog_description,
-confirm_label: lang.dialog_confirm_label,
-new_tab_label: lang.dialog_new_tab_label
-}) %}
-{% endif %}
-{% endfor %}
-
-
-<iqvia-header>
+<px-header>
   <img slot="logo" src="https://www.q2labsolutions.com/hubfs/IQVIA/Branding/iqvia-logo-white.png" />
 
   <nav slot="menu">
@@ -105,23 +83,4 @@ new_tab_label: lang.dialog_new_tab_label
   </div>
   {% endif %}
 
-  <iqvia-lang-selector slot="region" languages="{{ module.languages|map('language')|join(',') }}">
-    <a slot="action" href="javascript:;" class="flex gap-sm items-center uppercase theme-iqvia-white text-xs fw-bold">
-      <span>{{ lang_labels.trigger_label }}</span>
-      <iqvia-icon style="width:1rem;" icon="globe"></iqvia-icon>
-    </a>
-    <span slot="dialog-title">{{ lang_labels.title }}</span>
-    <span slot="dialog-description">{{ lang_labels.description }}</span>
-    <span slot="dialog-confirm-label">{{ lang_labels.confirm_label }}</span>
-    <span slot="dialog-new-tab-label">{{ lang_labels.new_tab_label }}</span>
-  </iqvia-lang-selector>
-
-  <iqvia-search-action slot="search">
-    <a href="javascript:;" class="flex gap-sm items-center uppercase theme-iqvia-white text-xs fw-bold">
-      <span>Search</span>
-      <iqvia-icon style="width:0.825rem;" icon="search"></iqvia-icon>
-    </a>
-  </iqvia-search-action>
-</iqvia-header>
-
-<iqvia-search></iqvia-search>
+</px-header>
