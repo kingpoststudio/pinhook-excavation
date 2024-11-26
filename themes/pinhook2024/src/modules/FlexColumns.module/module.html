@@ -3,13 +3,14 @@
 {# Render Column #}
 {% macro render_column(column) -%}
 {% set animation = column.settings.animation or "none" %}
+{% set animation_delay = column.settings.animation_delay or 0 %}
 {% set flex_style = 'flex:{{ column.settings.flex_factor || 1 }};' %}
 {% set px_style = column.settings.px ? 'padding-inline:{{ column.settings.px }};' : null %}
 {% set py_style = column.settings.py ? 'padding-block:{{ column.settings.py }};' : null %}
 {% set bg_style = column.settings.bg_color.color ? 'background:{{ column.settings.bg_color.color }};' : null %}
 
 <div style="{{ bg_style }}{{ px_style }}{{ py_style }}{{ flex_style }}">
-  <px-animate animation="{{ animation }}">
+  <px-animate animation="{{ animation }}" delay="{{ animation_delay }}">
     <div class="as-{{ column.type }} mx-auto">
 
       {# Content #}

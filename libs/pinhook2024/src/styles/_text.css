@@ -24,6 +24,7 @@ h6,
 
   > span {
     font-family: inherit;
+    line-height: 1;
   }
 }
 
@@ -63,6 +64,7 @@ h6,
 
 p,
 a,
+span,
 .as-body {
   font-size: inherit;
   line-height: 1.5;

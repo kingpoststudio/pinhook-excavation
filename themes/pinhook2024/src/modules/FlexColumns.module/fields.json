@@ -741,6 +741,20 @@
             "type": "choice",
             "placeholder": "",
             "default": "none"
+          },
+          {
+            "name": "animation_delay",
+            "label": "Animation delay",
+            "required": false,
+            "locked": false,
+            "display": "text",
+            "step": 1,
+            "type": "number",
+            "min": null,
+            "max": null,
+            "inline_help_text": "",
+            "help_text": "",
+            "default": 250
           }
         ],
         "type": "group",
