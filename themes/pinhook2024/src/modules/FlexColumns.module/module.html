@@ -35,15 +35,11 @@
         </div>
         {% endif %}
 
-        {% if !content.is_cta and content.link.url.href and content.link_label %}
+        {% if content.link.url.href and content.link_label %}
         {% set target = content.link.open_in_new_tab ? '_blank' : '_self' %}
         <a slot="cta" class="button" href="{{ content.link.url.href }}" target="{{ target }}" role="button">
           {{ content.link_label }}
         </a>
-        {% else %}
-        <div slot="cta">
-          {% cta 'content_cta' guid="{{ content.cta_id }}" %}
-        </div>
         {% endif %}
       </tui-content>
 
