@@ -1,4 +1,5 @@
 import styles from "./footer.css?inline";
+import "./_footer.css";
 
 const { LitElement, html, unsafeCSS } = window.Lit;
 
