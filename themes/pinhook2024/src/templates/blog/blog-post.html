@@ -73,11 +73,13 @@
     </div>
   </tui-container>
 
+  <hr />
+
   <div class="mb-lg">
     {%
     module 'related_blog_posts'
     path='../../modules/blog/RelatedBlogPosts',
-    title='<span class="text-md uppercase">You may also be interested in</span>',
+    content={ title: "Related Insights" },
     blog="{{ content.parent_blog.id }}",
     filter_by_tags="{{ content.tag_list[0].slug }}",
     %}
