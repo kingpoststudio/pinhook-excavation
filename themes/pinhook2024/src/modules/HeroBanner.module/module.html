@@ -3,15 +3,12 @@
 {% set overlay = module.overlay ? "overlay" : null %}
 
 <px-hero-banner {{ overlay }}>
-  {% if module.img.src %}
-  <img slot="background" src="{{ module.img.src }}" alt="{{ module.img.alt }}" />
+  {# Background #}
+  {% if module.bg_image.src %}
+  <img slot="background" src="{{ module.bg_image.src }}" alt="{{ module.bg_image.alt }}" width="1040" />
   {% endif %}
 
   <tui-content class="text-white" slot="content" alignment="start" gap="md">
-    {# Background #}
-    {% if module.bg_image.src %}
-    <img slot="background" src="{{ module.bg_image.src }}" alt="{{ module.bg_image.alt }}" width="1240" />
-    {% endif %}
 
     {# Breadcrumbs #}
     {% if module.breadcrumbs|length %}
@@ -22,7 +19,7 @@
       <span class="fw-bold">{{ crumb.link_label }}</span>
       {% else %}
       {% set target = crumb.link.open_in_new_tab ? '_blank' : '_self' %}
-      <a class="theme-white" href="{{ crumb.link.url.href }}" target="{{ target }}">
+      <a class="text-white" href="{{ crumb.link.url.href }}" target="{{ target }}">
         {{ crumb.link_label }}
       </a>
       {% endif %}

@@ -12,6 +12,7 @@ const clientConfig = ({ portal, autoupload, hsDest }) => ({
     'build/main': './src/main.ts',
     'modules/globals/Footer.module/module': './src/modules/globals/Footer.module/module.ts',
     'modules/globals/Header.module/module': './src/modules/globals/Header.module/module.ts',
+    'modules/blog/RelatedBlogPosts.module/module': './src/modules/blog/RelatedBlogPosts.module/module.ts',
     'modules/HeroCarousel.module/module': './src/modules/HeroCarousel.module/module.ts',
   },
 

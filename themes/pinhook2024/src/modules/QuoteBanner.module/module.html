@@ -5,10 +5,7 @@
     <px-icon icon="quiltOne" slot="media"></px-icon>
     <p class="text-lg" slot="quote">{{ module.quote }}</p>
     <p slot="author" class="text-lg">
-      <span>{{ module.author }}</span>
-      {% if module.position %}
-      <span>, <br /><strong>{{ module.position }}</strong></span>
-      {% endif %}
+      <span>{{ module.author }}{% if module.position %}, <br /><strong>{{ module.position }}</strong>{% endif %}</span>
     </p>
   </px-quote-card>
 </div>

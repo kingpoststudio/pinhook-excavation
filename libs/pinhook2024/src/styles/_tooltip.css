@@ -1,0 +1,42 @@
+tui-tooltip {
+  position: relative;
+
+  > span[slot="action"] {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--color-orange);
+    cursor: pointer;
+  }
+
+  > div.tooltip {
+    position: absolute;
+    top: calc(100% + 1.125rem);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    min-width: 6rem;
+    background: var(--color-white);
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+
+    a,
+    span {
+      display: flex;
+      align-items: center;
+      padding: var(--space-xs) var(--space-sm);
+      text-decoration: none;
+      cursor: pointer;
+      font-size: var(--font-size-sm);
+      color: var(--color-black);
+      transition: background var(--ease-time) var(--ease-type);
+
+      &:hover {
+        background: var(--color-gray);
+      }
+    }
+  }
+}
