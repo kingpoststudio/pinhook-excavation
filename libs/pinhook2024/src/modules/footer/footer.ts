@@ -12,6 +12,7 @@ export class Footer extends LitElement {
         <slot name="logo"></slot>
         <slot name="menu"></slot>
       </div>
+      <hr />
       <div class="bottom">
         <slot name="legal"></slot>
         <slot name="social"></slot>

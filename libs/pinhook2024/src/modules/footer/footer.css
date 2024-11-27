@@ -14,14 +14,23 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: var(--space-xl);
+    gap: var(--space-md);
     width: 100%;
     max-width: var(--page-max-width);
-    padding: var(--space-xl);
+    padding: var(--space-lg) var(--space-xl);
     margin: 0 auto;
 
     @media (min-width: 768px) {
       flex-direction: row;
     }
+  }
+
+  > hr {
+    width: calc(100% - var(--space-xl) * 2);
+    max-width: var(--page-max-width);
+    margin: 0 auto;
+    border: 0;
+    height: 1px;
+    background: var(--color-orange);
   }
 }
