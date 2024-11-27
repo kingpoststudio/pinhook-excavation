@@ -1,0 +1,33 @@
+<div class="grid cols-2 mx-auto max-w-snug gap-lg">
+  {% for card in module.cards %}
+  {% set dialog_id = "team-" ~ loop.index %}
+
+  <div>
+    <tui-dialog-action dialog-id="{{ dialog_id }}">
+      <px-team-card>
+        {% if card.image.src %}
+        <img slot="media" src="{{ card.image.src }}" alt="{{ card.image.alt }}" width="480" />
+        {% endif %}
+        <h3 class="as-h5" slot="member">{{ card.member }}</h3>
+        <p class="as-body" slot="position">{{ card.position }}</p>
+      </px-team-card>
+    </tui-dialog-action>
+    <tui-dialog id="{{ dialog_id }}">
+      <div class="dialog h-fit">
+        <div class="dialog__header">
+          <div class="flex flex-col gap-2xs">
+            <h5>{{ card.member }}</h5>
+            <p class="fw-bold italic uppercase">{{ card.position }}</p>
+          </div>
+          <tui-dialog-action action="close" dialog-id="{{ dialog_id }}">
+            <px-icon icon="cross"></px-icon>
+          </tui-dialog-action>
+        </div>
+        <div class="dialog__body">
+          {{ card.bio }}
+        </div>
+      </div>
+    </tui-dialog>
+  </div>
+  {% endfor %}
+</div>
