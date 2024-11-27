@@ -2,4 +2,8 @@
   <div slot="logo" style="width:6rem;color:var(--color-orange);">
     <px-icon icon="logo"></px-icon>
   </div>
+  <div slot="menu">
+    {% menu "footer_menu" id="{{ module.menu }}" %}
+  </div>
+  <p slot="legal" class="text-white">© {{ year }} Pinhook Excavation. All rights reserved.</p>
 </px-footer>
