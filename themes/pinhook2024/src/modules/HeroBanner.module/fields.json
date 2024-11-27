@@ -69,6 +69,19 @@
     "default": null
   },
   {
+    "name": "bg_image",
+    "label": "Background image",
+    "required": false,
+    "locked": false,
+    "inline_help_text": "",
+    "help_text": "",
+    "responsive": false,
+    "resizable": false,
+    "show_loading": false,
+    "type": "image",
+    "default": null
+  },
+  {
     "name": "links",
     "label": "Links",
     "required": false,

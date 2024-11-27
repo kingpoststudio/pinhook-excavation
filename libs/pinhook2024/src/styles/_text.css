@@ -62,9 +62,9 @@ h6,
   font-size: var(--font-size-md);
 }
 
-p,
 a,
-span,
+p,
+p span,
 .as-body {
   font-size: var(--font-size-md);
   line-height: 1.5;
