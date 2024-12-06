@@ -55,7 +55,7 @@ form {
       padding: 0 var(--space-xs);
       font-size: var(--font-size-sm);
       font-weight: 700;
-      color: var(--color-blue);
+      color: var(--color-black);
       text-transform: uppercase;
 
       &.error-msg,
