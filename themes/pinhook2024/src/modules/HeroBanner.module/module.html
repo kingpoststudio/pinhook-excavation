@@ -7,10 +7,22 @@
   {% if module.bg_type == "image" and module.bg_image.src %}
   <img slot="background" src="{{ module.bg_image.src }}" alt="{{ module.bg_image.alt }}" width="1040" />
   {% elif module.bg_type == "video" and module.bg_video_url %}
+
   <video slot="background" autoplay loop muted playsinline>
     <source src="{{ module.bg_video_url }}" type="video/webm">
     <source src="{{ module.bg_video_url }}" type="video/mp4">
   </video>
+
+  {% if module.video_speed %}
+  {% require_js %}
+  <script>
+    /* Set video speed based on module input. */
+    const video = document.querySelector('px-hero-banner video');
+    video.playbackRate = "{{ module.video_speed }}";
+  </script>
+  {% end_require_js %}
+  {% endif %}
+
   {% endif %}
 
   <tui-content class="text-white" slot="content" alignment="start" gap="md">
@@ -51,7 +63,7 @@
     {% if module.links|length > 0 %}
     <div slot="cta" class="flex flex-col md:flex-row gap-sm">
       {% for link in module.links %}
-      {% if link.url.href and link.link_label %}
+      {% if link.link.url.href and link.link_label %}
       <a class="button" href="{{ link.url.href }}">{{ link.link_label }}</a>
       {% endif %}
       {% endfor %}
