@@ -6,7 +6,7 @@
 
 footer {
   width: 100%;
-  min-height: 32rem;
+  min-height: 24rem;
   background: var(--color-black);
 
   > .top,
