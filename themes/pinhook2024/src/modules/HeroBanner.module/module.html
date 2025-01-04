@@ -4,8 +4,13 @@
 
 <px-hero-banner {{ overlay }}>
   {# Background #}
-  {% if module.bg_image.src %}
+  {% if module.bg_type == "image" and module.bg_image.src %}
   <img slot="background" src="{{ module.bg_image.src }}" alt="{{ module.bg_image.alt }}" width="1040" />
+  {% elif module.bg_type == "video" and module.bg_video_url %}
+  <video slot="background" autoplay loop muted playsinline>
+    <source src="{{ module.bg_video_url }}" type="video/webm">
+    <source src="{{ module.bg_video_url }}" type="video/mp4">
+  </video>
   {% endif %}
 
   <tui-content class="text-white" slot="content" alignment="start" gap="md">
