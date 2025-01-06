@@ -276,6 +276,10 @@
   margin-block: var(--space-sm);
 }
 
+.my-lg {
+  margin-block: var(--space-lg);
+}
+
 .block {
   display: block;
 }

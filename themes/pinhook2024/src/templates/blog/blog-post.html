@@ -27,7 +27,6 @@
   eyebrow="Blog",
   title="{{ content.title }}",
   as_h2={{ content.title|length > 60 }},
-  description="{{ content.meta_description }}",
   gradient={
   is_enabled: true,
   gradient: "gradient-charcoal-to-transparent"
@@ -35,7 +34,7 @@
   breadcrumbs=[
   { link: { url: { href: "/" } }, link_label: "Home" },
   { link: { url: { href: "/blog" } }, link_label: "Blog" },
-  { link_label: content.title }
+  { link_label: "{{ content.title }}" }
   ],
   featured_image={
   src: content.featured_image,
@@ -75,7 +74,7 @@
 
   <hr />
 
-  <div class="mb-lg">
+  <div class="my-lg">
     {%
     module 'related_blog_posts'
     path='../../modules/blog/RelatedBlogPosts',
