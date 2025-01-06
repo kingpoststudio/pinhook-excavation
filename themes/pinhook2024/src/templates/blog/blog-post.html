@@ -7,9 +7,6 @@
 {% boolean 'tags_enabled' label='Display post tags?', value=false, export_to_template_context=true, no_wrapper=true %}
 {% set tags_enabled = widget_data.tags_enabled.value %}
 
-{% boolean 'date_enabled' label='Display post date?', value=true, export_to_template_context=true, no_wrapper=true %}
-{% set date_enabled = widget_data.date_enabled.value %}
-
 {% boolean 'author_enabled' label='Display post author?', value=true, export_to_template_context=true, no_wrapper=true
 %}
 {% set author_enabled = widget_data.author_enabled.value %}
@@ -40,8 +37,6 @@
   src: content.featured_image,
   alt: content.title
   }
-  is_featured_img_pill=false,
-  extra_classes="bg-iqvia-gray"
   %}
 
   {%
@@ -59,9 +54,6 @@
       </div>
       {% endif %}
       <div class="flex flex-row gap-2xs">
-        {% if date_enabled %}
-        <p>{{ content.publish_date|datetimeformat('%B %e, %Y') }}</p>
-        {% endif %}
         {% if author_enabled and content.author %}
         <p>{{ "| " ~ content.author }}</p>
         {% endif %}
