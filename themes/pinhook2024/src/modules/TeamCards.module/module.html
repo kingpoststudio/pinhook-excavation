@@ -1,16 +1,22 @@
+{%- macro render_team_card(card) -%}
+<px-team-card>
+  {% if card.image.src %}
+  <img slot="media" src="{{ card.image.src }}" alt="{{ card.image.alt }}" width="480" />
+  {% endif %}
+  <h3 class="as-h5" slot="member">{{ card.member }}</h3>
+  <p class="as-body" slot="position">{{ card.position }}</p>
+</px-team-card>
+{%- endmacro -%}
+
 <div class="grid cols-2 mx-auto max-w-tight gap-lg">
   {% for card in module.cards %}
-  {% set dialog_id = "team-" ~ loop.index %}
 
   <div>
+    {% if card.bio %}
+    {% set dialog_id = "team-" ~ loop.index %}
+
     <tui-dialog-action dialog-id="{{ dialog_id }}">
-      <px-team-card>
-        {% if card.image.src %}
-        <img slot="media" src="{{ card.image.src }}" alt="{{ card.image.alt }}" width="480" />
-        {% endif %}
-        <h3 class="as-h5" slot="member">{{ card.member }}</h3>
-        <p class="as-body" slot="position">{{ card.position }}</p>
-      </px-team-card>
+      {{ render_team_card(card) }}
     </tui-dialog-action>
     <tui-dialog id="{{ dialog_id }}">
       <div class="dialog h-fit">
@@ -28,6 +34,10 @@
         </div>
       </div>
     </tui-dialog>
+    {% else %}
+    {{ render_team_card(card) }}
+    {% endif %}
+
   </div>
   {% endfor %}
 </div>
