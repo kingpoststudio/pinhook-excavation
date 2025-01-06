@@ -10,7 +10,7 @@
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  min-height: 40rem;
+  min-height: 36rem;
   padding: var(--space-2xl) 0 var(--space-3xl);
   background: var(--color-black);
   border-bottom: 0.25rem solid var(--color-orange);

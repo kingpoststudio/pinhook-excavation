@@ -58,7 +58,7 @@
 
 
 {# Blog Listing #}
-<main style="padding-bottom:6rem;">
+<main>
   {%
   module 'hero_banner'
   path='../../modules/HeroBanner'
@@ -97,7 +97,7 @@
   #}
 
   {# Standard Posts #}
-  <tui-container py="md">
+  <tui-container py="xl">
     {% if posts.standard|length > 0 or posts.featured|length > 0 %}
     <div class="basis-full grid cols-1 md:cols-3 gap-xl">
       {% for post in posts.standard %}
