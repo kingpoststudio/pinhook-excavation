@@ -57,11 +57,14 @@ export class CardCarousel extends LitElement {
         .swiper-pagination {
           bottom: auto !important;
           top: -5.5rem !important;
-          left: auto;
+          left: auto !important;
+          right: 0;
+          width: fit-content !important;
           text-align: right;
         }
         @media (min-width: 768px) {
           .swiper-pagination {
+            right: auto;
             width: calc(100% - 12rem) !important;
           }
         }
