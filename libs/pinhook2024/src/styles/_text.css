@@ -74,6 +74,16 @@ p span,
 a {
   opacity: 0.9;
   color: var(--color-blue);
+  text-decoration: none;
+  transition: opacity var(--ease-time) var(--ease-type);
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &.theme-orange {
+    color: var(--color-orange);
+  }
 }
 
 .title,
